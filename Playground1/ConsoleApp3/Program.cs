@@ -100,7 +100,7 @@ catch (Exception e)
 
 //SendGrid
 
-//var client = new SendGridClient("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");
+//var client = new SendGridClient("*********");
 //var from = new EmailAddress("aspnettest1912@gmail.com", "Example User");
 //var subject = "Sending with SendGrid is Fun";
 //var to = new EmailAddress("fepaw99251@kaimdr.com", "Example User");

@@ -36,6 +36,22 @@ using CsvHelper.Configuration.Attributes;
 using System.IO;
 using System.Text;
 
+//C# 10 FEATURE
+
+Person p1 = new Person("Georgi", 11);
+
+if (p1 is { Name: "Georgi", Age: 11 })
+{
+    Console.WriteLine(true);
+    return;
+}
+Console.WriteLine(false);
+record Person(string Name, int Age);
+
+class Address
+{
+    public string AddressName { get; init; } = "ff";
+}
 //Account account = new Account(
 //"daxn3ngly",
 //"911681576639439",
@@ -68,35 +84,39 @@ using System.Text;
 //Console.WriteLine(uploadResult.JsonObj);
 
 //}
-List<CsvLine> lines = new List<CsvLine>();
-
-var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
-{
-    HasHeaderRecord = false,
-    MissingFieldFound = null
-    
-};
-
-try
-{
-    
-    using (var fs = new StreamReader(@"C:\Users\Georges\Desktop\19332_Spotify_Songs.csv"))
-    {
-        // I just need this one line to load the records from the file in my List<CsvLine>
-        using (var csv = new CsvReader(fs, configuration))
-        {
-            lines = csv.GetRecords<CsvLine>().ToList();
-        }
-    }
-}
-
-catch (Exception e)
-{
-    Console.WriteLine(e);
-}
 
 
- record CsvLine([Index(8)] string Song, [Index(10)] string AudioLink, [Index(19)] string ImageLink);
+//List<CsvLine> lines = new List<CsvLine>();
+
+//var configuration = new CsvConfiguration(CultureInfo.InvariantCulture)
+//{
+//    HasHeaderRecord = false,
+//    MissingFieldFound = null
+
+//};
+
+//try
+//{
+
+//    using (var fs = new StreamReader(@"C:\Users\Georges\Desktop\19332_Spotify_Songs.csv"))
+//    {
+//        // I just need this one line to load the records from the file in my List<CsvLine>
+//        using (var csv = new CsvReader(fs, configuration))
+//        {
+//            lines = csv.GetRecords<CsvLine>().ToList();
+//        }
+//    }
+//}
+
+//catch (Exception e)
+//{
+//    Console.WriteLine(e);
+//}
+
+
+//record CsvLine([Index(8)] string Song, [Index(10)] string AudioLink, [Index(19)] string ImageLink);
+
+
 
 //SendGrid
 

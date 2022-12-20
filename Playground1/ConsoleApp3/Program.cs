@@ -35,18 +35,90 @@ using CsvHelper;
 using CsvHelper.Configuration.Attributes;
 using System.IO;
 using System.Text;
+using MimeKit;
+using MailKit.Net.Smtp;
 
+var message = new MimeMessage();
+message.From.Add(MailboxAddress.Parse("gogopopo262003@gmail.com"));
+message.To.Add(MailboxAddress.Parse("mefixa3922@areosur.com"));
+message.Subject = "test mailkit";
+message.Body = new TextPart("plain")
+{
+    Text = "Hello my"
+};
+
+using var client = new SmtpClient();
+
+try
+{
+    client.Connect("smtp.gmail.com", 465, true);
+    client.AuthenticationMechanisms.Remove("XOAUTH2");
+    client.Authenticate("gogopopo262003@gmail.com", "qsmisawtfflnoknn");
+    client.Send(message);
+    client.Disconnect(true);
+
+    Console.WriteLine("Succsess");
+
+}
+catch (Exception e)
+{
+    Console.WriteLine("Error: " + e.Message);
+    throw;
+}
+
+
+//MailMessage messageToSend = new MailMessage("gogopopo262003@gmail.com", "mefixa3922@areosur.com");
+//messageToSend.Subject = "asda";
+//messageToSend.Body = "adaddsad";
+
+//using System.Net.Mail.SmtpClient client = new System.Net.Mail.SmtpClient("smtp.gmail.com");
+
+//try
+//{
+//     client.Send(messageToSend, "qsmisawtfflnoknn");
+//}
+//catch (Exception)
+//{
+//    Console.WriteLine("Not send");
+//    throw;
+//}
+
+
+//string s = "a";
+//long n = 1000000000000;
+
+//var sb = new StringBuilder();
+
+//for (int i = 0; i < n; i++)
+//{
+//    //if (sb.Append(s).Length > n)
+//    //{
+//    //    var subStr = sb.ToString(0, Convert.ToInt32(n));
+//    //    sb.Replace(sb.ToString(), subStr);
+
+//    //    break;
+//    //}
+//    sb.Append(s);
+
+//}
+
+//Console.WriteLine((long)sb.ToString().Count(c => c == 'a'));
+
+
+
+
+//return;
 //C# 10 FEATURE
 
-Person p1 = new Person("Georgi", 11);
+//Person p1 = new Person("Georgi", 11);
 
-if (p1 is { Name: "Georgi", Age: 11 })
-{
-    Console.WriteLine(true);
-    return;
-}
-Console.WriteLine(false);
-record Person(string Name, int Age);
+//if (p1 is { Name: "Georgi", Age: 11 })
+//{
+//    Console.WriteLine(true);
+//    return;
+//}
+//Console.WriteLine(false);
+//record Person(string Name, int Age);
 
 class Address
 {

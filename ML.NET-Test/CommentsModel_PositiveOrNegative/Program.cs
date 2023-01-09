@@ -6,7 +6,7 @@ using CommentsModel_PositiveOrNegative;
 // Create single instance of sample data from first line of dataset for model input
 FootballResultModel.ModelInput sampleData = new FootballResultModel.ModelInput()
 {
-    Col0 = "This ",
+    Col0 = "This is my loved place.",
 };
 
 // Make a single prediction on the sample data and print results

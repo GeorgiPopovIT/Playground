@@ -5,12 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.ML.Data;
-using Microsoft.ML.Trainers.LightGbm;
+using Microsoft.ML.Trainers.FastTree;
 using Microsoft.ML.Trainers;
-using Microsoft.ML.Transforms;
 using Microsoft.ML;
 
-namespace FootballResultModel_PremierLeagueEN
+namespace FootballResultModel_PL_EN
 {
     public partial class FootballResultModel
     {
@@ -36,13 +35,16 @@ namespace FootballResultModel_PremierLeagueEN
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(new []{new InputOutputColumnPair(@"Home Team", @"Home Team"),new InputOutputColumnPair(@"Away Team", @"Away Team")}, outputKind: OneHotEncodingEstimator.OutputKind.Indicator)      
-                                    .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Match Number", @"Match Number"),new InputOutputColumnPair(@"Round Number", @"Round Number"),new InputOutputColumnPair(@"HG", @"HG")}))      
+            var pipeline = mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Match Number", @"Match Number"),new InputOutputColumnPair(@"Round Number", @"Round Number"),new InputOutputColumnPair(@"HG", @"HG")})      
                                     .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Date",outputColumnName:@"Date"))      
                                     .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Location",outputColumnName:@"Location"))      
+                                    .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Home Team",outputColumnName:@"Home Team"))      
+                                    .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Away Team",outputColumnName:@"Away Team"))      
                                     .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Result",outputColumnName:@"Result"))      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Home Team",@"Away Team",@"Match Number",@"Round Number",@"HG",@"Date",@"Location",@"Result"}))      
-                                    .Append(mlContext.Regression.Trainers.LightGbm(new LightGbmRegressionTrainer.Options(){NumberOfLeaves=4,NumberOfIterations=4,MinimumExampleCountPerLeaf=20,LearningRate=1,LabelColumnName=@"AG",FeatureColumnName=@"Features",ExampleWeightColumnName=null,Booster=new GradientBooster.Options(){SubsampleFraction=1,FeatureFraction=1,L1Regularization=2E-10,L2Regularization=1},MaximumBinCountPerFeature=254}));
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Match Number",@"Round Number",@"HG",@"Date",@"Location",@"Home Team",@"Away Team",@"Result"}))      
+                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"AG",inputColumnName:@"AG"))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options(){NumberOfLeaves=4,MinimumExampleCountPerLeaf=10,NumberOfTrees=38,MaximumBinCountPerFeature=290,FeatureFraction=0.896350805334553,LearningRate=0.0124524676469354,LabelColumnName=@"AG",FeatureColumnName=@"Features"}),labelColumnName: @"AG"))      
+                                    .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;
         }

@@ -66,7 +66,7 @@
       },
       {
         "ColumnName": "HG",
-        "ColumnPurpose": "Label",
+        "ColumnPurpose": "Feature",
         "ColumnDataFormat": "Single",
         "IsCategorical": false,
         "Type": "Column",
@@ -74,7 +74,7 @@
       },
       {
         "ColumnName": "AG",
-        "ColumnPurpose": "Feature",
+        "ColumnPurpose": "Label",
         "ColumnDataFormat": "Single",
         "IsCategorical": true,
         "Type": "Column",
@@ -95,19 +95,19 @@
         "Type": "Trial",
         "TrainerName": "FastTreeOva",
         "Score": 1.0,
-        "RuntimeInSeconds": 2.359,
+        "RuntimeInSeconds": 0.996,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e15",
           "e0": {
             "OutputColumnNames": [
               "Match Number",
               "Round Number",
-              "AG"
+              "HG"
             ],
             "InputColumnNames": [
               "Match Number",
               "Round Number",
-              "AG"
+              "HG"
             ]
           },
           "e1": {
@@ -138,7 +138,7 @@
             "InputColumnNames": [
               "Match Number",
               "Round Number",
-              "AG",
+              "HG",
               "Date",
               "Location",
               "Home Team",
@@ -148,17 +148,17 @@
             "OutputColumnName": "Features"
           },
           "e7": {
-            "OutputColumnName": "HG",
-            "InputColumnName": "HG"
+            "OutputColumnName": "AG",
+            "InputColumnName": "AG"
           },
           "e8": {
             "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "NumberOfTrees": 4,
-            "MaximumBinCountPerFeature": 254,
-            "FeatureFraction": 1.0,
-            "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "HG",
+            "MinimumExampleCountPerLeaf": 10,
+            "NumberOfTrees": 38,
+            "MaximumBinCountPerFeature": 290,
+            "FeatureFraction": 0.896350805334553,
+            "LearningRate": 0.012452467646935394,
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e10": {
@@ -171,389 +171,38 @@
             "FeatureFraction": 1.0,
             "L1Regularization": 2E-10,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e11": {
             "L1Regularization": 1.0,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e12": {
             "L1Regularization": 1.0,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e13": {
             "L1Regularization": 1.0,
             "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e14": {
             "L1Regularization": 1.0,
             "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e9": {
             "NumberOfTrees": 4,
             "NumberOfLeaves": 4,
             "FeatureFraction": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LightGbmMulti",
-        "Score": 1.0,
-        "RuntimeInSeconds": 0.484,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e10 * e15",
-          "e0": {
-            "OutputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG"
-            ],
-            "InputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG"
-            ]
-          },
-          "e1": {
-            "InputColumnName": "Date",
-            "OutputColumnName": "Date"
-          },
-          "e10": {
-            "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "LearningRate": 1.0,
-            "NumberOfTrees": 4,
-            "SubsampleFraction": 1.0,
-            "MaximumBinCountPerFeature": 254,
-            "FeatureFraction": 1.0,
-            "L1Regularization": 2E-10,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e15": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "InputColumnName": "Location",
-            "OutputColumnName": "Location"
-          },
-          "e3": {
-            "InputColumnName": "Home Team",
-            "OutputColumnName": "Home Team"
-          },
-          "e4": {
-            "InputColumnName": "Away Team",
-            "OutputColumnName": "Away Team"
-          },
-          "e5": {
-            "InputColumnName": "Result",
-            "OutputColumnName": "Result"
-          },
-          "e6": {
-            "InputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG",
-              "Date",
-              "Location",
-              "Home Team",
-              "Away Team",
-              "Result"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e7": {
-            "OutputColumnName": "HG",
-            "InputColumnName": "HG"
-          },
-          "e11": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e12": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e13": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e14": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e8": {
-            "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "NumberOfTrees": 4,
-            "MaximumBinCountPerFeature": 255,
-            "FeatureFraction": 1.0,
-            "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e9": {
-            "NumberOfTrees": 4,
-            "NumberOfLeaves": 4,
-            "FeatureFraction": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "FastTreeOva",
-        "Score": 1.0,
-        "RuntimeInSeconds": 1.544,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e15",
-          "e0": {
-            "OutputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG"
-            ],
-            "InputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG"
-            ]
-          },
-          "e1": {
-            "InputColumnName": "Date",
-            "OutputColumnName": "Date"
-          },
-          "e15": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "InputColumnName": "Location",
-            "OutputColumnName": "Location"
-          },
-          "e3": {
-            "InputColumnName": "Home Team",
-            "OutputColumnName": "Home Team"
-          },
-          "e4": {
-            "InputColumnName": "Away Team",
-            "OutputColumnName": "Away Team"
-          },
-          "e5": {
-            "InputColumnName": "Result",
-            "OutputColumnName": "Result"
-          },
-          "e6": {
-            "InputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG",
-              "Date",
-              "Location",
-              "Home Team",
-              "Away Team",
-              "Result"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e7": {
-            "OutputColumnName": "HG",
-            "InputColumnName": "HG"
-          },
-          "e8": {
-            "NumberOfLeaves": 10,
-            "MinimumExampleCountPerLeaf": 16,
-            "NumberOfTrees": 4,
-            "MaximumBinCountPerFeature": 223,
-            "FeatureFraction": 0.97865823324413226,
-            "LearningRate": 0.00013241733786096977,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e10": {
-            "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "LearningRate": 1.0,
-            "NumberOfTrees": 4,
-            "SubsampleFraction": 1.0,
-            "MaximumBinCountPerFeature": 255,
-            "FeatureFraction": 1.0,
-            "L1Regularization": 2E-10,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e11": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e12": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e13": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e14": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e9": {
-            "NumberOfTrees": 4,
-            "NumberOfLeaves": 4,
-            "FeatureFraction": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 1.0,
-        "RuntimeInSeconds": 1.443,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e12 * e15",
-          "e0": {
-            "OutputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG"
-            ],
-            "InputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG"
-            ]
-          },
-          "e1": {
-            "InputColumnName": "Date",
-            "OutputColumnName": "Date"
-          },
-          "e12": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e15": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "InputColumnName": "Location",
-            "OutputColumnName": "Location"
-          },
-          "e3": {
-            "InputColumnName": "Home Team",
-            "OutputColumnName": "Home Team"
-          },
-          "e4": {
-            "InputColumnName": "Away Team",
-            "OutputColumnName": "Away Team"
-          },
-          "e5": {
-            "InputColumnName": "Result",
-            "OutputColumnName": "Result"
-          },
-          "e6": {
-            "InputColumnNames": [
-              "Match Number",
-              "Round Number",
-              "AG",
-              "Date",
-              "Location",
-              "Home Team",
-              "Away Team",
-              "Result"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e7": {
-            "OutputColumnName": "HG",
-            "InputColumnName": "HG"
-          },
-          "e10": {
-            "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "LearningRate": 1.0,
-            "NumberOfTrees": 4,
-            "SubsampleFraction": 1.0,
-            "MaximumBinCountPerFeature": 255,
-            "FeatureFraction": 1.0,
-            "L1Regularization": 2E-10,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e11": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e13": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e14": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e8": {
-            "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "NumberOfTrees": 4,
-            "MaximumBinCountPerFeature": 255,
-            "FeatureFraction": 1.0,
-            "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e9": {
-            "NumberOfTrees": 4,
-            "NumberOfLeaves": 4,
-            "FeatureFraction": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           }
         }
@@ -563,19 +212,19 @@
         "Type": "Trial",
         "TrainerName": "FastForestOva",
         "Score": 1.0,
-        "RuntimeInSeconds": 3.006,
+        "RuntimeInSeconds": 1.679,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e9 * e15",
           "e0": {
             "OutputColumnNames": [
               "Match Number",
               "Round Number",
-              "AG"
+              "HG"
             ],
             "InputColumnNames": [
               "Match Number",
               "Round Number",
-              "AG"
+              "HG"
             ]
           },
           "e1": {
@@ -606,7 +255,7 @@
             "InputColumnNames": [
               "Match Number",
               "Round Number",
-              "AG",
+              "HG",
               "Date",
               "Location",
               "Home Team",
@@ -616,14 +265,14 @@
             "OutputColumnName": "Features"
           },
           "e7": {
-            "OutputColumnName": "HG",
-            "InputColumnName": "HG"
+            "OutputColumnName": "AG",
+            "InputColumnName": "AG"
           },
           "e9": {
             "NumberOfTrees": 4,
             "NumberOfLeaves": 4,
             "FeatureFraction": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e10": {
@@ -636,31 +285,31 @@
             "FeatureFraction": 1.0,
             "L1Regularization": 2E-10,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e11": {
             "L1Regularization": 1.0,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e12": {
             "L1Regularization": 1.0,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e13": {
             "L1Regularization": 1.0,
             "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e14": {
             "L1Regularization": 1.0,
             "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e8": {
@@ -670,7 +319,358 @@
             "MaximumBinCountPerFeature": 255,
             "FeatureFraction": 1.0,
             "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 1.0,
+        "RuntimeInSeconds": 1.7,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e9 * e15",
+          "e0": {
+            "OutputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG"
+            ],
+            "InputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Date",
+            "OutputColumnName": "Date"
+          },
+          "e15": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e3": {
+            "InputColumnName": "Home Team",
+            "OutputColumnName": "Home Team"
+          },
+          "e4": {
+            "InputColumnName": "Away Team",
+            "OutputColumnName": "Away Team"
+          },
+          "e5": {
+            "InputColumnName": "Result",
+            "OutputColumnName": "Result"
+          },
+          "e6": {
+            "InputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG",
+              "Date",
+              "Location",
+              "Home Team",
+              "Away Team",
+              "Result"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "OutputColumnName": "AG",
+            "InputColumnName": "AG"
+          },
+          "e9": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 5,
+            "FeatureFraction": 0.7466272,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e10": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e11": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e12": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e13": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e14": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e8": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.8,
+        "RuntimeInSeconds": 1.787,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e15",
+          "e0": {
+            "OutputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG"
+            ],
+            "InputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Date",
+            "OutputColumnName": "Date"
+          },
+          "e15": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e3": {
+            "InputColumnName": "Home Team",
+            "OutputColumnName": "Home Team"
+          },
+          "e4": {
+            "InputColumnName": "Away Team",
+            "OutputColumnName": "Away Team"
+          },
+          "e5": {
+            "InputColumnName": "Result",
+            "OutputColumnName": "Result"
+          },
+          "e6": {
+            "InputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG",
+              "Date",
+              "Location",
+              "Home Team",
+              "Away Team",
+              "Result"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "OutputColumnName": "AG",
+            "InputColumnName": "AG"
+          },
+          "e8": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 254,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e10": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e11": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e12": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e13": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e14": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastTreeOva",
+        "Score": 0.8,
+        "RuntimeInSeconds": 1.111,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * e8 * e15",
+          "e0": {
+            "OutputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG"
+            ],
+            "InputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG"
+            ]
+          },
+          "e1": {
+            "InputColumnName": "Date",
+            "OutputColumnName": "Date"
+          },
+          "e15": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "InputColumnName": "Location",
+            "OutputColumnName": "Location"
+          },
+          "e3": {
+            "InputColumnName": "Home Team",
+            "OutputColumnName": "Home Team"
+          },
+          "e4": {
+            "InputColumnName": "Away Team",
+            "OutputColumnName": "Away Team"
+          },
+          "e5": {
+            "InputColumnName": "Result",
+            "OutputColumnName": "Result"
+          },
+          "e6": {
+            "InputColumnNames": [
+              "Match Number",
+              "Round Number",
+              "HG",
+              "Date",
+              "Location",
+              "Home Team",
+              "Away Team",
+              "Result"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e7": {
+            "OutputColumnName": "AG",
+            "InputColumnName": "AG"
+          },
+          "e8": {
+            "NumberOfLeaves": 6,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 54,
+            "MaximumBinCountPerFeature": 498,
+            "FeatureFraction": 0.99999999,
+            "LearningRate": 4.7386983075548878E-06,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e10": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e11": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e12": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e13": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e14": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           }
         }
@@ -703,7 +703,7 @@
     "Version": 0,
     "Type": "ClassificationTrainingOption",
     "TrainingTime": 30,
-    "LabelColumn": "HG",
+    "LabelColumn": "AG",
     "Seed": 0
   }
 }

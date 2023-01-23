@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-namespace FootballResultModel_PremierLeagueEN
+namespace FootballResultModel_PL_EN
 {
     public partial class FootballResultModel
     {
@@ -86,13 +86,16 @@ namespace FootballResultModel_PremierLeagueEN
             public float HG { get; set; }
 
             [ColumnName(@"AG")]
-            public float AG { get; set; }
+            public uint AG { get; set; }
 
             [ColumnName(@"Features")]
             public float[] Features { get; set; }
 
+            [ColumnName(@"PredictedLabel")]
+            public float PredictedLabel { get; set; }
+
             [ColumnName(@"Score")]
-            public float Score { get; set; }
+            public float[] Score { get; set; }
 
         }
 

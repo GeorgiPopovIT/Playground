@@ -2,6 +2,55 @@
 //using SendGrid;
 //using ConsoleApp3;
 
+Dictionary<char, int> dict = new()
+{
+    {'I',1 },
+    {'V',5 },
+    {'X',10 },
+    {'L', 50 },
+    {'C',100 },
+    {'D',500 },
+    {'M',1000 }
+};
+
+Dictionary<string, int> exclusion = new()
+{
+    {"IV",4 },
+    {"IX",9 },
+    {"XL",40 },
+    {"XC",90 },
+    {"CD",400 },
+    {"CM", 900 }
+};
+string number = "MCMXCIV";
+
+Console.WriteLine(RomanToInt(number));
+
+int RomanToInt(string s)
+{
+    int sum = 0;
+
+    for (int i = 0; i < s.Length; i++)
+    {
+        var currSymbol = s[i];
+
+
+        if (i < s.Length - 1)
+        {
+            if (exclusion.ContainsKey(currSymbol + s[i + 1].ToString()))
+            {
+                sum += exclusion[currSymbol + s[i + 1].ToString()];
+
+                i++;
+                continue;
+            }
+        }
+
+        sum += dict[s[i]];
+    }
+
+    return sum;
+}
 //var db = new AnimalDbContext();
 
 //db.Animals.Add(new Animal
@@ -20,51 +69,51 @@
 
 //customersCollection.InsertOne(new Customer { Name = "Georgi" });
 
-using SpotifyAPI.Web;
+//using SpotifyAPI.Web;
 //Cloudinary
 
 
-using CloudinaryDotNet;
-using CloudinaryDotNet.Actions;
-using Microsoft.VisualBasic;
-using Microsoft.Extensions.Configuration;
+//using CloudinaryDotNet;
+//using CloudinaryDotNet.Actions;
+//using Microsoft.VisualBasic;
+//using Microsoft.Extensions.Configuration;
 
-using System.Globalization;
-using CsvHelper.Configuration;
-using CsvHelper;
-using CsvHelper.Configuration.Attributes;
-using System.IO;
-using System.Text;
-using MimeKit;
-using MailKit.Net.Smtp;
+//using System.Globalization;
+//using CsvHelper.Configuration;
+//using CsvHelper;
+//using CsvHelper.Configuration.Attributes;
+//using System.IO;
+//using System.Text;
+//using MimeKit;
+//using MailKit.Net.Smtp;
 
-var message = new MimeMessage();
-message.From.Add(MailboxAddress.Parse("gogopopo262003@gmail.com"));
-message.To.Add(MailboxAddress.Parse("mefixa3922@areosur.com"));
-message.Subject = "test mailkit";
-message.Body = new TextPart("plain")
-{
-    Text = "Hello my"
-};
+//var message = new MimeMessage();
+//message.From.Add(MailboxAddress.Parse("gogopopo262003@gmail.com"));
+//message.To.Add(MailboxAddress.Parse("mefixa3922@areosur.com"));
+//message.Subject = "test mailkit";
+//message.Body = new TextPart("plain")
+//{
+//    Text = "Hello my"
+//};
 
-using var client = new SmtpClient();
+//using var client = new SmtpClient();
 
-try
-{
-    client.Connect("smtp.gmail.com", 465, true);
-    client.AuthenticationMechanisms.Remove("XOAUTH2");
-    client.Authenticate("gogopopo262003@gmail.com", "qsmisawtfflnoknn");
-    client.Send(message);
-    client.Disconnect(true);
+//try
+//{
+//    client.Connect("smtp.gmail.com", 465, true);
+//    client.AuthenticationMechanisms.Remove("XOAUTH2");
+//    client.Authenticate("gogopopo262003@gmail.com", "qsmisawtfflnoknn");
+//    client.Send(message);
+//    client.Disconnect(true);
 
-    Console.WriteLine("Succsess");
+//    Console.WriteLine("Succsess");
 
-}
-catch (Exception e)
-{
-    Console.WriteLine("Error: " + e.Message);
-    throw;
-}
+//}
+//catch (Exception e)
+//{
+//    Console.WriteLine("Error: " + e.Message);
+//    throw;
+//}
 
 
 //MailMessage messageToSend = new MailMessage("gogopopo262003@gmail.com", "mefixa3922@areosur.com");

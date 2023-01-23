@@ -8,7 +8,6 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.ML" Version="2.0.0" />
     <PackageReference Include="Microsoft.ML.FastTree" Version="2.0.0" />
-    <PackageReference Include="Microsoft.ML.LightGbm" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup Label="FootballResultModel">
     <None Include="FootballResultModel.consumption.cs">

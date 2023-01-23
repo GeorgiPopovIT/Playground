@@ -1,0 +1,241 @@
+Nation,League,Date,Month,Year,Home,Away,HG,AG,YCH,YCA,RCH,RCA
+Bulgaria,Liga,8,7,2022,Botev Plovdiv,Hebar,0,1,2,2,0,0
+Bulgaria,Liga,8,7,2022,Septemvri Sofia,Ludogorets,0,3,1,1,1,0
+Bulgaria,Liga,9,7,2022,CSKA 1948 Sofia,Levski Sofia,1,0,4,2,1,0
+Bulgaria,Liga,9,7,2022,Lok. Plovdiv,Pirin Blagoevgrad,2,1,1,2,0,0
+Bulgaria,Liga,10,7,2022,CSKA Sofia,Arda,3,0,1,4,0,1
+Bulgaria,Liga,10,7,2022,Lok. Sofia,Cherno More,0,1,3,5,0,0
+Bulgaria,Liga,11,7,2022,Beroe,Botev Vratsa,2,1,1,4,0,0
+Bulgaria,Liga,11,7,2022,Spartak Varna,Slavia Sofia,0,1,3,1,0,0
+Bulgaria,Liga,15,7,2022,Botev Vratsa,Botev Plovdiv,3,2,1,4,0,1
+Bulgaria,Liga,15,7,2022,Ludogorets,Lok. Plovdiv,2,0,0,3,0,0
+Bulgaria,Liga,16,7,2022,Levski Sofia,Spartak Varna,5,0,1,1,0,0
+Bulgaria,Liga,16,7,2022,Lok. Sofia,CSKA Sofia,1,1,4,4,0,0
+Bulgaria,Liga,17,7,2022,Cherno More,Slavia Sofia,1,0,2,4,0,0
+Bulgaria,Liga,17,7,2022,Pirin Blagoevgrad,CSKA 1948 Sofia,1,1,6,3,0,0
+Bulgaria,Liga,18,7,2022,Arda,Beroe,1,0,0,1,0,0
+Bulgaria,Liga,18,7,2022,Hebar,Septemvri Sofia,1,3,3,4,0,1
+Bulgaria,Liga,22,7,2022,CSKA 1948 Sofia,Ludogorets,2,2,2,3,0,0
+Bulgaria,Liga,22,7,2022,Spartak Varna,Pirin Blagoevgrad,1,1,2,2,0,0
+Bulgaria,Liga,23,7,2022,Beroe,Lok. Sofia,1,1,3,1,0,0
+Bulgaria,Liga,23,7,2022,Botev Plovdiv,Arda,0,2,5,4,0,0
+Bulgaria,Liga,24,7,2022,Lok. Plovdiv,Hebar,2,1,3,1,0,0
+Bulgaria,Liga,25,7,2022,CSKA Sofia,Cherno More,1,0,3,2,0,0
+Bulgaria,Liga,25,7,2022,Septemvri Sofia,Botev Vratsa,1,1,1,2,0,0
+Bulgaria,Liga,29,7,2022,Hebar,CSKA 1948 Sofia,0,1,2,2,0,0
+Bulgaria,Liga,29,7,2022,Ludogorets,Spartak Varna,5,0,2,4,0,0
+Bulgaria,Liga,30,7,2022,Botev Vratsa,Lok. Plovdiv,0,1,4,4,1,0
+Bulgaria,Liga,30,7,2022,Pirin Blagoevgrad,Slavia Sofia,1,2,4,2,1,0
+Bulgaria,Liga,31,7,2022,CSKA Sofia,Beroe,5,1,2,3,0,0
+Bulgaria,Liga,31,7,2022,Lok. Sofia,Botev Plovdiv,2,0,3,4,0,1
+Bulgaria,Liga,1,8,2022,Arda,Septemvri Sofia,3,2,1,1,0,0
+Bulgaria,Liga,6,8,2022,Beroe,Cherno More,0,2,1,3,1,0
+Bulgaria,Liga,6,8,2022,CSKA 1948 Sofia,Botev Vratsa,5,2,1,4,1,0
+Bulgaria,Liga,6,8,2022,Levski Sofia,Pirin Blagoevgrad,1,0,0,2,0,1
+Bulgaria,Liga,6,8,2022,Lok. Plovdiv,Arda,1,0,4,5,1,0
+Bulgaria,Liga,6,8,2022,Septemvri Sofia,Lok. Sofia,0,3,2,1,0,0
+Bulgaria,Liga,6,8,2022,Spartak Varna,Hebar,0,1,1,5,0,0
+Bulgaria,Liga,13,8,2022,Arda,CSKA 1948 Sofia,0,1,3,3,0,0
+Bulgaria,Liga,13,8,2022,Beroe,Botev Plovdiv,1,1,5,4,0,0
+Bulgaria,Liga,13,8,2022,Botev Vratsa,Spartak Varna,1,0,3,2,0,0
+Bulgaria,Liga,13,8,2022,Cherno More,Pirin Blagoevgrad,1,0,1,0,0,0
+Bulgaria,Liga,13,8,2022,CSKA Sofia,Septemvri Sofia,1,0,4,3,0,0
+Bulgaria,Liga,13,8,2022,Hebar,Slavia Sofia,0,3,2,2,0,0
+Bulgaria,Liga,13,8,2022,Lok. Sofia,Lok. Plovdiv,0,0,2,6,0,1
+Bulgaria,Liga,20,8,2022,Botev Plovdiv,Cherno More,3,4,4,6,0,0
+Bulgaria,Liga,20,8,2022,CSKA 1948 Sofia,Lok. Sofia,2,0,2,2,1,1
+Bulgaria,Liga,20,8,2022,Levski Sofia,Hebar,4,0,2,3,0,0
+Bulgaria,Liga,20,8,2022,Pirin Blagoevgrad,Ludogorets,0,4,4,1,0,0
+Bulgaria,Liga,20,8,2022,Septemvri Sofia,Beroe,3,1,4,2,0,0
+Bulgaria,Liga,20,8,2022,Slavia Sofia,Botev Vratsa,2,1,1,4,0,0
+Bulgaria,Liga,20,8,2022,Spartak Varna,Arda,1,3,3,4,0,0
+Bulgaria,Liga,27,8,2022,Arda,Slavia Sofia,1,0,0,3,0,0
+Bulgaria,Liga,27,8,2022,Beroe,Lok. Plovdiv,2,0,2,5,0,0
+Bulgaria,Liga,27,8,2022,Botev Plovdiv,Septemvri Sofia,3,1,0,2,0,0
+Bulgaria,Liga,27,8,2022,Botev Vratsa,Levski Sofia,0,2,4,2,1,1
+Bulgaria,Liga,27,8,2022,Cherno More,Ludogorets,2,3,4,4,0,0
+Bulgaria,Liga,27,8,2022,CSKA Sofia,CSKA 1948 Sofia,2,1,3,2,0,1
+Bulgaria,Liga,27,8,2022,Hebar,Pirin Blagoevgrad,0,0,2,2,0,0
+Bulgaria,Liga,27,8,2022,Lok. Sofia,Spartak Varna,3,2,3,3,0,0
+Bulgaria,Liga,3,9,2022,CSKA 1948 Sofia,Beroe,4,0,4,3,0,0
+Bulgaria,Liga,3,9,2022,Levski Sofia,Arda,2,0,0,3,0,0
+Bulgaria,Liga,3,9,2022,Lok. Plovdiv,Botev Plovdiv,1,0,1,5
+Bulgaria,Liga,3,9,2022,Ludogorets,Hebar,6,0,1,2,0,0
+Bulgaria,Liga,3,9,2022,Pirin Blagoevgrad,Botev Vratsa,2,1,6,2,1,0
+Bulgaria,Liga,3,9,2022,Septemvri Sofia,Cherno More,0,0,2,3,0,1
+Bulgaria,Liga,3,9,2022,Slavia Sofia,Lok. Sofia,2,1,4,2,0,0
+Bulgaria,Liga,3,9,2022,Spartak Varna,CSKA Sofia,0,1,4,3,0,0
+Bulgaria,Liga,10,9,2022,Arda,Pirin Blagoevgrad,0,0,2,6,0,0
+Bulgaria,Liga,10,9,2022,Beroe,Spartak Varna,3,1,2,1,0,1
+Bulgaria,Liga,10,9,2022,Botev Plovdiv,CSKA 1948 Sofia,2,0,4,3,0,0
+Bulgaria,Liga,10,9,2022,Botev Vratsa,Ludogorets,0,4,5,1,1,0
+Bulgaria,Liga,10,9,2022,Cherno More,Hebar,1,0,2,6,0,0
+Bulgaria,Liga,10,9,2022,CSKA Sofia,Slavia Sofia,2,0,2,0,0,0
+Bulgaria,Liga,10,9,2022,Lok. Sofia,Levski Sofia,3,2,5,2,0,0
+Bulgaria,Liga,10,9,2022,Septemvri Sofia,Lok. Plovdiv,0,1,3,2,0,0
+Bulgaria,Liga,17,9,2022,CSKA 1948 Sofia,Septemvri Sofia,1,0,3,5,0,1
+Bulgaria,Liga,17,9,2022,Hebar,Botev Vratsa,0,2,1,5,0,0
+Bulgaria,Liga,17,9,2022,Levski Sofia,CSKA Sofia,2,0,2,3,0,1
+Bulgaria,Liga,17,9,2022,Lok. Plovdiv,Cherno More,3,0,1,1,0,0
+Bulgaria,Liga,17,9,2022,Ludogorets,Arda,1,1,3,5,0,1
+Bulgaria,Liga,17,9,2022,Pirin Blagoevgrad,Lok. Sofia,0,1,5,3,0,0
+Bulgaria,Liga,17,9,2022,Slavia Sofia,Beroe,2,0,3,0,0,0
+Bulgaria,Liga,17,9,2022,Spartak Varna,Botev Plovdiv,3,2,3,1,0,0
+Bulgaria,Liga,1,10,2022,Arda,Hebar,1,0,3,2,0,0
+Bulgaria,Liga,1,10,2022,Beroe,Levski Sofia,0,1,4,2,0,0
+Bulgaria,Liga,1,10,2022,Botev Plovdiv,Slavia Sofia,1,0,4,3,1,0
+Bulgaria,Liga,1,10,2022,Cherno More,Botev Vratsa,2,1,3,4,0,0
+Bulgaria,Liga,1,10,2022,CSKA Sofia,Pirin Blagoevgrad,2,1,3,5,0,0
+Bulgaria,Liga,1,10,2022,Lok. Plovdiv,CSKA 1948 Sofia,1,3,1,3,0,0
+Bulgaria,Liga,1,10,2022,Lok. Sofia,Ludogorets,1,0,4,2,1,1
+Bulgaria,Liga,1,10,2022,Septemvri Sofia,Spartak Varna,1,1,5,4,0,0
+Bulgaria,Liga,8,10,2022,Botev Vratsa,Arda,0,0,1,4,0,0
+Bulgaria,Liga,8,10,2022,CSKA 1948 Sofia,Cherno More,0,0,2,2,0,0
+Bulgaria,Liga,8,10,2022,Hebar,Lok. Sofia,3,2,3,2,0,0
+Bulgaria,Liga,8,10,2022,Levski Sofia,Botev Plovdiv,1,0,3,5,0,0
+Bulgaria,Liga,8,10,2022,Ludogorets,CSKA Sofia,2,1,3,3,0,0
+Bulgaria,Liga,8,10,2022,Pirin Blagoevgrad,Beroe,0,0,1,1,0,0
+Bulgaria,Liga,8,10,2022,Slavia Sofia,Septemvri Sofia,1,0,3,3,0,0
+Bulgaria,Liga,8,10,2022,Spartak Varna,Lok. Plovdiv,0,2,2,4,0,0
+Bulgaria,Liga,24,7,2022,Slavia Sofia,Levski Sofia,2,1,2,2,0,0
+Bulgaria,Liga,15,10,2022,Beroe,Ludogorets,0,4,3,0,0,0
+Bulgaria,Liga,15,10,2022,Botev Plovdiv,Pirin Blagoevgrad,3,1,1,2,0,0
+Bulgaria,Liga,15,10,2022,Cherno More,Arda,1,1,1,2,0,0
+Bulgaria,Liga,15,10,2022,CSKA 1948 Sofia,Spartak Varna,2,0,3,1,0,0
+Bulgaria,Liga,15,10,2022,CSKA Sofia,Hebar,4,0,2,2,0,1
+Bulgaria,Liga,15,10,2022,Lok. Plovdiv,Slavia Sofia,3,0,0,2,0,0
+Bulgaria,Liga,15,10,2022,Lok. Sofia,Botev Vratsa,1,0,5,5,0,0
+Bulgaria,Liga,15,10,2022,Septemvri Sofia,Levski Sofia,0,0,4,2,0,0
+Bulgaria,Liga,6,8,2022,Botev Plovdiv,CSKA Sofia,0,1,5,5,0,0
+Bulgaria,Liga,22,10,2022,Arda,Lok. Sofia,2,2,6,7,1,2
+Bulgaria,Liga,22,10,2022,Botev Vratsa,CSKA Sofia,0,4,1,2,0,0
+Bulgaria,Liga,22,10,2022,Hebar,Beroe,1,1,1,2,0,0
+Bulgaria,Liga,22,10,2022,Levski Sofia,Lok. Plovdiv,1,1,1,3,0,0
+Bulgaria,Liga,22,10,2022,Ludogorets,Botev Plovdiv,1,0,1,4,0,0
+Bulgaria,Liga,22,10,2022,Pirin Blagoevgrad,Septemvri Sofia,1,4,5,0,0,0
+Bulgaria,Liga,22,10,2022,Slavia Sofia,CSKA 1948 Sofia,1,1,3,3,0,0
+Bulgaria,Liga,22,10,2022,Spartak Varna,Cherno More,0,0,4,1,0,0
+Bulgaria,Liga,29,10,2022,Arda,CSKA Sofia,1,3,2,3,0,0
+Bulgaria,Liga,29,10,2022,Botev Vratsa,Beroe,2,0,2,3,0,0
+Bulgaria,Liga,29,10,2022,Cherno More,Lok. Sofia,2,1,4,1,0,0
+Bulgaria,Liga,29,10,2022,Hebar,Botev Plovdiv,1,2,1,2,0,0
+Bulgaria,Liga,29,10,2022,Levski Sofia,CSKA 1948 Sofia,0,0,2,5,0,0
+Bulgaria,Liga,29,10,2022,Ludogorets,Septemvri Sofia,3,1,1,2,0,0
+Bulgaria,Liga,29,10,2022,Pirin Blagoevgrad,Lok. Plovdiv,0,0,2,2,0,0
+Bulgaria,Liga,29,10,2022,Slavia Sofia,Spartak Varna,2,2,3,1,0,0
+Bulgaria,Liga,20,8,2022,Lok. Plovdiv,CSKA Sofia,0,1,1,6,0,0
+Bulgaria,Liga,1,8,2022,Cherno More,Levski Sofia,0,0,5,2,0,0
+Bulgaria,Liga,5,11,2022,Beroe,Arda,2,0,2,1,0,0
+Bulgaria,Liga,5,11,2022,Botev Plovdiv,Botev Vratsa,6,0,4,3,1,0
+Bulgaria,Liga,5,11,2022,CSKA 1948 Sofia,Pirin Blagoevgrad,2,1,2,3,1,0
+Bulgaria,Liga,5,11,2022,CSKA Sofia,Lok. Sofia,0,0,1,1,0,0
+Bulgaria,Liga,5,11,2022,Lok. Plovdiv,Ludogorets,2,3,5,2,0,0
+Bulgaria,Liga,5,11,2022,Septemvri Sofia,Hebar,1,1,1,3,0,0
+Bulgaria,Liga,5,11,2022,Slavia Sofia,Cherno More,1,0,2,1,0,0
+Bulgaria,Liga,5,11,2022,Spartak Varna,Levski Sofia,2,2,5,4,0,0
+Bulgaria,Liga,12,11,2022,Arda,Botev Plovdiv,2,1,3,2,0,0
+Bulgaria,Liga,12,11,2022,Botev Vratsa,Septemvri Sofia,0,0,3,2,0,0
+Bulgaria,Liga,12,11,2022,Cherno More,CSKA Sofia,0,2,2,5,0,1
+Bulgaria,Liga,12,11,2022,Hebar,Lok. Plovdiv,1,2,2,2,0,0
+Bulgaria,Liga,12,11,2022,Levski Sofia,Slavia Sofia,1,2,2,4,0,0
+Bulgaria,Liga,12,11,2022,Lok. Sofia,Beroe,1,2,0,2,0,0
+Bulgaria,Liga,12,11,2022,Ludogorets,CSKA 1948 Sofia,1,1,3,6,0,1
+Bulgaria,Liga,12,11,2022,Pirin Blagoevgrad,Spartak Varna,3,1,3,3,0,0
+Bulgaria,Liga,6,8,2022,Slavia Sofia,Ludogorets,1,2,1,1,1,0
+Bulgaria,Liga,13,8,2022,Ludogorets,Levski Sofia,0,0,5,7,0,0
+Bulgaria,Liga,19,11,2022,Beroe,CSKA Sofia
+Bulgaria,Liga,19,11,2022,Botev Plovdiv,Lok. Sofia
+Bulgaria,Liga,19,11,2022,CSKA 1948 Sofia,Hebar
+Bulgaria,Liga,19,11,2022,Levski Sofia,Cherno More
+Bulgaria,Liga,19,11,2022,Lok. Plovdiv,Botev Vratsa
+Bulgaria,Liga,19,11,2022,Septemvri Sofia,Arda
+Bulgaria,Liga,19,11,2022,Slavia Sofia,Pirin Blagoevgrad
+Bulgaria,Liga,19,11,2022,Spartak Varna,Ludogorets
+Bulgaria,Liga,11,2,2023,Arda,Lok. Plovdiv
+Bulgaria,Liga,11,2,2023,Botev Vratsa,CSKA 1948 Sofia
+Bulgaria,Liga,11,2,2023,Cherno More,Beroe
+Bulgaria,Liga,11,2,2023,CSKA Sofia,Botev Plovdiv
+Bulgaria,Liga,11,2,2023,Hebar,Spartak Varna
+Bulgaria,Liga,11,2,2023,Lok. Sofia,Septemvri Sofia
+Bulgaria,Liga,11,2,2023,Ludogorets,Slavia Sofia
+Bulgaria,Liga,11,2,2023,Pirin Blagoevgrad,Levski Sofia
+Bulgaria,Liga,18,2,2023,Botev Plovdiv,Beroe
+Bulgaria,Liga,18,2,2023,CSKA 1948 Sofia,Arda
+Bulgaria,Liga,18,2,2023,Levski Sofia,Ludogorets
+Bulgaria,Liga,18,2,2023,Lok. Plovdiv,Lok. Sofia
+Bulgaria,Liga,18,2,2023,Pirin Blagoevgrad,Cherno More
+Bulgaria,Liga,18,2,2023,Septemvri Sofia,CSKA Sofia
+Bulgaria,Liga,18,2,2023,Slavia Sofia,Hebar
+Bulgaria,Liga,18,2,2023,Spartak Varna,Botev Vratsa
+Bulgaria,Liga,25,2,2023,Arda,Spartak Varna
+Bulgaria,Liga,25,2,2023,Beroe,Septemvri Sofia
+Bulgaria,Liga,25,2,2023,Botev Vratsa,Slavia Sofia
+Bulgaria,Liga,25,2,2023,Cherno More,Botev Plovdiv
+Bulgaria,Liga,25,2,2023,CSKA Sofia,Lok. Plovdiv
+Bulgaria,Liga,25,2,2023,Hebar,Levski Sofia
+Bulgaria,Liga,25,2,2023,Lok. Sofia,CSKA 1948 Sofia
+Bulgaria,Liga,25,2,2023,Ludogorets,Pirin Blagoevgrad
+Bulgaria,Liga,4,3,2023,CSKA 1948 Sofia,CSKA Sofia
+Bulgaria,Liga,4,3,2023,Levski Sofia,Botev Vratsa
+Bulgaria,Liga,4,3,2023,Lok. Plovdiv,Beroe
+Bulgaria,Liga,4,3,2023,Ludogorets,Cherno More
+Bulgaria,Liga,4,3,2023,Pirin Blagoevgrad,Hebar
+Bulgaria,Liga,4,3,2023,Septemvri Sofia,Botev Plovdiv
+Bulgaria,Liga,4,3,2023,Slavia Sofia,Arda
+Bulgaria,Liga,4,3,2023,Spartak Varna,Lok. Sofia
+Bulgaria,Liga,11,3,2023,Arda,Levski Sofia
+Bulgaria,Liga,11,3,2023,Beroe,CSKA 1948 Sofia
+Bulgaria,Liga,11,3,2023,Botev Plovdiv,Lok. Plovdiv
+Bulgaria,Liga,11,3,2023,Botev Vratsa,Pirin Blagoevgrad
+Bulgaria,Liga,11,3,2023,Cherno More,Septemvri Sofia
+Bulgaria,Liga,11,3,2023,CSKA Sofia,Spartak Varna
+Bulgaria,Liga,11,3,2023,Hebar,Ludogorets
+Bulgaria,Liga,11,3,2023,Lok. Sofia,Slavia Sofia
+Bulgaria,Liga,18,3,2023,CSKA 1948 Sofia,Botev Plovdiv
+Bulgaria,Liga,18,3,2023,Hebar,Cherno More
+Bulgaria,Liga,18,3,2023,Levski Sofia,Lok. Sofia
+Bulgaria,Liga,18,3,2023,Lok. Plovdiv,Septemvri Sofia
+Bulgaria,Liga,18,3,2023,Ludogorets,Botev Vratsa
+Bulgaria,Liga,18,3,2023,Pirin Blagoevgrad,Arda
+Bulgaria,Liga,18,3,2023,Slavia Sofia,CSKA Sofia
+Bulgaria,Liga,18,3,2023,Spartak Varna,Beroe
+Bulgaria,Liga,1,4,2023,Arda,Ludogorets
+Bulgaria,Liga,1,4,2023,Beroe,Slavia Sofia
+Bulgaria,Liga,1,4,2023,Botev Plovdiv,Spartak Varna
+Bulgaria,Liga,1,4,2023,Botev Vratsa,Hebar
+Bulgaria,Liga,1,4,2023,Cherno More,Lok. Plovdiv
+Bulgaria,Liga,1,4,2023,CSKA Sofia,Levski Sofia
+Bulgaria,Liga,1,4,2023,Lok. Sofia,Pirin Blagoevgrad
+Bulgaria,Liga,1,4,2023,Septemvri Sofia,CSKA 1948 Sofia
+Bulgaria,Liga,8,4,2023,Botev Vratsa,Cherno More
+Bulgaria,Liga,8,4,2023,CSKA 1948 Sofia,Lok. Plovdiv
+Bulgaria,Liga,8,4,2023,Hebar,Arda
+Bulgaria,Liga,8,4,2023,Levski Sofia,Beroe
+Bulgaria,Liga,8,4,2023,Ludogorets,Lok. Sofia
+Bulgaria,Liga,8,4,2023,Pirin Blagoevgrad,CSKA Sofia
+Bulgaria,Liga,8,4,2023,Slavia Sofia,Botev Plovdiv
+Bulgaria,Liga,8,4,2023,Spartak Varna,Septemvri Sofia
+Bulgaria,Liga,15,4,2023,Arda,Botev Vratsa
+Bulgaria,Liga,15,4,2023,Beroe,Pirin Blagoevgrad
+Bulgaria,Liga,15,4,2023,Botev Plovdiv,Levski Sofia
+Bulgaria,Liga,15,4,2023,Cherno More,CSKA 1948 Sofia
+Bulgaria,Liga,15,4,2023,CSKA Sofia,Ludogorets
+Bulgaria,Liga,15,4,2023,Lok. Plovdiv,Spartak Varna
+Bulgaria,Liga,15,4,2023,Lok. Sofia,Hebar
+Bulgaria,Liga,15,4,2023,Septemvri Sofia,Slavia Sofia
+Bulgaria,Liga,22,4,2023,Arda,Cherno More
+Bulgaria,Liga,22,4,2023,Botev Vratsa,Lok. Sofia
+Bulgaria,Liga,22,4,2023,Hebar,CSKA Sofia
+Bulgaria,Liga,22,4,2023,Levski Sofia,Septemvri Sofia
+Bulgaria,Liga,22,4,2023,Ludogorets,Beroe
+Bulgaria,Liga,22,4,2023,Pirin Blagoevgrad,Botev Plovdiv
+Bulgaria,Liga,22,4,2023,Slavia Sofia,Lok. Plovdiv
+Bulgaria,Liga,22,4,2023,Spartak Varna,CSKA 1948 Sofia
+Bulgaria,Liga,29,4,2023,Beroe,Hebar
+Bulgaria,Liga,29,4,2023,Botev Plovdiv,Ludogorets
+Bulgaria,Liga,29,4,2023,Cherno More,Spartak Varna
+Bulgaria,Liga,29,4,2023,CSKA 1948 Sofia,Slavia Sofia
+Bulgaria,Liga,29,4,2023,CSKA Sofia,Botev Vratsa
+Bulgaria,Liga,29,4,2023,Lok. Plovdiv,Levski Sofia
+Bulgaria,Liga,29,4,2023,Lok. Sofia,Arda
+Bulgaria,Liga,29,4,2023,Septemvri Sofia,Pirin Blagoevgrad

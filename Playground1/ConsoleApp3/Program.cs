@@ -2,55 +2,16 @@
 //using SendGrid;
 //using ConsoleApp3;
 
-Dictionary<char, int> dict = new()
+public record class Person(string FirstName, string LastName)
 {
-    {'I',1 },
-    {'V',5 },
-    {'X',10 },
-    {'L', 50 },
-    {'C',100 },
-    {'D',500 },
-    {'M',1000 }
-};
-
-Dictionary<string, int> exclusion = new()
-{
-    {"IV",4 },
-    {"IX",9 },
-    {"XL",40 },
-    {"XC",90 },
-    {"CD",400 },
-    {"CM", 900 }
-};
-string number = "MCMXCIV";
-
-Console.WriteLine(RomanToInt(number));
-
-int RomanToInt(string s)
-{
-    int sum = 0;
-
-    for (int i = 0; i < s.Length; i++)
+    void Write()
     {
-        var currSymbol = s[i];
 
-
-        if (i < s.Length - 1)
-        {
-            if (exclusion.ContainsKey(currSymbol + s[i + 1].ToString()))
-            {
-                sum += exclusion[currSymbol + s[i + 1].ToString()];
-
-                i++;
-                continue;
-            }
-        }
-
-        sum += dict[s[i]];
     }
-
-    return sum;
 }
+
+
+
 //var db = new AnimalDbContext();
 
 //db.Animals.Add(new Animal

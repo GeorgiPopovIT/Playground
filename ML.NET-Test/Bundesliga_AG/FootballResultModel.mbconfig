@@ -66,7 +66,7 @@
       },
       {
         "ColumnName": "HG",
-        "ColumnPurpose": "Label",
+        "ColumnPurpose": "Feature",
         "ColumnDataFormat": "Single",
         "IsCategorical": true,
         "Type": "Column",
@@ -74,7 +74,7 @@
       },
       {
         "ColumnName": "AG",
-        "ColumnPurpose": "Feature",
+        "ColumnPurpose": "Label",
         "ColumnDataFormat": "Single",
         "IsCategorical": false,
         "Type": "Column",
@@ -190,8 +190,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "FastForestRegression",
-        "Score": 0.51570011486574341,
-        "RuntimeInSeconds": 0.153,
+        "Score": 0.43929277459605787,
+        "RuntimeInSeconds": 0.148,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
           "e0": {
@@ -211,7 +211,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -228,7 +228,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -258,7 +258,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -276,10 +276,10 @@
             "OutputColumnName": "Features"
           },
           "e6": {
-            "NumberOfTrees": 4,
-            "NumberOfLeaves": 22,
-            "FeatureFraction": 0.9748392,
-            "LabelColumnName": "HG",
+            "NumberOfTrees": 31,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.937922239,
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e5": {
@@ -289,7 +289,7 @@
             "MaximumBinCountPerFeature": 255,
             "FeatureFraction": 1.0,
             "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e7": {
@@ -302,19 +302,19 @@
             "FeatureFraction": 1.0,
             "L1Regularization": 2E-10,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e8": {
             "L1Regularization": 1.0,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e9": {
             "L1Regularization": 1.0,
             "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           }
         }
@@ -323,8 +323,8 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "FastForestRegression",
-        "Score": 0.48774702750263565,
-        "RuntimeInSeconds": 0.468,
+        "Score": 0.41831848398629334,
+        "RuntimeInSeconds": 0.121,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
           "e0": {
@@ -344,7 +344,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -361,7 +361,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -391,7 +391,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -411,8 +411,8 @@
           "e6": {
             "NumberOfTrees": 4,
             "NumberOfLeaves": 4,
-            "FeatureFraction": 1.0,
-            "LabelColumnName": "HG",
+            "FeatureFraction": 0.8432001,
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e5": {
@@ -422,7 +422,7 @@
             "MaximumBinCountPerFeature": 255,
             "FeatureFraction": 1.0,
             "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e7": {
@@ -435,19 +435,19 @@
             "FeatureFraction": 1.0,
             "L1Regularization": 2E-10,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e8": {
             "L1Regularization": 1.0,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e9": {
             "L1Regularization": 1.0,
             "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           }
         }
@@ -455,11 +455,11 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "FastTreeRegression",
-        "Score": -1.11789967982353,
-        "RuntimeInSeconds": 0.142,
+        "TrainerName": "FastForestRegression",
+        "Score": 0.29404001874165353,
+        "RuntimeInSeconds": 0.177,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e5",
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
           "e0": {
             "OutputColumnNames": [
               "Nation",
@@ -477,7 +477,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -494,7 +494,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -524,7 +524,7 @@
               "Date",
               "Month",
               "Year",
-              "AG",
+              "HG",
               "MissingHomeCount",
               "MissingAwayCount",
               "Bet365HC",
@@ -541,21 +541,21 @@
             ],
             "OutputColumnName": "Features"
           },
+          "e6": {
+            "NumberOfTrees": 32,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.6302302,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
           "e5": {
             "NumberOfLeaves": 4,
             "MinimumExampleCountPerLeaf": 20,
             "NumberOfTrees": 4,
-            "MaximumBinCountPerFeature": 254,
+            "MaximumBinCountPerFeature": 255,
             "FeatureFraction": 1.0,
             "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "HG",
-            "FeatureColumnName": "Features"
-          },
-          "e6": {
-            "NumberOfTrees": 4,
-            "NumberOfLeaves": 4,
-            "FeatureFraction": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e7": {
@@ -568,19 +568,285 @@
             "FeatureFraction": 1.0,
             "L1Regularization": 2E-10,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e8": {
             "L1Regularization": 1.0,
             "L2Regularization": 1.0,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           },
           "e9": {
             "L1Regularization": 1.0,
             "L2Regularization": 0.1,
-            "LabelColumnName": "HG",
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.017450003324293362,
+        "RuntimeInSeconds": 0.955,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Nation",
+              "League",
+              "FTR"
+            ],
+            "InputColumnNames": [
+              "Nation",
+              "League",
+              "FTR"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Date",
+              "Month",
+              "Year",
+              "HG",
+              "MissingHomeCount",
+              "MissingAwayCount",
+              "Bet365HC",
+              "Bet365DC",
+              "Bet365AC",
+              "YCH",
+              "YCA",
+              "RCH",
+              "RCA",
+              "FirstHalfHome",
+              "FirstHalfAway"
+            ],
+            "InputColumnNames": [
+              "Date",
+              "Month",
+              "Year",
+              "HG",
+              "MissingHomeCount",
+              "MissingAwayCount",
+              "Bet365HC",
+              "Bet365DC",
+              "Bet365AC",
+              "YCH",
+              "YCA",
+              "RCH",
+              "RCA",
+              "FirstHalfHome",
+              "FirstHalfAway"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Home",
+            "OutputColumnName": "Home"
+          },
+          "e3": {
+            "InputColumnName": "Away",
+            "OutputColumnName": "Away"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Nation",
+              "League",
+              "FTR",
+              "Date",
+              "Month",
+              "Year",
+              "HG",
+              "MissingHomeCount",
+              "MissingAwayCount",
+              "Bet365HC",
+              "Bet365DC",
+              "Bet365AC",
+              "YCH",
+              "YCA",
+              "RCH",
+              "RCA",
+              "FirstHalfHome",
+              "FirstHalfAway",
+              "Home",
+              "Away"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e8": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestRegression",
+        "Score": 0.017450003324293362,
+        "RuntimeInSeconds": 0.144,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e4 * e6",
+          "e0": {
+            "OutputColumnNames": [
+              "Nation",
+              "League",
+              "FTR"
+            ],
+            "InputColumnNames": [
+              "Nation",
+              "League",
+              "FTR"
+            ]
+          },
+          "e1": {
+            "OutputColumnNames": [
+              "Date",
+              "Month",
+              "Year",
+              "HG",
+              "MissingHomeCount",
+              "MissingAwayCount",
+              "Bet365HC",
+              "Bet365DC",
+              "Bet365AC",
+              "YCH",
+              "YCA",
+              "RCH",
+              "RCA",
+              "FirstHalfHome",
+              "FirstHalfAway"
+            ],
+            "InputColumnNames": [
+              "Date",
+              "Month",
+              "Year",
+              "HG",
+              "MissingHomeCount",
+              "MissingAwayCount",
+              "Bet365HC",
+              "Bet365DC",
+              "Bet365AC",
+              "YCH",
+              "YCA",
+              "RCH",
+              "RCA",
+              "FirstHalfHome",
+              "FirstHalfAway"
+            ]
+          },
+          "e2": {
+            "InputColumnName": "Home",
+            "OutputColumnName": "Home"
+          },
+          "e3": {
+            "InputColumnName": "Away",
+            "OutputColumnName": "Away"
+          },
+          "e4": {
+            "InputColumnNames": [
+              "Nation",
+              "League",
+              "FTR",
+              "Date",
+              "Month",
+              "Year",
+              "HG",
+              "MissingHomeCount",
+              "MissingAwayCount",
+              "Bet365HC",
+              "Bet365DC",
+              "Bet365AC",
+              "YCH",
+              "YCA",
+              "RCH",
+              "RCA",
+              "FirstHalfHome",
+              "FirstHalfAway",
+              "Home",
+              "Away"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e6": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 34,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e7": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 255,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e8": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "AG",
+            "FeatureColumnName": "Features"
+          },
+          "e9": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "AG",
             "FeatureColumnName": "Features"
           }
         }
@@ -608,7 +874,7 @@
     "Version": 0,
     "Type": "RegressionTrainingOption",
     "TrainingTime": 30,
-    "LabelColumn": "HG",
+    "LabelColumn": "AG",
     "Seed": 0
   }
 }

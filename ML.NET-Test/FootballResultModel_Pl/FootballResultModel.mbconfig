@@ -87,7 +87,7 @@
     "Version": 1
   },
   "RunHistory": {
-    "Version": 2,
+    "Version": 3,
     "Type": "Result",
     "Trials": [
       {
@@ -695,7 +695,8 @@
       "e15": "MapKeyToValue"
     },
     "Schema": "e0 * e1 * e2 * e3 * e4 * e5 * e6 * e7 * (e8 + e9 + e10 + e11 + e12 + e13 + e14) * e15",
-    "MetricName": "MacroAccuracy"
+    "MetricName": "MacroAccuracy",
+    "ModelFilePath": "C:\\Users\\Georges\\Desktop\\Tests.Net\\Playground\\ML.NET-Test\\FootballResultModel_Pl\\FootballResultModel.zip"
   },
   "Type": "TrainingConfig",
   "Version": 3,

@@ -10,7 +10,7 @@ using Microsoft.ML.Trainers;
 using Microsoft.ML.Transforms;
 using Microsoft.ML;
 
-namespace FootballMatches_Predictor
+namespace Bundesliga_AG
 {
     public partial class FootballResultModel
     {
@@ -92,11 +92,11 @@ namespace FootballMatches_Predictor
         {
             // Data process configuration with pipeline data transformations
             var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(new []{new InputOutputColumnPair(@"Nation", @"Nation"),new InputOutputColumnPair(@"League", @"League"),new InputOutputColumnPair(@"FTR", @"FTR")}, outputKind: OneHotEncodingEstimator.OutputKind.Indicator)      
-                                    .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Date", @"Date"),new InputOutputColumnPair(@"Month", @"Month"),new InputOutputColumnPair(@"Year", @"Year"),new InputOutputColumnPair(@"AG", @"AG"),new InputOutputColumnPair(@"MissingHomeCount", @"MissingHomeCount"),new InputOutputColumnPair(@"MissingAwayCount", @"MissingAwayCount"),new InputOutputColumnPair(@"Bet365HC", @"Bet365HC"),new InputOutputColumnPair(@"Bet365DC", @"Bet365DC"),new InputOutputColumnPair(@"Bet365AC", @"Bet365AC"),new InputOutputColumnPair(@"YCH", @"YCH"),new InputOutputColumnPair(@"YCA", @"YCA"),new InputOutputColumnPair(@"RCH", @"RCH"),new InputOutputColumnPair(@"RCA", @"RCA"),new InputOutputColumnPair(@"FirstHalfHome", @"FirstHalfHome"),new InputOutputColumnPair(@"FirstHalfAway", @"FirstHalfAway")}))      
+                                    .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Date", @"Date"),new InputOutputColumnPair(@"Month", @"Month"),new InputOutputColumnPair(@"Year", @"Year"),new InputOutputColumnPair(@"HG", @"HG"),new InputOutputColumnPair(@"MissingHomeCount", @"MissingHomeCount"),new InputOutputColumnPair(@"MissingAwayCount", @"MissingAwayCount"),new InputOutputColumnPair(@"Bet365HC", @"Bet365HC"),new InputOutputColumnPair(@"Bet365DC", @"Bet365DC"),new InputOutputColumnPair(@"Bet365AC", @"Bet365AC"),new InputOutputColumnPair(@"YCH", @"YCH"),new InputOutputColumnPair(@"YCA", @"YCA"),new InputOutputColumnPair(@"RCH", @"RCH"),new InputOutputColumnPair(@"RCA", @"RCA"),new InputOutputColumnPair(@"FirstHalfHome", @"FirstHalfHome"),new InputOutputColumnPair(@"FirstHalfAway", @"FirstHalfAway")}))      
                                     .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Home",outputColumnName:@"Home"))      
                                     .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Away",outputColumnName:@"Away"))      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Nation",@"League",@"FTR",@"Date",@"Month",@"Year",@"AG",@"MissingHomeCount",@"MissingAwayCount",@"Bet365HC",@"Bet365DC",@"Bet365AC",@"YCH",@"YCA",@"RCH",@"RCA",@"FirstHalfHome",@"FirstHalfAway",@"Home",@"Away"}))      
-                                    .Append(mlContext.Regression.Trainers.FastForest(new FastForestRegressionTrainer.Options(){NumberOfTrees=4,NumberOfLeaves=22,FeatureFraction=0.9748392F,LabelColumnName=@"HG",FeatureColumnName=@"Features"}));
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Nation",@"League",@"FTR",@"Date",@"Month",@"Year",@"HG",@"MissingHomeCount",@"MissingAwayCount",@"Bet365HC",@"Bet365DC",@"Bet365AC",@"YCH",@"YCA",@"RCH",@"RCA",@"FirstHalfHome",@"FirstHalfAway",@"Home",@"Away"}))      
+                                    .Append(mlContext.Regression.Trainers.FastForest(new FastForestRegressionTrainer.Options(){NumberOfTrees=31,NumberOfLeaves=4,FeatureFraction=0.9379222F,LabelColumnName=@"AG",FeatureColumnName=@"Features"}));
 
             return pipeline;
         }

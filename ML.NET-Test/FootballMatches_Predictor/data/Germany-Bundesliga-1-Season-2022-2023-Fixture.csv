@@ -1,0 +1,149 @@
+Nation,League,Date,Month,Year,Home,Away,HG,AG,FTR,MissingHomeCount,MissingAwayCount,Bet365HC,Bet365DC,Bet365AC,YCH,YCA,RCH,RCA,FirstHalfHome,FirstHalfAway
+Germany,Bundesliga,5,8,2022,Eintracht Frankfurt,Bayern Munich,1,6,Away,3,4,6.00,5.00,1.44,2,0,0,0,0,5
+Germany,Bundesliga,6,8,2022,Augsburg,Freiburg,0,4,Away,7,3,3.40,3.60,2.10,0,0,0,0,0,0
+Germany,Bundesliga,6,8,2022,B. Monchengladbach,Hoffenheim,3,1,Home,2,4,2.00,4.00,3.20,1,4,0,1,1,1
+Germany,Bundesliga,6,8,2022,Bochum,Mainz,1,2,Away,4,3,3.40,3.40,2.15,2,3,0,0,1,1
+Germany,Bundesliga,6,8,2022,Dortmund,Bayer Leverkusen,1,0,Home,3,2,2.00,4.10,3.20,2,4,0,1,1,0
+Germany,Bundesliga,6,8,2022,Union Berlin,Hertha Berlin,3,1,Home,2,6,1.85,3.60,4.20,2,3,0,1,1,0
+Germany,Bundesliga,6,8,2022,Wolfsburg,Werder Bremen,2,2,Draw,2,5,2.05,3.60,3.40,2,2,0,0,1,2
+Germany,Bundesliga,7,8,2022,FC Koln,Schalke,3,1,Home,4,1,2.05,3.75,3.40,0,1,0,1,0,0
+Germany,Bundesliga,7,8,2022,Stuttgart,RB Leipzig,1,1,Draw,5,1,3.60,3.60,2.00,2,1,0,0,1,1
+Germany,Bundesliga,12,8,2022,Freiburg,Dortmund,1,3,Away,4,5,2.90,3.75,2.25,1,3,0,0,1,0
+Germany,Bundesliga,13,8,2022,Bayer Leverkusen,Augsburg,1,2,Away,3,6,1.30,6.00,8.50,1,6,0,0,1,1
+Germany,Bundesliga,13,8,2022,Hertha Berlin,Eintracht Frankfurt,1,1,Draw,4,2,2.90,3.60,2.30,3,1,0,0,1,0
+Germany,Bundesliga,13,8,2022,Hoffenheim,Bochum,3,2,Home,5,5,1.55,4.50,5.25,1,1,0,0,2,2
+Germany,Bundesliga,13,8,2022,RB Leipzig,FC Koln,2,2,Draw,3,3,1.45,5.00,6.50,1,4,1,0,1,1
+Germany,Bundesliga,13,8,2022,Schalke,B. Monchengladbach,2,2,Draw,2,2,3.10,3.80,2.10,4,2,0,0,1,0
+Germany,Bundesliga,13,8,2022,Werder Bremen,Stuttgart,2,2,Draw,4,3,2.25,3.60,3.00,4,2,0,0,1,1
+Germany,Bundesliga,14,8,2022,Bayern Munich,Wolfsburg,2,0,Home,3,4,1.16,8.00,15.00,2,1,0,0,2,0
+Germany,Bundesliga,14,8,2022,Mainz,Union Berlin,0,0,Draw,2,1,2.25,3.25,3.40,1,0,0,0,0,0
+Germany,Bundesliga,19,8,2022,B. Monchengladbach,Hertha Berlin,1,0,Home,0,7,1.53,4.50,5.75,1,2,0,1,1,0
+Germany,Bundesliga,20,8,2022,Augsburg,Mainz,1,2,Away,4,1,3.80,3.60,1.90,2,2,0,0,1,1
+Germany,Bundesliga,20,8,2022,Bayer Leverkusen,Hoffenheim,0,3,Away,4,5,1.57,4.75,4.75,1,4,0,0,0,2
+Germany,Bundesliga,20,8,2022,Dortmund,Werder Bremen,2,3,Away,3,2,1.40,5.00,7.00,4,1,0,0,1,0
+Germany,Bundesliga,20,8,2022,Stuttgart,Freiburg,0,1,Away,3,4,2.62,3.60,2.55,4,2,0,1
+Germany,Bundesliga,20,8,2022,Union Berlin,RB Leipzig,2,1,Home,1,4,3.25,3.40,2.20,2,1,0,0,2,0
+Germany,Bundesliga,20,8,2022,Wolfsburg,Schalke,0,0,Draw,4,2,1.83,3.80,4.00,1,3,0,0,0,0
+Germany,Bundesliga,21,8,2022,Bochum,Bayern Munich,0,7,Away,5,3,12.00,7.50,1.20,1,0,0,0,0,4
+Germany,Bundesliga,21,8,2022,Eintracht Frankfurt,FC Koln,1,1,Draw,4,4,2.10,3.75,3.25,0,1,0,0,0,0
+Germany,Bundesliga,26,8,2022,Freiburg,Bochum,1,0,Home,5,5,1.53,4.33,6.00,2,2,0,0,0,0
+Germany,Bundesliga,27,8,2022,Bayern Munich,B. Monchengladbach,1,1,Draw,2,2,1.16,8.50,13.00,4,2,0,0,0,1
+Germany,Bundesliga,27,8,2022,Hertha Berlin,Dortmund,0,1,Away,6,4,4.00,4.33,1.75,1,0,0,0,0,1
+Germany,Bundesliga,27,8,2022,Hoffenheim,Augsburg,1,0,Home,5,7,1.40,5.00,7.00,1,1,0,0,1,0
+Germany,Bundesliga,27,8,2022,Mainz,Bayer Leverkusen,0,3,Away,1,4,2.30,3.60,2.90,1,6,0,2,0,3
+Germany,Bundesliga,27,8,2022,RB Leipzig,Wolfsburg,2,0,Home,4,2,1.53,4.75,5.50,3,3,0,0,1,0
+Germany,Bundesliga,27,8,2022,Schalke,Union Berlin,1,6,Away,1,1,3.10,3.40,2.30,1,0,0,0,1,3
+Germany,Bundesliga,28,8,2022,FC Koln,Stuttgart,0,0,Draw,1,1,2.37,3.50,2.80,2,2,0,1,0,0
+Germany,Bundesliga,28,8,2022,Werder Bremen,Eintracht Frankfurt,3,4,Away,3,4,2.37,3.60,2.87,1,3,0,0,2,3
+Germany,Bundesliga,2,9,2022,Dortmund,Hoffenheim,1,0,Home,6,5,1.75,4.20,4.20,3,4,0,0,1,0
+Germany,Bundesliga,3,9,2022,Bayer Leverkusen,Freiburg,2,3,Away,6,4,1.75,3.80,4.33,2,2,0,0,1,0
+Germany,Bundesliga,3,9,2022,Bochum,Werder Bremen,0,2,Away,2,5,2.90,3.75,2.25,2,2,0,0,0,0
+Germany,Bundesliga,3,9,2022,Eintracht Frankfurt,RB Leipzig,4,0,Home,3,2,3.40,3.60,2.10,1,1,0,0,2,0
+Germany,Bundesliga,3,9,2022,Stuttgart,Schalke,1,1,Draw,4,1,1.70,4.00,4.50,4,2,1,0,1,1
+Germany,Bundesliga,3,9,2022,Union Berlin,Bayern Munich,1,1,Draw,2,2,7.00,5.00,1.40,1,2,0,0,1,1
+Germany,Bundesliga,3,9,2022,Wolfsburg,FC Koln,2,4,Away,3,6,2.15,3.40,3.40,2,1,0,0,1,3
+Germany,Bundesliga,4,9,2022,Augsburg,Hertha Berlin,0,2,Away,6,5,2.55,3.40,2.62,2,1,0,0,0,0
+Germany,Bundesliga,4,9,2022,B. Monchengladbach,Mainz,0,1,Away,1,1,2.37,3.75,2.80,1,4,1,0,0,0
+Germany,Bundesliga,9,9,2022,Werder Bremen,Augsburg,0,1,Away,3,6,1.45,4.75,6.00,4,5,0,0,0,0
+Germany,Bundesliga,10,9,2022,Bayern Munich,Stuttgart,2,2,Draw,2,5,1.22,6.50,12.00,2,5,0,0,1,0
+Germany,Bundesliga,10,9,2022,Eintracht Frankfurt,Wolfsburg,0,1,Away,5,2,1.90,3.75,3.80,2,4,0,0,0,0
+Germany,Bundesliga,10,9,2022,Hertha Berlin,Bayer Leverkusen,2,2,Draw,5,4,4.00,4.00,1.83,3,1,0,0,0,0
+Germany,Bundesliga,10,9,2022,Hoffenheim,Mainz,4,1,Home,4,2,2.37,3.60,2.80,3,2,0,1,0,0
+Germany,Bundesliga,10,9,2022,RB Leipzig,Dortmund,3,0,Home,2,8,2.37,3.80,2.70,2,1,0,0,2,0
+Germany,Bundesliga,10,9,2022,Schalke,Bochum,3,1,Home,1,4,2.05,3.75,3.40,2,3,0,0,1,0
+Germany,Bundesliga,11,9,2022,FC Koln,Union Berlin,0,1,Away,5,2,2.37,3.40,2.90,4,1,1,0,0,1
+Germany,Bundesliga,11,9,2022,Freiburg,B. Monchengladbach,0,0,Draw,3,3,2.10,3.75,3.20,1,1,0,0,0,0
+Germany,Bundesliga,16,9,2022,Mainz,Hertha Berlin,1,1,Draw,2,7,1.72,4.00,4.33,3,5,0,0,0,1
+Germany,Bundesliga,17,9,2022,Augsburg,Bayern Munich,1,0,Home,5,3,15.00,7.50,1.18,3,1,0,0,0,0
+Germany,Bundesliga,17,9,2022,B. Monchengladbach,RB Leipzig,3,0,Home,4,5,3.10,3.50,2.25,2,2,0,0,2,0
+Germany,Bundesliga,17,9,2022,Bayer Leverkusen,Werder Bremen,1,1,Draw,5,3,1.61,4.33,5.00,2,3,0,0,0,0
+Germany,Bundesliga,17,9,2022,Dortmund,Schalke,1,0,Home,6,2,1.40,4.75,7.00,3,2,0,0,0,0
+Germany,Bundesliga,17,9,2022,Stuttgart,Eintracht Frankfurt,1,3,Away,4,5,2.60,3.25,2.80,2,0,0,0,0,1
+Germany,Bundesliga,18,9,2022,Bochum,FC Koln,1,1,Draw,5,6,3.30,3.80,2.05,0,1,0,0,1,0
+Germany,Bundesliga,18,9,2022,Hoffenheim,Freiburg,0,0,Draw,4,2,2.15,3.50,3.25,1,2,0,0,0,0
+Germany,Bundesliga,18,9,2022,Union Berlin,Wolfsburg,2,0,Home,2,2,2.05,3.40,3.50,0,0,0,0,0,0
+Germany,Bundesliga,1,10,2022,Bayern Munich,Bayer Leverkusen,4,0,Home,3,3,1.33,6.50,7.50,0,0,0,0,3,0
+Germany,Bundesliga,1,10,2022,Eintracht Frankfurt,Union Berlin,2,0,Home,4,1,2.40,3.40,3.00,3,4,1,0,2,0
+Germany,Bundesliga,1,10,2022,FC Koln,Dortmund,3,2,Home,4,8,3.00,3.80,2.20,4,3,0,0,0,1
+Germany,Bundesliga,1,10,2022,Freiburg,Mainz,2,1,Home,2,3,2.10,3.60,3.40,2,4,0,0,2,0
+Germany,Bundesliga,1,10,2022,Hertha Berlin,Hoffenheim,1,1,Draw,4,4,2.90,3.60,2.30,2,1,0,0,1,1
+Germany,Bundesliga,1,10,2022,RB Leipzig,Bochum,4,0,Home,4,4,1.25,6.00,10.00,0,2,0,0,2,0
+Germany,Bundesliga,1,10,2022,Schalke,Augsburg,2,3,Away,1,5,1.85,3.75,4.00,2,6,0,1,1,2
+Germany,Bundesliga,1,10,2022,Werder Bremen,B. Monchengladbach,5,1,Home,3,4,2.50,4.00,2.50,0,1,0,0,4,0
+Germany,Bundesliga,1,10,2022,Wolfsburg,Stuttgart,3,2,Home,3,2,2.45,3.25,2.90,3,5,0,0,2,2
+Germany,Bundesliga,8,10,2022,Augsburg,Wolfsburg,1,1,Draw,8,2,2.80,3.40,2.45,5,3,0,0,0,1
+Germany,Bundesliga,8,10,2022,B. Monchengladbach,FC Koln,5,2,Home,3,7,2.05,3.75,3.40,2,3,0,1,2,1
+Germany,Bundesliga,8,10,2022,Bayer Leverkusen,Schalke,4,0,Home,4,4,1.36,4.75,7.50,1,1,0,0,2,0
+Germany,Bundesliga,8,10,2022,Bochum,Eintracht Frankfurt,3,0,Home,5,4,3.75,3.80,1.90,2,1,0,0,0,0
+Germany,Bundesliga,8,10,2022,Dortmund,Bayern Munich,2,2,Draw,5,3,4.00,4.50,1.72,3,6,0,1,0,1
+Germany,Bundesliga,8,10,2022,Hertha Berlin,Freiburg,2,2,Draw,4,3,3.20,3.40,2.25,2,1,0,0,0,1
+Germany,Bundesliga,8,10,2022,Hoffenheim,Werder Bremen,1,2,Away,3,4,1.90,4.00,3.50,3,3,0,0,1,1
+Germany,Bundesliga,8,10,2022,Mainz,RB Leipzig,1,1,Draw,1,4,3.20,3.60,2.20,1,1,0,0,1,0
+Germany,Bundesliga,8,10,2022,Stuttgart,Union Berlin,0,1,Away,1,3,2.90,2.90,2.70,3,3,1,0,0,0
+Germany,Bundesliga,15,10,2022,Bayern Munich,Freiburg,5,0,Home,4,4,1.40,5.25,6.00,0,2,0,0,2,0
+Germany,Bundesliga,15,10,2022,Eintracht Frankfurt,Bayer Leverkusen,5,1,Home,6,4,2.55,3.50,2.70,0,4,0,1,1,0
+Germany,Bundesliga,15,10,2022,FC Koln,Augsburg,3,2,Home,8,10,1.57,4.50,5.25,2,4,0,0,0,1
+Germany,Bundesliga,15,10,2022,RB Leipzig,Hertha Berlin,3,2,Home,4,4,1.45,5.00,6.50,2,3,0,0,3,0
+Germany,Bundesliga,15,10,2022,Schalke,Hoffenheim,0,3,Away,4,3,3.40,3.80,2.00,2,2,0,0,0,2
+Germany,Bundesliga,15,10,2022,Stuttgart,Bochum,4,1,Home,3,7,1.70,4.00,4.75,0,3,0,0,2,1
+Germany,Bundesliga,15,10,2022,Union Berlin,Dortmund,2,0,Home,1,6,2.90,3.30,2.45,1,2,0,0,2,0
+Germany,Bundesliga,15,10,2022,Werder Bremen,Mainz,0,2,Away,4,4,2.20,3.60,3.10,1,2,0,0,0,1
+Germany,Bundesliga,15,10,2022,Wolfsburg,B. Monchengladbach,2,2,Draw,1,5,2.80,3.50,2.40,3,3,0,0,1,1
+Germany,Bundesliga,22,10,2022,Augsburg,RB Leipzig,3,3,Draw,9,5,4.75,4.20,1.65,7,1,1,0,1,0
+Germany,Bundesliga,22,10,2022,B. Monchengladbach,Eintracht Frankfurt,1,3,Away,6,3,2.62,3.60,2.50,3,2,0,0,0,3
+Germany,Bundesliga,22,10,2022,Bayer Leverkusen,Wolfsburg,2,2,Draw,6,3,1.75,4.00,4.33,3,1,0,0,1,1
+Germany,Bundesliga,22,10,2022,Bochum,Union Berlin,2,1,Home,4,1,4.75,3.40,1.85,1,3,0,0,1,0
+Germany,Bundesliga,22,10,2022,Dortmund,Stuttgart,5,0,Home,6,2,1.57,4.50,5.25,1,0,0,0,3,0
+Germany,Bundesliga,22,10,2022,Freiburg,Werder Bremen,2,0,Home,4,3,1.90,3.75,3.80,2,2,0,1,0,0
+Germany,Bundesliga,22,10,2022,Hertha Berlin,Schalke,2,1,Home,5,5,1.72,4.00,4.50,5,1,0,0,0,0
+Germany,Bundesliga,22,10,2022,Hoffenheim,Bayern Munich,0,2,Away,5,4,5.00,4.50,1.57,3,2,0,0,0,2
+Germany,Bundesliga,22,10,2022,Mainz,FC Koln,5,0,Home,3,7,2.05,3.60,3.40,1,5,0,1,3,0
+Germany,Bundesliga,29,10,2022,Bayern Munich,Mainz,6,2,Home,5,3,1.22,7.00,12.00,1,1,0,0,3,1
+Germany,Bundesliga,29,10,2022,Eintracht Frankfurt,Dortmund,1,2,Away,4,7,2.25,3.75,2.60,5,5,0,0,1,1
+Germany,Bundesliga,29,10,2022,FC Koln,Hoffenheim,1,1,Draw,9,6,3.20,3.60,2.15,1,2,0,1,1,1
+Germany,Bundesliga,29,10,2022,RB Leipzig,Bayer Leverkusen,2,0,Home,4,4,1.61,4.00,5.00,3,3,0,0,1,0
+Germany,Bundesliga,29,10,2022,Schalke,Freiburg,0,2,Away,5,3,4.00,3.60,1.85,3,2,0,0,0,1
+Germany,Bundesliga,29,10,2022,Stuttgart,Augsburg,2,1,Home,2,8,1.55,4.50,5.75,1,2,0,0,1,1
+Germany,Bundesliga,29,10,2022,Union Berlin,B. Monchengladbach,2,1,Home,0,8,1.90,3.40,4.20,3,2,0,0,0,1
+Germany,Bundesliga,29,10,2022,Werder Bremen,Hertha Berlin,1,0,Home,3,4,2.05,3.80,3.25,2,3,0,0,0,0
+Germany,Bundesliga,29,10,2022,Wolfsburg,Bochum,4,0,Home,4,5,1.75,4.00,4.20,1,1,0,0,2,0
+Germany,Bundesliga,5,11,2022,Augsburg,Eintracht Frankfurt,1,2,Away,6,5,4.20,4.00,1.75,0,1,0,0,1,1
+Germany,Bundesliga,5,11,2022,B. Monchengladbach,Stuttgart,3,1,Home,6,2,2.25,3.75,2.90,2,1,0,0,2,1
+Germany,Bundesliga,5,11,2022,Bayer Leverkusen,Union Berlin,5,0,Home,4,2,2.25,3.10,3.40,1,4,0,0,0,0
+Germany,Bundesliga,5,11,2022,Dortmund,Bochum,3,0,Home,7,5,1.28,6.00,9.00,1,1,0,0,3,0
+Germany,Bundesliga,5,11,2022,Freiburg,FC Koln,2,0,Home,3,7,1.61,4.00,5.25,0,1,0,0,0,0
+Germany,Bundesliga,5,11,2022,Hertha Berlin,Bayern Munich,2,3,Away,5,4,10.00,6.50,1.25,0,0,0,0,2,3
+Germany,Bundesliga,5,11,2022,Hoffenheim,RB Leipzig,1,3,Away,6,5,2.62,3.75,2.45,4,2,0,0,0,1
+Germany,Bundesliga,5,11,2022,Mainz,Wolfsburg,0,3,Away,2,3,2.00,3.60,3.60,1,1,0,0,0,1
+Germany,Bundesliga,5,11,2022,Werder Bremen,Schalke,2,1,Home,3,6,1.55,4.75,5.00,3,2,0,0,1,0
+Germany,Bundesliga,9,11,2022,Bayern Munich,Werder Bremen,6,1,Home,5,4,1.16,8.50,13.00,0,0,0,0,4,1
+Germany,Bundesliga,9,11,2022,Bochum,B. Monchengladbach,2,1,Home,5,4,2.70,3.40,2.62,1,3,0,0,2,0
+Germany,Bundesliga,9,11,2022,Eintracht Frankfurt,Hoffenheim,4,2,Home,4,6,1.61,4.20,5.00,0,3,0,0,3,1
+Germany,Bundesliga,9,11,2022,FC Koln,Bayer Leverkusen,1,2,Away,6,4,3.00,3.60,2.25,1,2,0,0,1,0
+Germany,Bundesliga,9,11,2022,RB Leipzig,Freiburg,3,1,Home,3,4,1.75,3.80,4.75,2,4,0,0,0,0
+Germany,Bundesliga,9,11,2022,Schalke,Mainz,1,1,Draw,6,2,3.30,3.75,2.10,3,1,0,0,1,0
+Germany,Bundesliga,9,11,2022,Stuttgart,Hertha Berlin,2,1,Home,0,5,2.05,3.60,3.50,3,2,0,0,1,1
+Germany,Bundesliga,9,11,2022,Union Berlin,Augsburg,2,2,Draw,2,4,1.70,3.75,5.00,1,4,0,0,2,2
+Germany,Bundesliga,9,11,2022,Wolfsburg,Dortmund,2,0,Home,4,8,2.80,3.50,2.30,4,2,0,0,1,0
+Germany,Bundesliga,12,11,2022,Augsburg,Bochum,0,1,Away,6,4,2.45,3.30,2.90,1,1,0,0,0,0
+Germany,Bundesliga,12,11,2022,B. Monchengladbach,Dortmund,4,2,Home,5,8,3.30,4.20,2.10,1,2,0,0,3,2
+Germany,Bundesliga,12,11,2022,Bayer Leverkusen,Stuttgart,2,0,Home,6,4,1.83,3.80,4.20,2,3,0,0,1,0
+Germany,Bundesliga,12,11,2022,Freiburg,Union Berlin,4,1,Home,4,3,2.05,3.10,4.20,0,1,0,1,4,0
+Germany,Bundesliga,12,11,2022,Hertha Berlin,FC Koln,2,0,Home,7,6,2.50,3.40,2.75,3,1,0,0,1,0
+Germany,Bundesliga,12,11,2022,Hoffenheim,Wolfsburg,1,2,Away,6,4,2.00,3.80,3.40,0,3,0,0,1,1
+Germany,Bundesliga,12,11,2022,Mainz,Eintracht Frankfurt,1,1,Draw,2,3,2.62,3.50,2.60,2,2,0,0,1,0
+Germany,Bundesliga,12,11,2022,Schalke,Bayern Munich,0,2,Away,6,4,12.00,6.50,1.25,0,0,0,0,0,1
+Germany,Bundesliga,12,11,2022,Werder Bremen,RB Leipzig,1,2,Away,3,5,3.75,4.00,1.90,1,2,0,0,0,1
+Germany,Bundesliga,21,1,2023,B. Monchengladbach,Bayer Leverkusen,2,3,Away,2,4,2.75,3.75,2.38,3,2,0,0,0,2
+Germany,Bundesliga,21,1,2023,Bochum,Hertha Berlin,3,1,Home,4,5,2.30,3.50,3.00,1,1,0,0,2,0
+Germany,Bundesliga,21,1,2023,Dortmund,Augsburg,4,3,Home,5,5,1.25,6.50,10.00,1,4,0,0,2,2
+Germany,Bundesliga,21,1,2023,Eintracht Frankfurt,Schalke,3,0,Home,3,8,1.33,5.00,8.50,2,3,0,0,1,0
+Germany,Bundesliga,21,1,2023,FC Koln,Werder Bremen,7,1,Home,7,2,2.00,3.75,3.60,0,0,0,0,5,1
+Germany,Bundesliga,21,1,2023,RB Leipzig,Bayern Munich,1,1,Draw,2,5,3.50,4.33,1.91,2,3,0,0,0,1
+Germany,Bundesliga,21,1,2023,Stuttgart,Mainz,1,1,Away,3,4,2.30,3.50,3.10,1,3,0,0,1,1
+Germany,Bundesliga,21,1,2023,Union Berlin,Hoffenheim,3,1,Home,3,2,2.20,3.25,3.50,2,1,0,0,0,1
+Germany,Bundesliga,21,1,2023,Wolfsburg,Freiburg,6,0,Home,1,1,2.20,3.30,3.40,1,2,0,0,3,0
+Germany,Bundesliga,25,1,2023,Bayern Munich,FC Koln,1,1,Draw,5,7,1.20,7.50,11.00,0,1,0,0,0,1
+Germany,Bundesliga,25,1,2023,Hertha Berlin,Wolfsburg,0,5,Away,5,3,2.88,3.40,2.40,2,0,0,0,0,3
+Germany,Bundesliga,25,1,2023,Hoffenheim,Stuttgart,2,2,Draw,4,3,2.10,3.60,3.30,1,3,0,1,1,1
+Germany,Bundesliga,25,1,2023,Schalke,RB Leipzig,1,6,Away,7,2,6.00,4.20,1.53,1,1,0,0,0,4

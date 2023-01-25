@@ -1,0 +1,307 @@
+Nation,League,Date,Month,Year,Home,Away
+Germany,Bundesliga,5,8,2022,Eintracht Frankfurt,Bayern Munich
+Germany,Bundesliga,6,8,2022,Augsburg,Freiburg
+Germany,Bundesliga,6,8,2022,B. Monchengladbach,Hoffenheim
+Germany,Bundesliga,6,8,2022,Bochum,Mainz
+Germany,Bundesliga,6,8,2022,Dortmund,Bayer Leverkusen
+Germany,Bundesliga,6,8,2022,Union Berlin,Hertha Berlin
+Germany,Bundesliga,6,8,2022,Wolfsburg,Werder Bremen
+Germany,Bundesliga,7,8,2022,FC Koln,Schalke
+Germany,Bundesliga,7,8,2022,Stuttgart,RB Leipzig
+Germany,Bundesliga,12,8,2022,Freiburg,Dortmund
+Germany,Bundesliga,13,8,2022,Bayer Leverkusen,Augsburg
+Germany,Bundesliga,13,8,2022,Hertha Berlin,Eintracht Frankfurt
+Germany,Bundesliga,13,8,2022,Hoffenheim,Bochum
+Germany,Bundesliga,13,8,2022,RB Leipzig,FC Koln
+Germany,Bundesliga,13,8,2022,Schalke,B. Monchengladbach
+Germany,Bundesliga,13,8,2022,Werder Bremen,Stuttgart
+Germany,Bundesliga,14,8,2022,Bayern Munich,Wolfsburg
+Germany,Bundesliga,14,8,2022,Mainz,Union Berlin
+Germany,Bundesliga,19,8,2022,B. Monchengladbach,Hertha Berlin
+Germany,Bundesliga,20,8,2022,Augsburg,Mainz
+Germany,Bundesliga,20,8,2022,Bayer Leverkusen,Hoffenheim
+Germany,Bundesliga,20,8,2022,Dortmund,Werder Bremen
+Germany,Bundesliga,20,8,2022,Stuttgart,Freiburg
+Germany,Bundesliga,20,8,2022,Union Berlin,RB Leipzig
+Germany,Bundesliga,20,8,2022,Wolfsburg,Schalke
+Germany,Bundesliga,21,8,2022,Bochum,Bayern Munich
+Germany,Bundesliga,21,8,2022,Eintracht Frankfurt,FC Koln
+Germany,Bundesliga,26,8,2022,Freiburg,Bochum
+Germany,Bundesliga,27,8,2022,Bayern Munich,B. Monchengladbach
+Germany,Bundesliga,27,8,2022,Hertha Berlin,Dortmund
+Germany,Bundesliga,27,8,2022,Hoffenheim,Augsburg
+Germany,Bundesliga,27,8,2022,Mainz,Bayer Leverkusen
+Germany,Bundesliga,27,8,2022,RB Leipzig,Wolfsburg
+Germany,Bundesliga,27,8,2022,Schalke,Union Berlin
+Germany,Bundesliga,28,8,2022,FC Koln,Stuttgart
+Germany,Bundesliga,28,8,2022,Werder Bremen,Eintracht Frankfurt
+Germany,Bundesliga,2,9,2022,Dortmund,Hoffenheim
+Germany,Bundesliga,3,9,2022,Bayer Leverkusen,Freiburg
+Germany,Bundesliga,3,9,2022,Bochum,Werder Bremen
+Germany,Bundesliga,3,9,2022,Eintracht Frankfurt,RB Leipzig
+Germany,Bundesliga,3,9,2022,Stuttgart,Schalke
+Germany,Bundesliga,3,9,2022,Union Berlin,Bayern Munich
+Germany,Bundesliga,3,9,2022,Wolfsburg,FC Koln
+Germany,Bundesliga,4,9,2022,Augsburg,Hertha Berlin
+Germany,Bundesliga,4,9,2022,B. Monchengladbach,Mainz
+Germany,Bundesliga,9,9,2022,Werder Bremen,Augsburg
+Germany,Bundesliga,10,9,2022,Bayern Munich,Stuttgart
+Germany,Bundesliga,10,9,2022,Eintracht Frankfurt,Wolfsburg
+Germany,Bundesliga,10,9,2022,Hertha Berlin,Bayer Leverkusen
+Germany,Bundesliga,10,9,2022,Hoffenheim,Mainz
+Germany,Bundesliga,10,9,2022,RB Leipzig,Dortmund
+Germany,Bundesliga,10,9,2022,Schalke,Bochum
+Germany,Bundesliga,11,9,2022,FC Koln,Union Berlin
+Germany,Bundesliga,11,9,2022,Freiburg,B. Monchengladbach
+Germany,Bundesliga,16,9,2022,Mainz,Hertha Berlin
+Germany,Bundesliga,17,9,2022,Augsburg,Bayern Munich
+Germany,Bundesliga,17,9,2022,B. Monchengladbach,RB Leipzig
+Germany,Bundesliga,17,9,2022,Bayer Leverkusen,Werder Bremen
+Germany,Bundesliga,17,9,2022,Dortmund,Schalke
+Germany,Bundesliga,17,9,2022,Stuttgart,Eintracht Frankfurt
+Germany,Bundesliga,18,9,2022,Bochum,FC Koln
+Germany,Bundesliga,18,9,2022,Hoffenheim,Freiburg
+Germany,Bundesliga,18,9,2022,Union Berlin,Wolfsburg
+Germany,Bundesliga,1,10,2022,Bayern Munich,Bayer Leverkusen
+Germany,Bundesliga,1,10,2022,Eintracht Frankfurt,Union Berlin
+Germany,Bundesliga,1,10,2022,FC Koln,Dortmund
+Germany,Bundesliga,1,10,2022,Freiburg,Mainz
+Germany,Bundesliga,1,10,2022,Hertha Berlin,Hoffenheim
+Germany,Bundesliga,1,10,2022,RB Leipzig,Bochum
+Germany,Bundesliga,1,10,2022,Schalke,Augsburg
+Germany,Bundesliga,1,10,2022,Werder Bremen,B. Monchengladbach
+Germany,Bundesliga,1,10,2022,Wolfsburg,Stuttgart
+Germany,Bundesliga,8,10,2022,Augsburg,Wolfsburg
+Germany,Bundesliga,8,10,2022,B. Monchengladbach,FC Koln
+Germany,Bundesliga,8,10,2022,Bayer Leverkusen,Schalke
+Germany,Bundesliga,8,10,2022,Bochum,Eintracht Frankfurt
+Germany,Bundesliga,8,10,2022,Dortmund,Bayern Munich
+Germany,Bundesliga,8,10,2022,Hertha Berlin,Freiburg
+Germany,Bundesliga,8,10,2022,Hoffenheim,Werder Bremen
+Germany,Bundesliga,8,10,2022,Mainz,RB Leipzig
+Germany,Bundesliga,8,10,2022,Stuttgart,Union Berlin
+Germany,Bundesliga,15,10,2022,Bayern Munich,Freiburg
+Germany,Bundesliga,15,10,2022,Eintracht Frankfurt,Bayer Leverkusen
+Germany,Bundesliga,15,10,2022,FC Koln,Augsburg
+Germany,Bundesliga,15,10,2022,RB Leipzig,Hertha Berlin
+Germany,Bundesliga,15,10,2022,Schalke,Hoffenheim
+Germany,Bundesliga,15,10,2022,Stuttgart,Bochum
+Germany,Bundesliga,15,10,2022,Union Berlin,Dortmund
+Germany,Bundesliga,15,10,2022,Werder Bremen,Mainz
+Germany,Bundesliga,15,10,2022,Wolfsburg,B. Monchengladbach
+Germany,Bundesliga,22,10,2022,Augsburg,RB Leipzig
+Germany,Bundesliga,22,10,2022,B. Monchengladbach,Eintracht Frankfurt
+Germany,Bundesliga,22,10,2022,Bayer Leverkusen,Wolfsburg
+Germany,Bundesliga,22,10,2022,Bochum,Union Berlin
+Germany,Bundesliga,22,10,2022,Dortmund,Stuttgart
+Germany,Bundesliga,22,10,2022,Freiburg,Werder Bremen
+Germany,Bundesliga,22,10,2022,Hertha Berlin,Schalke
+Germany,Bundesliga,22,10,2022,Hoffenheim,Bayern Munich
+Germany,Bundesliga,22,10,2022,Mainz,FC Koln
+Germany,Bundesliga,29,10,2022,Bayern Munich,Mainz
+Germany,Bundesliga,29,10,2022,Eintracht Frankfurt,Dortmund
+Germany,Bundesliga,29,10,2022,FC Koln,Hoffenheim
+Germany,Bundesliga,29,10,2022,RB Leipzig,Bayer Leverkusen
+Germany,Bundesliga,29,10,2022,Schalke,Freiburg
+Germany,Bundesliga,29,10,2022,Stuttgart,Augsburg
+Germany,Bundesliga,29,10,2022,Union Berlin,B. Monchengladbach
+Germany,Bundesliga,29,10,2022,Werder Bremen,Hertha Berlin
+Germany,Bundesliga,29,10,2022,Wolfsburg,Bochum
+Germany,Bundesliga,5,11,2022,Augsburg,Eintracht Frankfurt
+Germany,Bundesliga,5,11,2022,B. Monchengladbach,Stuttgart
+Germany,Bundesliga,5,11,2022,Bayer Leverkusen,Union Berlin
+Germany,Bundesliga,5,11,2022,Dortmund,Bochum
+Germany,Bundesliga,5,11,2022,Freiburg,FC Koln
+Germany,Bundesliga,5,11,2022,Hertha Berlin,Bayern Munich
+Germany,Bundesliga,5,11,2022,Hoffenheim,RB Leipzig
+Germany,Bundesliga,5,11,2022,Mainz,Wolfsburg
+Germany,Bundesliga,5,11,2022,Werder Bremen,Schalke
+Germany,Bundesliga,9,11,2022,Bayern Munich,Werder Bremen
+Germany,Bundesliga,9,11,2022,Bochum,B. Monchengladbach
+Germany,Bundesliga,9,11,2022,Eintracht Frankfurt,Hoffenheim
+Germany,Bundesliga,9,11,2022,FC Koln,Bayer Leverkusen
+Germany,Bundesliga,9,11,2022,RB Leipzig,Freiburg
+Germany,Bundesliga,9,11,2022,Schalke,Mainz
+Germany,Bundesliga,9,11,2022,Stuttgart,Hertha Berlin
+Germany,Bundesliga,9,11,2022,Union Berlin,Augsburg
+Germany,Bundesliga,9,11,2022,Wolfsburg,Dortmund
+Germany,Bundesliga,12,11,2022,Augsburg,Bochum
+Germany,Bundesliga,12,11,2022,B. Monchengladbach,Dortmund
+Germany,Bundesliga,12,11,2022,Bayer Leverkusen,Stuttgart
+Germany,Bundesliga,12,11,2022,Freiburg,Union Berlin
+Germany,Bundesliga,12,11,2022,Hertha Berlin,FC Koln
+Germany,Bundesliga,12,11,2022,Hoffenheim,Wolfsburg
+Germany,Bundesliga,12,11,2022,Mainz,Eintracht Frankfurt
+Germany,Bundesliga,12,11,2022,Schalke,Bayern Munich
+Germany,Bundesliga,12,11,2022,Werder Bremen,RB Leipzig
+Germany,Bundesliga,21,1,2023,B. Monchengladbach,Bayer Leverkusen
+Germany,Bundesliga,21,1,2023,Bochum,Hertha Berlin
+Germany,Bundesliga,21,1,2023,Dortmund,Augsburg
+Germany,Bundesliga,21,1,2023,Eintracht Frankfurt,Schalke
+Germany,Bundesliga,21,1,2023,FC Koln,Werder Bremen
+Germany,Bundesliga,21,1,2023,RB Leipzig,Bayern Munich
+Germany,Bundesliga,21,1,2023,Stuttgart,Mainz
+Germany,Bundesliga,21,1,2023,Union Berlin,Hoffenheim
+Germany,Bundesliga,21,1,2023,Wolfsburg,Freiburg
+Germany,Bundesliga,25,1,2023,Augsburg,B. Monchengladbach
+Germany,Bundesliga,25,1,2023,Bayer Leverkusen,Bochum
+Germany,Bundesliga,25,1,2023,Bayern Munich,FC Koln
+Germany,Bundesliga,25,1,2023,Freiburg,Eintracht Frankfurt
+Germany,Bundesliga,25,1,2023,Hertha Berlin,Wolfsburg
+Germany,Bundesliga,25,1,2023,Hoffenheim,Stuttgart
+Germany,Bundesliga,25,1,2023,Mainz,Dortmund
+Germany,Bundesliga,25,1,2023,Schalke,RB Leipzig
+Germany,Bundesliga,25,1,2023,Werder Bremen,Union Berlin
+Germany,Bundesliga,28,1,2023,Bayer Leverkusen,Dortmund
+Germany,Bundesliga,28,1,2023,Bayern Munich,Eintracht Frankfurt
+Germany,Bundesliga,28,1,2023,Freiburg,Augsburg
+Germany,Bundesliga,28,1,2023,Hertha Berlin,Union Berlin
+Germany,Bundesliga,28,1,2023,Hoffenheim,B. Monchengladbach
+Germany,Bundesliga,28,1,2023,Mainz,Bochum
+Germany,Bundesliga,28,1,2023,RB Leipzig,Stuttgart
+Germany,Bundesliga,28,1,2023,Schalke,FC Koln
+Germany,Bundesliga,28,1,2023,Werder Bremen,Wolfsburg
+Germany,Bundesliga,4,2,2023,Augsburg,Bayer Leverkusen
+Germany,Bundesliga,4,2,2023,B. Monchengladbach,Schalke
+Germany,Bundesliga,4,2,2023,Bochum,Hoffenheim
+Germany,Bundesliga,4,2,2023,Dortmund,Freiburg
+Germany,Bundesliga,4,2,2023,Eintracht Frankfurt,Hertha Berlin
+Germany,Bundesliga,4,2,2023,FC Koln,RB Leipzig
+Germany,Bundesliga,4,2,2023,Stuttgart,Werder Bremen
+Germany,Bundesliga,4,2,2023,Union Berlin,Mainz
+Germany,Bundesliga,4,2,2023,Wolfsburg,Bayern Munich
+Germany,Bundesliga,11,2,2023,Bayern Munich,Bochum
+Germany,Bundesliga,11,2,2023,FC Koln,Eintracht Frankfurt
+Germany,Bundesliga,11,2,2023,Freiburg,Stuttgart
+Germany,Bundesliga,11,2,2023,Hertha Berlin,B. Monchengladbach
+Germany,Bundesliga,11,2,2023,Hoffenheim,Bayer Leverkusen
+Germany,Bundesliga,11,2,2023,Mainz,Augsburg
+Germany,Bundesliga,11,2,2023,RB Leipzig,Union Berlin
+Germany,Bundesliga,11,2,2023,Schalke,Wolfsburg
+Germany,Bundesliga,11,2,2023,Werder Bremen,Dortmund
+Germany,Bundesliga,18,2,2023,Augsburg,Hoffenheim
+Germany,Bundesliga,18,2,2023,B. Monchengladbach,Bayern Munich
+Germany,Bundesliga,18,2,2023,Bayer Leverkusen,Mainz
+Germany,Bundesliga,18,2,2023,Bochum,Freiburg
+Germany,Bundesliga,18,2,2023,Dortmund,Hertha Berlin
+Germany,Bundesliga,18,2,2023,Eintracht Frankfurt,Werder Bremen
+Germany,Bundesliga,18,2,2023,Stuttgart,FC Koln
+Germany,Bundesliga,18,2,2023,Union Berlin,Schalke
+Germany,Bundesliga,18,2,2023,Wolfsburg,RB Leipzig
+Germany,Bundesliga,25,2,2023,Bayern Munich,Union Berlin
+Germany,Bundesliga,25,2,2023,FC Koln,Wolfsburg
+Germany,Bundesliga,25,2,2023,Freiburg,Bayer Leverkusen
+Germany,Bundesliga,25,2,2023,Hertha Berlin,Augsburg
+Germany,Bundesliga,25,2,2023,Hoffenheim,Dortmund
+Germany,Bundesliga,25,2,2023,Mainz,B. Monchengladbach
+Germany,Bundesliga,25,2,2023,RB Leipzig,Eintracht Frankfurt
+Germany,Bundesliga,25,2,2023,Schalke,Stuttgart
+Germany,Bundesliga,25,2,2023,Werder Bremen,Bochum
+Germany,Bundesliga,4,3,2023,Augsburg,Werder Bremen
+Germany,Bundesliga,4,3,2023,B. Monchengladbach,Freiburg
+Germany,Bundesliga,4,3,2023,Bayer Leverkusen,Hertha Berlin
+Germany,Bundesliga,4,3,2023,Bochum,Schalke
+Germany,Bundesliga,4,3,2023,Dortmund,RB Leipzig
+Germany,Bundesliga,4,3,2023,Mainz,Hoffenheim
+Germany,Bundesliga,4,3,2023,Stuttgart,Bayern Munich
+Germany,Bundesliga,4,3,2023,Union Berlin,FC Koln
+Germany,Bundesliga,4,3,2023,Wolfsburg,Eintracht Frankfurt
+Germany,Bundesliga,11,3,2023,Bayern Munich,Augsburg
+Germany,Bundesliga,11,3,2023,Eintracht Frankfurt,Stuttgart
+Germany,Bundesliga,11,3,2023,FC Koln,Bochum
+Germany,Bundesliga,11,3,2023,Freiburg,Hoffenheim
+Germany,Bundesliga,11,3,2023,Hertha Berlin,Mainz
+Germany,Bundesliga,11,3,2023,RB Leipzig,B. Monchengladbach
+Germany,Bundesliga,11,3,2023,Schalke,Dortmund
+Germany,Bundesliga,11,3,2023,Werder Bremen,Bayer Leverkusen
+Germany,Bundesliga,11,3,2023,Wolfsburg,Union Berlin
+Germany,Bundesliga,18,3,2023,Augsburg,Schalke
+Germany,Bundesliga,18,3,2023,B. Monchengladbach,Werder Bremen
+Germany,Bundesliga,18,3,2023,Bayer Leverkusen,Bayern Munich
+Germany,Bundesliga,18,3,2023,Bochum,RB Leipzig
+Germany,Bundesliga,18,3,2023,Dortmund,FC Koln
+Germany,Bundesliga,18,3,2023,Hoffenheim,Hertha Berlin
+Germany,Bundesliga,18,3,2023,Mainz,Freiburg
+Germany,Bundesliga,18,3,2023,Stuttgart,Wolfsburg
+Germany,Bundesliga,18,3,2023,Union Berlin,Eintracht Frankfurt
+Germany,Bundesliga,1,4,2023,Bayern Munich,Dortmund
+Germany,Bundesliga,1,4,2023,Eintracht Frankfurt,Bochum
+Germany,Bundesliga,1,4,2023,FC Koln,B. Monchengladbach
+Germany,Bundesliga,1,4,2023,Freiburg,Hertha Berlin
+Germany,Bundesliga,1,4,2023,RB Leipzig,Mainz
+Germany,Bundesliga,1,4,2023,Schalke,Bayer Leverkusen
+Germany,Bundesliga,1,4,2023,Union Berlin,Stuttgart
+Germany,Bundesliga,1,4,2023,Werder Bremen,Hoffenheim
+Germany,Bundesliga,1,4,2023,Wolfsburg,Augsburg
+Germany,Bundesliga,8,4,2023,Augsburg,FC Koln
+Germany,Bundesliga,8,4,2023,B. Monchengladbach,Wolfsburg
+Germany,Bundesliga,8,4,2023,Bayer Leverkusen,Eintracht Frankfurt
+Germany,Bundesliga,8,4,2023,Bochum,Stuttgart
+Germany,Bundesliga,8,4,2023,Dortmund,Union Berlin
+Germany,Bundesliga,8,4,2023,Freiburg,Bayern Munich
+Germany,Bundesliga,8,4,2023,Hertha Berlin,RB Leipzig
+Germany,Bundesliga,8,4,2023,Hoffenheim,Schalke
+Germany,Bundesliga,8,4,2023,Mainz,Werder Bremen
+Germany,Bundesliga,15,4,2023,Bayern Munich,Hoffenheim
+Germany,Bundesliga,15,4,2023,Eintracht Frankfurt,B. Monchengladbach
+Germany,Bundesliga,15,4,2023,FC Koln,Mainz
+Germany,Bundesliga,15,4,2023,RB Leipzig,Augsburg
+Germany,Bundesliga,15,4,2023,Schalke,Hertha Berlin
+Germany,Bundesliga,15,4,2023,Stuttgart,Dortmund
+Germany,Bundesliga,15,4,2023,Union Berlin,Bochum
+Germany,Bundesliga,15,4,2023,Werder Bremen,Freiburg
+Germany,Bundesliga,15,4,2023,Wolfsburg,Bayer Leverkusen
+Germany,Bundesliga,22,4,2023,Augsburg,Stuttgart
+Germany,Bundesliga,22,4,2023,B. Monchengladbach,Union Berlin
+Germany,Bundesliga,22,4,2023,Bayer Leverkusen,RB Leipzig
+Germany,Bundesliga,22,4,2023,Bochum,Wolfsburg
+Germany,Bundesliga,22,4,2023,Dortmund,Eintracht Frankfurt
+Germany,Bundesliga,22,4,2023,Freiburg,Schalke
+Germany,Bundesliga,22,4,2023,Hertha Berlin,Werder Bremen
+Germany,Bundesliga,22,4,2023,Hoffenheim,FC Koln
+Germany,Bundesliga,22,4,2023,Mainz,Bayern Munich
+Germany,Bundesliga,29,4,2023,Bayern Munich,Hertha Berlin
+Germany,Bundesliga,29,4,2023,Bochum,Dortmund
+Germany,Bundesliga,29,4,2023,Eintracht Frankfurt,Augsburg
+Germany,Bundesliga,29,4,2023,FC Koln,Freiburg
+Germany,Bundesliga,29,4,2023,RB Leipzig,Hoffenheim
+Germany,Bundesliga,29,4,2023,Schalke,Werder Bremen
+Germany,Bundesliga,29,4,2023,Stuttgart,B. Monchengladbach
+Germany,Bundesliga,29,4,2023,Union Berlin,Bayer Leverkusen
+Germany,Bundesliga,29,4,2023,Wolfsburg,Mainz
+Germany,Bundesliga,6,5,2023,Augsburg,Union Berlin
+Germany,Bundesliga,6,5,2023,B. Monchengladbach,Bochum
+Germany,Bundesliga,6,5,2023,Bayer Leverkusen,FC Koln
+Germany,Bundesliga,6,5,2023,Dortmund,Wolfsburg
+Germany,Bundesliga,6,5,2023,Freiburg,RB Leipzig
+Germany,Bundesliga,6,5,2023,Hertha Berlin,Stuttgart
+Germany,Bundesliga,6,5,2023,Hoffenheim,Eintracht Frankfurt
+Germany,Bundesliga,6,5,2023,Mainz,Schalke
+Germany,Bundesliga,6,5,2023,Werder Bremen,Bayern Munich
+Germany,Bundesliga,13,5,2023,Bayern Munich,Schalke
+Germany,Bundesliga,13,5,2023,Bochum,Augsburg
+Germany,Bundesliga,13,5,2023,Dortmund,B. Monchengladbach
+Germany,Bundesliga,13,5,2023,Eintracht Frankfurt,Mainz
+Germany,Bundesliga,13,5,2023,FC Koln,Hertha Berlin
+Germany,Bundesliga,13,5,2023,RB Leipzig,Werder Bremen
+Germany,Bundesliga,13,5,2023,Stuttgart,Bayer Leverkusen
+Germany,Bundesliga,13,5,2023,Union Berlin,Freiburg
+Germany,Bundesliga,13,5,2023,Wolfsburg,Hoffenheim
+Germany,Bundesliga,20,5,2023,Augsburg,Dortmund
+Germany,Bundesliga,20,5,2023,Bayer Leverkusen,B. Monchengladbach
+Germany,Bundesliga,20,5,2023,Bayern Munich,RB Leipzig
+Germany,Bundesliga,20,5,2023,Freiburg,Wolfsburg
+Germany,Bundesliga,20,5,2023,Hertha Berlin,Bochum
+Germany,Bundesliga,20,5,2023,Hoffenheim,Union Berlin
+Germany,Bundesliga,20,5,2023,Mainz,Stuttgart
+Germany,Bundesliga,20,5,2023,Schalke,Eintracht Frankfurt
+Germany,Bundesliga,20,5,2023,Werder Bremen,FC Koln
+Germany,Bundesliga,27,5,2023,B. Monchengladbach,Augsburg
+Germany,Bundesliga,27,5,2023,Bochum,Bayer Leverkusen
+Germany,Bundesliga,27,5,2023,Dortmund,Mainz
+Germany,Bundesliga,27,5,2023,Eintracht Frankfurt,Freiburg
+Germany,Bundesliga,27,5,2023,FC Koln,Bayern Munich
+Germany,Bundesliga,27,5,2023,RB Leipzig,Schalke
+Germany,Bundesliga,27,5,2023,Stuttgart,Hoffenheim
+Germany,Bundesliga,27,5,2023,Union Berlin,Werder Bremen
+Germany,Bundesliga,27,5,2023,Wolfsburg,Hertha Berlin

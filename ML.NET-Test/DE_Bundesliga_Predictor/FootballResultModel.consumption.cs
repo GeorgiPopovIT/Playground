@@ -5,7 +5,7 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
-namespace DE_Bundesliga_Predictor
+namespace DE_Bundesliga_HG_Predictor
 {
     public partial class FootballResultModel
     {

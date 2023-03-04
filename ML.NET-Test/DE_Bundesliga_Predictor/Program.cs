@@ -1,19 +1,19 @@
-﻿using DE_Bundesliga_Predictor;
+﻿using DE_Bundesliga_HG_Predictor;
 
 FootballResultModel.ModelInput sampleData = new FootballResultModel.ModelInput()
 {
     Nation = @"Germany",
     League = @"Bundesliga",
-    Date = 26F,
+    Date = 28F,
     Month = 1F,
     Year = 2023F,
-    Home = @"Augsburg",
-    Away = @"Werder Bremen",
+    Home = @"Freiburg",
+    Away = @"Augsburg",
     MissingHomeCount = 2F,
-    MissingAwayCount = 4F,
-    Bet365HC = 3.10F,
-    Bet365DC = 3.75F,
-    Bet365AC = 2.56F
+    MissingAwayCount = 5F,
+    Bet365HC = 1.60F,
+    Bet365DC = 4.20F,
+    Bet365AC = 5.25F
 };
 
 // Make a single prediction on the sample data and print results

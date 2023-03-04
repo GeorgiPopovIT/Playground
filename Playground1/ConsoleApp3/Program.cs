@@ -1,12 +1,41 @@
 ﻿//using SendGrid.Helpers.Mail;
 //using SendGrid;
 //using ConsoleApp3;
+var p1 = new Person("Georgi", "Popov");
+Console.WriteLine(p1.FirstName + " " + p1.LastName);
+//public record Person(string FirstName, string LastName)
+//{
+//    public int Age { get; set; }
+//    void Write()
+//    {
 
-public record class Person(string FirstName, string LastName)
+//    }
+//}
+
+class Person
 {
-    void Write()
+    private string _fName;
+    private string _lName;
+
+    public Person()
     {
 
+    }
+
+    public Person(string fName, string lName)
+        => (FirstName, LastName) = (fName, lName);
+
+    public string FirstName
+    {
+        get => this._fName;
+        set => this._fName = !string.IsNullOrWhiteSpace(value) 
+            ? value : throw new ArgumentNullException();
+    }
+
+    public string LastName
+    {
+        get => this._lName;
+        init => this._lName = value ?? throw new ArgumentNullException();
     }
 }
 

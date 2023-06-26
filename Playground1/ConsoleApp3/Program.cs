@@ -1,8 +1,113 @@
 ﻿//using SendGrid.Helpers.Mail;
 //using SendGrid;
 //using ConsoleApp3;
-var p1 = new Person("Georgi", "Popov");
-Console.WriteLine(p1.FirstName + " " + p1.LastName);
+var linkedlist = new LinkedList<int>();
+linkedlist.AddFirst(1);
+linkedlist.AddFirst(2);
+
+foreach (var item in linkedlist)
+{
+    Console.WriteLine(item);
+}
+
+public class LinkedListNode<T>
+{
+	public T Value { get; set; }
+	public LinkedListNode<T> Next { get; set; }
+
+	public LinkedListNode(T value)
+	{
+		Value = value;
+		Next = null;
+	}
+}
+
+public class LinkedList<T>
+{
+	private LinkedListNode<T> head;
+	private LinkedListNode<T> tail;
+	private int count;
+
+	public int Count { get { return count; } }
+
+	public void AddLast(T value)
+	{
+		LinkedListNode<T> node = new LinkedListNode<T>(value);
+		if (head == null)
+		{
+			head = node;
+			tail = node;
+		}
+		else
+		{
+			tail.Next = node;
+			tail = node;
+		}
+		count++;
+	}
+
+	public void AddFirst(T value)
+	{
+		LinkedListNode<T> node = new LinkedListNode<T>(value);
+		if (head == null)
+		{
+			head = node;
+			tail = node;
+		}
+		else
+		{
+			node.Next = head;
+			head = node;
+		}
+		count++;
+	}
+
+	public void Remove(T value)
+	{
+		LinkedListNode<T> current = head;
+		LinkedListNode<T> previous = null;
+
+		while (current != null)
+		{
+			if (current.Value.Equals(value))
+			{
+				if (previous == null)
+				{
+					head = current.Next;
+				}
+				else
+				{
+					previous.Next = current.Next;
+				}
+
+				if (current == tail)
+				{
+					tail = previous;
+				}
+
+				count--;
+				break;
+			}
+
+			previous = current;
+			current = current.Next;
+		}
+	}
+
+	public IEnumerator<T> GetEnumerator()
+	{
+		LinkedListNode<T> current = head;
+
+		while (current != null)
+		{
+			yield return current.Value;
+			current = current.Next;
+		}
+	}
+}
+
+//var p1 = new Person("Georgi", "Popov");
+//Console.WriteLine(p1.FirstName + " " + p1.LastName);
 //public record Person(string FirstName, string LastName)
 //{
 //    public int Age { get; set; }

@@ -44,5 +44,7 @@ app.MapControllerRoute(
 app.MapRazorPages();
 
 app.MapHub<UserHub>("/userHub");
+app.MapHub<HouseGroupHub>("/hubs/houseGroup");
+
 
 app.Run();

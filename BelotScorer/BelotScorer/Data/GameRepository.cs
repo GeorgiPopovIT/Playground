@@ -2,6 +2,8 @@
 using BelotScorer.Models;
 using SQLite;
 
+using static BelotScorer.Common.Constants;
+
 namespace BelotScorer.Data
 {
     public class GameRepository
@@ -21,7 +23,29 @@ namespace BelotScorer.Data
             var result = await _database.CreateTableAsync<Game>();
         }
 
-        public async Task<List<Game>> GetGameAsync()
+        public async Task<bool> SavePointToTeam(int gameId, short team1PointToAdd, short team2PointToAdd)
+        {
+            var currentGame = await this.GetGameAsync(gameId);
+
+            currentGame.Team1Points.Add(team1PointToAdd);
+            currentGame.Team2Points.Add(team2PointToAdd);
+
+            currentGame.Team1FinalPoints += team1PointToAdd;
+
+            currentGame.Team2FinalPoints += team2PointToAdd;
+
+            if (currentGame.Team1FinalPoints >= Constants.END_GAME_POINT ||
+                currentGame.Team2FinalPoints >= Constants.END_GAME_POINT)
+            {
+
+                return true;
+            }
+
+            return false;
+
+        }
+
+        public async Task<List<Game>> GetGamesAsync()
         {
             await Init();
             return await _database.Table<Game>().ToListAsync();

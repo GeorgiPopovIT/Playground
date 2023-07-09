@@ -1,7 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model ="clr-namespace:BelotScorer.Models"
              x:Class="BelotScorer.MainPage">
+
+    <Shell.TitleView>
+        <Grid>
+            <Label FontSize="Large" TextColor="White" Text="Belot Scorer" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+    </Shell.TitleView>
 
 
     <Grid>
@@ -34,14 +41,17 @@
                 <Image Grid.RowSpan="2" Source="Images/background_top.png" />
             </Grid>-->
 
-            <Label FontSize="Large"
+            <Button FontSize="Large"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
-                 TextColor="Black"
-                 Text="Нова игра"/>
+                 TextColor="White"
+                 Text="Нова игра"
+                  Clicked="GoToCreateGame"/>
+
+                    <Label Text="{Binding IsGameFinished}"/>
 
 
-            <!--<Button
+                    <!--<Button
                 x:Name="CounterBtn"
                 Text="Click me"
                 SemanticProperties.Hint="Counts the number of times you click"

@@ -4,17 +4,17 @@ namespace BelotScorer.Pages;
 
 public partial class CreateGamePage : ContentPage
 {
-	private readonly GameRepository _gameRepository;
+	private  GameRepository _gameRepository;
 
-	public CreateGamePage(GameRepository gameRepository)
+	public CreateGamePage()
 	{
 		InitializeComponent();
 
-        this._gameRepository = gameRepository;
+        //this._gameRepository = gameRepository;
     }
 
-	async void OnTeamsReady(object sender, EventArgs args)
-	{
+	//async void OnTeamsReady(object sender, EventArgs args)
+	//{
 
-	}
+	//}
 }

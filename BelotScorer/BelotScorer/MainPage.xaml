@@ -48,7 +48,7 @@
                  Text="Нова игра"
                   Clicked="GoToCreateGame"/>
 
-                    <Label Text="{Binding IsGameFinished}"/>
+                  
 
 
                     <!--<Button

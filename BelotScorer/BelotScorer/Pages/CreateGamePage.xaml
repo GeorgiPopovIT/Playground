@@ -1,28 +1,42 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel ="clr-namespace:BelotScorer.Models"
              x:Class="BelotScorer.Pages.CreateGamePage"
              Title="Създай игра">
 
+    <Shell.TitleView>
+        <Grid>
+            <Label FontSize="Large" TextColor="White" Text="Създай игра" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+    </Shell.TitleView>
 
+    
+    
     <Grid>
         <Image Aspect="AspectFill"  Source="table_background.jpg" />
-        <Grid>
+        <Grid HorizontalOptions="Center">
+
             <ScrollView>
-                <VerticalStackLayout>
-                    <Label 
-                        FontFamily="Bold"
-                    Text="Welcome to .NET MAUI! Create game page"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center" />
+                <VerticalStackLayout HorizontalOptions="Center">
 
-                <Entry 
-                       HorizontalOptions="Start"
-                       Placeholder="Ние"/>
+                    <StackLayout HorizontalOptions="Center">
+                        <Label FontSize="Medium" FontFamily="bold">Име на отбор</Label>
+                        <Entry x:Name="entry" TextColor="Black"
+                                Placeholder="Име на отбор ..." MaxLength="16"
+                               PlaceholderColor="Black"/>
+                    </StackLayout>
 
-                <Entry
-                       Placeholder="Вие"
-                       HorizontalOptions="End"/>
+
+                    <StackLayout HorizontalOptions="Center">
+                        <Label FontSize="Medium" FontFamily="Bold">Име на отбор</Label>
+                        <Entry MaxLength="16"  TextColor="Black" PlaceholderColor="Black"
+                               Placeholder="Име на отбор ..."/>
+                    </StackLayout>
+
+                    <Button BackgroundColor="Blue" Text="Нова игра"></Button>
+
+                  
                 </VerticalStackLayout>
             </ScrollView>
         </Grid>

@@ -1,4 +1,5 @@
 ﻿using BelotScorer.Data;
+using BelotScorer.Pages;
 using Microsoft.Extensions.Logging;
 
 namespace BelotScorer;
@@ -15,8 +16,10 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+        builder.Services.AddTransient<CreateGamePage>();
 
-		builder.Services.AddSingleton<GameRepository>();
+
+        builder.Services.AddSingleton<GameRepository>();
 
 #if DEBUG
 		builder.Logging.AddDebug();

@@ -19,7 +19,7 @@ public partial class GameViewModel : ObservableObject
     string team2Name;
 
     [RelayCommand]
-    async Task GetGame()
+     void GetGame()
     {
 
     }

@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using static BelotScorer.Common.Constants;
 
 namespace BelotScorer.Models;
 
@@ -9,8 +10,10 @@ public class Game
 
     public int Id { get; set; }
 
+    [MaxLength(TEAM_NAME_MAX_LENGTH)]
     public string Team1Name { get; set; }
 
+    [MaxLength(TEAM_NAME_MAX_LENGTH)]
     public string Team2Name { get; set; }
 
     public int Team1FinalPoints { get; set; }

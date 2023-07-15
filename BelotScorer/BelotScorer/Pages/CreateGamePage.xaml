@@ -2,43 +2,38 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModel ="clr-namespace:BelotScorer.Models"
+             x:DataType="viewModel:CreateGameViewModel"
              x:Class="BelotScorer.Pages.CreateGamePage"
-             Title="Създай игра">
-
-    <Shell.TitleView>
-        <Grid>
-            <Label FontSize="Large" TextColor="White" Text="Създай игра" HorizontalOptions="Center" VerticalOptions="Center" />
-        </Grid>
-    </Shell.TitleView>
-
-    
-    
-    <Grid>
-        <Image Aspect="AspectFill"  Source="table_background.jpg" />
-        <Grid HorizontalOptions="Center">
-
-            <ScrollView>
-                <VerticalStackLayout HorizontalOptions="Center">
-
-                    <StackLayout HorizontalOptions="Center">
-                        <Label FontSize="Medium" FontFamily="bold">Име на отбор</Label>
-                        <Entry x:Name="entry" TextColor="Black"
-                                Placeholder="Име на отбор ..." MaxLength="16"
-                               PlaceholderColor="Black"/>
-                    </StackLayout>
+             Title="Създай игра"
+             BackgroundImageSource="table_background.jpg">
 
 
-                    <StackLayout HorizontalOptions="Center">
-                        <Label FontSize="Medium" FontFamily="Bold">Име на отбор</Label>
-                        <Entry MaxLength="16"  TextColor="Black" PlaceholderColor="Black"
-                               Placeholder="Име на отбор ..."/>
-                    </StackLayout>
+    <Grid HorizontalOptions="Center">
+        <VerticalStackLayout HorizontalOptions="Center" BindingContext="{x:Type viewModel:CreateGameViewModel}">
 
-                    <Button BackgroundColor="Blue" Text="Нова игра"></Button>
+            <StackLayout Margin="10" HorizontalOptions="Center">
+                <Label FontSize="Medium" FontFamily="bold">Име на отбор</Label>
+                <Entry Text="{Binding Team1Name}" x:Name="entry1"
+                       TextChanged="Entry_TeamName_Changed" TextColor="Black"
+                       Placeholder="Име на отбор ..." MaxLength="16"
+                       PlaceholderColor="Black"/>
+            </StackLayout>
 
-                  
-                </VerticalStackLayout>
-            </ScrollView>
-        </Grid>
+
+            <StackLayout Margin="10" HorizontalOptions="Center">
+                <Label FontSize="Medium" FontFamily="Bold">Име на отбор</Label>
+                <Entry Text="{Binding Team2Name}" x:Name="entry2" MaxLength="16"
+                       TextColor="Black" TextChanged="Entry_TeamName_Changed"
+                       PlaceholderColor="Black"
+                       Placeholder="Име на отбор ..."/>
+            </StackLayout>
+
+            <Button x:Name="btn_Create"
+                    x:DataType="viewModel:CreateGameViewModel"
+                Margin="10" Padding="5" IsEnabled="False"
+                    BackgroundColor="Grey" TextTransform="Uppercase"
+                    Text="Нова игра"
+                    Command="{Binding CreateGameCommand}"></Button>
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>

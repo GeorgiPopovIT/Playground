@@ -12,6 +12,7 @@ namespace BelotScorer.Data
 
         public GameRepository()
         {
+
         }
 
         async Task Init()
@@ -23,6 +24,17 @@ namespace BelotScorer.Data
             var result = await _database.CreateTableAsync<Game>();
         }
 
+        public async Task CreateGame(string team1Name, string team2Name)
+        {
+            Init();
+
+            await this._database.InsertAsync(new Game
+            {
+                Team1Name = team1Name,
+                Team2Name = team2Name
+            });
+
+        }
         public async Task<bool> SavePointToTeam(int gameId, short team1PointToAdd, short team2PointToAdd)
         {
             var currentGame = await this.GetGameAsync(gameId);

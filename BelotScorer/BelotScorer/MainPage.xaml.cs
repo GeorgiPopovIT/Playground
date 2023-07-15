@@ -1,23 +1,23 @@
 ﻿using BelotScorer.Data;
+using BelotScorer.Models;
 using BelotScorer.Pages;
 
 namespace BelotScorer;
 
 public partial class MainPage : ContentPage
 {
-    private GameRepository _database;
-    public MainPage(GameRepository database)
+    public MainPage()
     {
         InitializeComponent();
 
-        this._database = database;
+        Routing.RegisterRoute("createGame", typeof(CreateGamePage));
     }
 
 
 
     async void GoToCreateGame(object sender, EventArgs args)
     {
-        await Navigation.PushAsync(new CreateGamePage());
+        await Shell.Current.GoToAsync("createGame");
     }
 }
 

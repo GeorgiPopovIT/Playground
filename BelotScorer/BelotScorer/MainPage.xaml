@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model ="clr-namespace:BelotScorer.Models"
+             BackgroundImageSource="table_background.jpg"
              x:Class="BelotScorer.MainPage">
 
     <Shell.TitleView>
@@ -11,21 +12,20 @@
     </Shell.TitleView>
 
 
+
     <Grid>
-        <Image Aspect="AspectFill"  Source="table_background.jpg" />
-        <Grid>
-            <ScrollView>
-        <VerticalStackLayout
+        <ScrollView>
+            <VerticalStackLayout
             Spacing="20"
             Padding="20">
 
-            <!--<Image
+                <!--<Image
                 Source="dotnet_bot.png"
                 SemanticProperties.Description="Cute dot net bot waving hi to you!"
                 HeightRequest="200"
                 HorizontalOptions="Center" />-->
 
-            <!--<Label
+                <!--<Label
                 Text="Hello, World!"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
@@ -41,17 +41,18 @@
                 <Image Grid.RowSpan="2" Source="Images/background_top.png" />
             </Grid>-->
 
-            <Button FontSize="Large"
+                <Button FontSize="Large"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"
                  TextColor="White"
                  Text="Нова игра"
+                    Command="{Binding }"
                   Clicked="GoToCreateGame"/>
 
-                  
 
 
-                    <!--<Button
+
+                <!--<Button
                 x:Name="CounterBtn"
                 Text="Click me"
                 SemanticProperties.Hint="Counts the number of times you click"
@@ -59,10 +60,10 @@
                 HorizontalOptions="Center"
                 BackgroundColor="Blue" />-->
 
-        </VerticalStackLayout>
-    </ScrollView>
-        </Grid>
+            </VerticalStackLayout>
+        </ScrollView>
     </Grid>
 
-    
+
+
 </ContentPage>

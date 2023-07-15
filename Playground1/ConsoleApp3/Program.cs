@@ -5,106 +5,133 @@ var linkedlist = new LinkedList<int>();
 linkedlist.AddFirst(1);
 linkedlist.AddFirst(2);
 
-foreach (var item in linkedlist)
+Console.WriteLine(GetTotalCoinsFromSum(new List<int> { 1, 2, 3, 5, 10, 20, 50, 100 }, 81));
+static int GetTotalCoinsFromSum(IEnumerable<int> input, int target)
 {
-    Console.WriteLine(item);
+    var coins = new Queue<int>(input.OrderByDescending(x => x));
+
+    int totalCoins = 0;
+
+    while (target > 0 && coins.Count > 0)
+    {
+        var currentCoin = coins.Dequeue();
+
+        var count = target / currentCoin;
+
+        if (count == 0)
+        {
+            continue;
+        }
+
+        target %= currentCoin;
+
+        totalCoins += count;
+    }
+
+    return totalCoins;
 }
+
+//foreach (var item in linkedlist)
+//{
+//    Console.WriteLine(item);
+//}
 
 public class LinkedListNode<T>
 {
-	public T Value { get; set; }
-	public LinkedListNode<T> Next { get; set; }
+    public T Value { get; set; }
+    public LinkedListNode<T> Next { get; set; }
 
-	public LinkedListNode(T value)
-	{
-		Value = value;
-		Next = null;
-	}
+    public LinkedListNode(T value)
+    {
+        Value = value;
+        Next = null;
+    }
 }
 
 public class LinkedList<T>
 {
-	private LinkedListNode<T> head;
-	private LinkedListNode<T> tail;
-	private int count;
+    private LinkedListNode<T> head;
+    private LinkedListNode<T> tail;
+    private int count;
 
-	public int Count { get { return count; } }
+    public int Count { get { return count; } }
 
-	public void AddLast(T value)
-	{
-		LinkedListNode<T> node = new LinkedListNode<T>(value);
-		if (head == null)
-		{
-			head = node;
-			tail = node;
-		}
-		else
-		{
-			tail.Next = node;
-			tail = node;
-		}
-		count++;
-	}
+    public void AddLast(T value)
+    {
+        LinkedListNode<T> node = new LinkedListNode<T>(value);
+        if (head == null)
+        {
+            head = node;
+            tail = node;
+        }
+        else
+        {
+            tail.Next = node;
+            tail = node;
+        }
+        count++;
+    }
 
-	public void AddFirst(T value)
-	{
-		LinkedListNode<T> node = new LinkedListNode<T>(value);
-		if (head == null)
-		{
-			head = node;
-			tail = node;
-		}
-		else
-		{
-			node.Next = head;
-			head = node;
-		}
-		count++;
-	}
+    public void AddFirst(T value)
+    {
+        LinkedListNode<T> node = new LinkedListNode<T>(value);
+        if (head == null)
+        {
+            head = node;
+            tail = node;
+        }
+        else
+        {
+            node.Next = head;
+            head = node;
+        }
+        count++;
+    }
 
-	public void Remove(T value)
-	{
-		LinkedListNode<T> current = head;
-		LinkedListNode<T> previous = null;
+    public void Remove(T value)
+    {
+        LinkedListNode<T> current = head;
+        LinkedListNode<T> previous = null;
 
-		while (current != null)
-		{
-			if (current.Value.Equals(value))
-			{
-				if (previous == null)
-				{
-					head = current.Next;
-				}
-				else
-				{
-					previous.Next = current.Next;
-				}
+        while (current != null)
+        {
+            if (current.Value.Equals(value))
+            {
+                if (previous == null)
+                {
+                    head = current.Next;
+                }
+                else
+                {
+                    previous.Next = current.Next;
+                }
 
-				if (current == tail)
-				{
-					tail = previous;
-				}
+                if (current == tail)
+                {
+                    tail = previous;
+                }
 
-				count--;
-				break;
-			}
+                count--;
+                break;
+            }
 
-			previous = current;
-			current = current.Next;
-		}
-	}
+            previous = current;
+            current = current.Next;
+        }
+    }
 
-	public IEnumerator<T> GetEnumerator()
-	{
-		LinkedListNode<T> current = head;
+    public IEnumerator<T> GetEnumerator()
+    {
+        LinkedListNode<T> current = head;
 
-		while (current != null)
-		{
-			yield return current.Value;
-			current = current.Next;
-		}
-	}
+        while (current != null)
+        {
+            yield return current.Value;
+            current = current.Next;
+        }
+    }
 }
+
 
 //var p1 = new Person("Georgi", "Popov");
 //Console.WriteLine(p1.FirstName + " " + p1.LastName);
@@ -133,7 +160,7 @@ class Person
     public string FirstName
     {
         get => this._fName;
-        set => this._fName = !string.IsNullOrWhiteSpace(value) 
+        set => this._fName = !string.IsNullOrWhiteSpace(value)
             ? value : throw new ArgumentNullException();
     }
 

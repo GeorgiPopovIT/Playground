@@ -1,20 +1,29 @@
 using BelotScorer.Data;
+using BelotScorer.Models;
 
 namespace BelotScorer.Pages;
 
 public partial class CreateGamePage : ContentPage
 {
-	private  GameRepository _gameRepository;
-
-	public CreateGamePage()
-	{
-		InitializeComponent();
-
-        //this._gameRepository = gameRepository;
+    public CreateGamePage(CreateGameViewModel viewModel)
+    {
+        InitializeComponent();
+        BindingContext = viewModel;
     }
 
-	//async void OnTeamsReady(object sender, EventArgs args)
-	//{
+    private void Entry_TeamName_Changed(object sender, TextChangedEventArgs e)
+    {
+        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text))
+        {
+            btn_Create.IsEnabled = true;
 
-	//}
+            btn_Create.BackgroundColor = Colors.Blue;
+        }
+        else
+        {
+            btn_Create.IsEnabled = false;
+
+            btn_Create.BackgroundColor = Colors.Grey;
+        }
+    }
 }

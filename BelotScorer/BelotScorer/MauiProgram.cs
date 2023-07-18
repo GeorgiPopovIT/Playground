@@ -1,5 +1,5 @@
 ﻿using BelotScorer.Data;
-using BelotScorer.Models;
+using BelotScorer.ViewModels;
 using BelotScorer.Pages;
 using Microsoft.Extensions.Logging;
 

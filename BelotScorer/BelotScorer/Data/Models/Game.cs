@@ -7,7 +7,6 @@ namespace BelotScorer.Models;
 public class Game
 {
     [PrimaryKey, AutoIncrement]
-
     public int Id { get; set; }
 
     [MaxLength(TEAM_NAME_MAX_LENGTH)]
@@ -19,6 +18,8 @@ public class Game
     public int Team1FinalPoints { get; set; }
 
     public int Team2FinalPoints { get; set; }
+
+    public bool IsGameFinished { get; set; }
 
     public List<short> Team1Points { get; init; } = new();
 

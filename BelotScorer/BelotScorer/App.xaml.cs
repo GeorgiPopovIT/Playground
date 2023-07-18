@@ -1,19 +1,14 @@
 ﻿using BelotScorer.Data;
+using BelotScorer.ViewModels;
 
 namespace BelotScorer;
 
 public partial class App : Application
 {
-	public static GameRepository GameRepo { get; private set; }
-	public App(GameRepository gameRepo)
-	{
-		
-		InitializeComponent();
+    public App()
+    {
+        InitializeComponent();
 
-		MainPage = new AppShell();
-		
-		
-
-		GameRepo = gameRepo;
-	}
+        MainPage = new AppShell();
+    }
 }

@@ -11,9 +11,8 @@ namespace BelotScorer.Data
         private SQLiteAsyncConnection _database;
 
         public GameRepository()
-        {
+        { }
 
-        }
 
         async Task Init()
         {
@@ -26,7 +25,7 @@ namespace BelotScorer.Data
 
         public async Task CreateGame(string team1Name, string team2Name)
         {
-            Init();
+            await Init();
 
             await this._database.InsertAsync(new Game
             {
@@ -35,7 +34,8 @@ namespace BelotScorer.Data
             });
 
         }
-        public async Task<bool> SavePointToTeam(int gameId, short team1PointToAdd, short team2PointToAdd)
+
+        public async Task<bool> SavePointsToTeams(int gameId, short team1PointToAdd, short team2PointToAdd)
         {
             var currentGame = await this.GetGameAsync(gameId);
 
@@ -49,7 +49,7 @@ namespace BelotScorer.Data
             if (currentGame.Team1FinalPoints >= Constants.END_GAME_POINT ||
                 currentGame.Team2FinalPoints >= Constants.END_GAME_POINT)
             {
-
+                currentGame.IsGameFinished = true;
                 return true;
             }
 

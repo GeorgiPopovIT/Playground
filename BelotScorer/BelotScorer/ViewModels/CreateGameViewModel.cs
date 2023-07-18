@@ -1,31 +1,32 @@
 ﻿using BelotScorer.Data;
+using BelotScorer.Models;
 using BelotScorer.Pages;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace BelotScorer.Models;
+namespace BelotScorer.ViewModels;
 
 public partial class CreateGameViewModel : ObservableObject
 {
     GameRepository _gameRepo;
 
     [ObservableProperty]
-    string team1Name;
+    Game game;
 
-    [ObservableProperty]
-    string team2Name;
     public CreateGameViewModel(GameRepository gameRepo)
     {
         this._gameRepo = gameRepo;
-        Routing.RegisterRoute("playGame",typeof(GamePage));
     }
 
     [RelayCommand]
-     void CreateGame()
+    async Task CreateGame()
     {
-         this._gameRepo.CreateGame(team1Name, team2Name);
+        await this._gameRepo.CreateGame(game.Team1Name, game.Team2Name);
 
-         Shell.Current.GoToAsync("createGame");
+        await Shell.Current.GoToAsync("playGame");
+
+        //await Task.WhenAll(this._gameRepo.CreateGame(team1Name, team2Name),
+        //    Shell.Current.GoToAsync("playGame"));
 
     }
 }

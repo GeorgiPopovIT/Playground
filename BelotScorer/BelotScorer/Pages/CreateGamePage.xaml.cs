@@ -1,5 +1,4 @@
-using BelotScorer.Data;
-using BelotScorer.Models;
+using BelotScorer.ViewModels;
 
 namespace BelotScorer.Pages;
 
@@ -8,6 +7,7 @@ public partial class CreateGamePage : ContentPage
     public CreateGamePage(CreateGameViewModel viewModel)
     {
         InitializeComponent();
+
         BindingContext = viewModel;
     }
 

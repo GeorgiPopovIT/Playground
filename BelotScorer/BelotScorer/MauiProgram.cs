@@ -21,8 +21,11 @@ public static class MauiProgram
         builder.Services.AddSingleton<MainPage>();
 
         builder.Services.AddSingleton<CreateGamePage>();
+        builder.Services.AddSingleton<GamePage>();
 
         builder.Services.AddSingleton<CreateGameViewModel>();
+        builder.Services.AddTransient<GameViewModel>();
+
 
         builder.Services.AddSingleton<GameRepository>();
 

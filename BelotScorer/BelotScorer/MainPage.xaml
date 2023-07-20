@@ -12,7 +12,6 @@
     </Shell.TitleView>
 
 
-
     <Grid>
         <ScrollView>
             <VerticalStackLayout

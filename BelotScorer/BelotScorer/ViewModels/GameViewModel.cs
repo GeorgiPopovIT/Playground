@@ -1,26 +1,45 @@
 ﻿using BelotScorer.Data;
+using BelotScorer.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 
 namespace BelotScorer.ViewModels;
 
+[QueryProperty(nameof(Game), "CurrentGame")]
 public partial class GameViewModel : ObservableObject
 {
-    private GameRepository _gameRepository;
+    GameRepository _gameRepository;
 
     public GameViewModel(GameRepository gameRepo)
     {
         this._gameRepository = gameRepo;
-        this.points = new ObservableCollection<short>();
+        //this.pointsTeam1 = new ObservableCollection<short>();
+        //this.pointsTeam2 = new ObservableCollection<short>();
     }
 
     [ObservableProperty]
-    int totalTeam1Points;
+    short team1PointsToAdd;
 
     [ObservableProperty]
-    int totalTeam2Points;
+    short team2PointsToAdd;
 
     [ObservableProperty]
-    ObservableCollection<short> points;
+    Game game;
 
+    [RelayCommand]
+    async Task AddPointsToTeams()
+    {
+        var isGameFinished = this._gameRepository.SavePointsToTeams(this.game.Id, team1PointsToAdd, team2PointsToAdd);
+
+        if (isGameFinished)
+        {
+            //bool answer = await DisplayAlert("Question?", "Would you like to play a game", "Yes", "No");
+
+        }
+        else
+        {
+
+        }
+    }
 }

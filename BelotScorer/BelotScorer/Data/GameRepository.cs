@@ -23,21 +23,26 @@ namespace BelotScorer.Data
             var result = await _database.CreateTableAsync<Game>();
         }
 
-        public async Task CreateGame(string team1Name, string team2Name)
+        public async Task<int> CreateGame(string team1Name, string team2Name)
         {
             await Init();
 
-            await this._database.InsertAsync(new Game
+            var game = new Game
             {
                 Team1Name = team1Name,
                 Team2Name = team2Name
-            });
+            };
+
+            await this._database.InsertAsync(game);
+
+
+            return game.Id;
 
         }
 
-        public async Task<bool> SavePointsToTeams(int gameId, short team1PointToAdd, short team2PointToAdd)
+        public bool SavePointsToTeams(int gameId, short team1PointToAdd, short team2PointToAdd)
         {
-            var currentGame = await this.GetGameAsync(gameId);
+            var currentGame = this.GetGameAsync(gameId).Result;
 
             currentGame.Team1Points.Add(team1PointToAdd);
             currentGame.Team2Points.Add(team2PointToAdd);
@@ -49,7 +54,6 @@ namespace BelotScorer.Data
             if (currentGame.Team1FinalPoints >= Constants.END_GAME_POINT ||
                 currentGame.Team2FinalPoints >= Constants.END_GAME_POINT)
             {
-                currentGame.IsGameFinished = true;
                 return true;
             }
 

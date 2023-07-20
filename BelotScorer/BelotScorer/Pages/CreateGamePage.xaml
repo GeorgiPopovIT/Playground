@@ -13,17 +13,17 @@
 
             <StackLayout Margin="10" HorizontalOptions="Center">
                 <Label FontSize="Medium" FontFamily="bold">Име на отбор</Label>
-                <Entry Text="{Binding Game.Team1Name}" x:Name="entry1"
+                <Entry Text="{Binding Team1Name}" x:Name="entry1"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
-                       Placeholder="Име на отбор ..." 
+                       Placeholder="Име на отбор ..." MaxLength="15"
                        PlaceholderColor="Black"/>
             </StackLayout>
 
             <StackLayout Margin="10" HorizontalOptions="Center">
                 <Label FontSize="Medium" FontFamily="Bold">Име на отбор</Label>
-                <Entry Text="{Binding Game.Team2Name}" x:Name="entry2" 
+                <Entry Text="{Binding Team2Name}" x:Name="entry2" 
                        TextColor="Black" TextChanged="Entry_TeamName_Changed"
-                       PlaceholderColor="Black"
+                       PlaceholderColor="Black" MaxLength="15"
                        Placeholder="Име на отбор ..."/>
             </StackLayout>
 

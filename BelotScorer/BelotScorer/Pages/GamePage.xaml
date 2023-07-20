@@ -1,12 +1,58 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModel ="clr-namespace:BelotScorer.ViewModels"
+             x:DataType="viewModel:GameViewModel"
              x:Class="BelotScorer.Pages.GamePage"
-             Title="GamePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Game Page"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Игра"
+             BackgroundImageSource="table_background.jpg">
+
+    <!--<ScrollView>
+        <Grid RowDefinitions="*,*,*">
+            <Label Text="Start"  BackgroundColor="Silver" FontSize="40" />
+            <Label Text="End"  BackgroundColor="Silver" FontSize="40" />
+        </Grid>
+        
+    </ScrollView>-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*" />
+            <RowDefinition />
+            <RowDefinition Height="100" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label FontSize="Large" Text="{Binding Game.Team1Name}"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <Label  FontSize="Large" Grid.Column="1"
+               Text="{Binding Game.Team2Name}"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <!--<BoxView Grid.Row="1"
+                 Color="Teal" />-->
+        <Label Grid.Row="1"
+               Text="Row 1, Column 0"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <!--<BoxView Grid.Row="1"
+                 Grid.Column="1"
+                 Color="Purple" />-->
+        <Label Grid.Row="1"
+               Grid.Column="1"
+               Text="Row1, Column 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+        <!--<BoxView Grid.Row="2"
+                 Grid.ColumnSpan="2"
+                 Color="Red" />-->
+        <Label Grid.Row="2"
+               Grid.ColumnSpan="2"
+               Text="Row 2, Columns 0 and 1"
+               HorizontalOptions="Center"
+               VerticalOptions="Center" />
+    </Grid>
 </ContentPage>

@@ -30,7 +30,7 @@ public partial class GameViewModel : ObservableObject
     [RelayCommand]
     async Task AddPointsToTeams()
     {
-        var isGameFinished = this._gameRepository.SavePointsToTeams(this.game.Id, team1PointsToAdd, team2PointsToAdd);
+        var isGameFinished = this._gameRepository.SavePointsToTeams(this.game, team1PointsToAdd, team2PointsToAdd);
 
         if (isGameFinished)
         {

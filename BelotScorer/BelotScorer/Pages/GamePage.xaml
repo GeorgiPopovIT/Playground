@@ -14,45 +14,84 @@
         </Grid>
         
     </ScrollView>-->
-
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="0.4*" />
-            <RowDefinition />
-            <RowDefinition Height="100" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Label FontSize="Large" Text="{Binding Game.Team1Name}"
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.4*" />
+                <RowDefinition />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label FontSize="Large" Text="{Binding Game.Team1Name}"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
-        <Label  FontSize="Large" Grid.Column="1"
+            <Label  FontSize="Large" Grid.Column="1"
                Text="{Binding Game.Team2Name}"
                HorizontalOptions="Center"
                VerticalOptions="Center" />
-        <!--<BoxView Grid.Row="1"
+            <!--<BoxView Grid.Row="1"
                  Color="Teal" />-->
-        <Label Grid.Row="1"
+            <CollectionView HorizontalOptions="Center" VerticalOptions="Center"
+                        Grid.Row="1" ItemsSource="{Binding Game.Team1Points}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame>
+                            <Label Text="{Binding .}" />
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+          
+                <Entry HorizontalOptions="Center" VerticalOptions="Center"
+                       Grid.Column="0" Grid.Row="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1" 
+                       TextColor="Black" TextChanged="Entry_TeamName_Changed"
+                       PlaceholderColor="Black" MaxLength="15"
+                       Placeholder="Точки на отбор 1"/>
+            
+            <!--<Label Grid.Row="1"
                Text="Row 1, Column 0"
                HorizontalOptions="Center"
-               VerticalOptions="Center" />
-        <!--<BoxView Grid.Row="1"
+               VerticalOptions="Center" />-->
+            <!--<BoxView Grid.Row="1"
                  Grid.Column="1"
                  Color="Purple" />-->
-        <Label Grid.Row="1"
+
+            <ListView HorizontalOptions="Center" VerticalOptions="Center"
+                        Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Game.Team2Points}">
+                <ListView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Type x:Int32}">
+                        <TextCell Text="{Binding .}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+           
+                <Entry HorizontalOptions="Center" VerticalOptions="Center"
+                        Grid.Row="1" Grid.Column="1"  Text="{Binding Team2PointsToAdd}" x:Name="entry2" 
+                       TextColor="Black" TextChanged="Entry_TeamName_Changed"
+                       PlaceholderColor="Black" MaxLength="15"
+                       Placeholder="Точки на отбор 2"/>
+           
+            <!--<Label Grid.Row="1"
                Grid.Column="1"
                Text="Row1, Column 1"
                HorizontalOptions="Center"
-               VerticalOptions="Center" />
-        <!--<BoxView Grid.Row="2"
+               VerticalOptions="Center" />-->
+            <!--<BoxView Grid.Row="2"
                  Grid.ColumnSpan="2"
                  Color="Red" />-->
-        <Label Grid.Row="2"
-               Grid.ColumnSpan="2"
-               Text="Row 2, Columns 0 and 1"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
-    </Grid>
+
+            <Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="btn_Create"
+                    Margin="20" Padding="5" IsEnabled="False"
+                    BackgroundColor="Grey" TextTransform="Uppercase"
+                    Text="Въведи точки"
+                    Clicked="Save_Points_Clicked"
+                    Command="{Binding AddPointsToTeamsCommand}" />
+        </Grid>
+    </ScrollView>
 </ContentPage>

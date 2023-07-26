@@ -75,15 +75,15 @@
                 <VerticalStackLayout VerticalOptions="EndAndExpand">
                     <StackLayout Orientation="Horizontal">
                         <StackLayout HorizontalOptions="Center">
-                            <Label  Grid.Column="1" FontSize="Medium">Точки за отбор 1</Label>
-                            <Entry Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"
+                            <Label FontSize="Large" Grid.Column="1">Точки за отбор 1</Label>
+                            <Entry FontSize="Medium" Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
                        Placeholder="Точки за отбор ..." MaxLength="4"
                        PlaceholderColor="Black"/>
                         </StackLayout>
                         <StackLayout HorizontalOptions="EndAndExpand">
-                            <Label FontSize="Medium">Точки за отбор 2</Label>
-                            <Entry Text="{Binding Team2PointsToAdd}" x:Name="entry2"
+                            <Label FontSize="Large">Точки за отбор 2</Label>
+                            <Entry FontSize="Medium" Text="{Binding Team2PointsToAdd}" x:Name="entry2"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
                        Placeholder="Точки за отбор ..." MaxLength="4"
                        PlaceholderColor="Black"/>

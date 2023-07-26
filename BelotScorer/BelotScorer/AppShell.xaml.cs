@@ -1,4 +1,4 @@
-﻿using BelotScorer.Pages;
+﻿using BelotScorer.Views;
 
 namespace BelotScorer;
 

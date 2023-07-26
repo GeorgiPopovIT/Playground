@@ -1,6 +1,6 @@
 ﻿using BelotScorer.Data;
 using BelotScorer.ViewModels;
-using BelotScorer.Pages;
+using BelotScorer.Views;
 using Microsoft.Extensions.Logging;
 
 namespace BelotScorer;

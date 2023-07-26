@@ -40,26 +40,26 @@ namespace BelotScorer.Data
 
         }
 
-        public bool SavePointsToTeams(Game game, short team1PointToAdd, short team2PointToAdd)
+        public void SavePointsToTeams(Game game, int team1PointToAdd, int team2PointToAdd)
         {
             //var currentGame = this.GetGameAsync(gameId).Result;
             var currentGame = game;
+
             currentGame.Team1Points.Add(team1PointToAdd);
             currentGame.Team2Points.Add(team2PointToAdd);
 
-            currentGame.Team1FinalPoints += team1PointToAdd;
-
-            currentGame.Team2FinalPoints += team2PointToAdd;
+            currentGame.Team1Score += team1PointToAdd;
+            currentGame.Team2Score += team2PointToAdd;
 
             if (currentGame.Team1FinalPoints >= Constants.END_GAME_POINT ||
                 currentGame.Team2FinalPoints >= Constants.END_GAME_POINT)
             {
                 currentGame.IsGameFinished = true;
-                return true;
             }
-
-            return false;
-
+            else
+            {
+                currentGame.IsGameFinished = false;
+            }
         }
 
         public async Task<List<Game>> GetGamesAsync()

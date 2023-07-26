@@ -1,20 +1,24 @@
-﻿using BelotScorer.ViewModels;
+﻿using BelotScorer.Data;
+using BelotScorer.ViewModels;
 
 namespace BelotScorer.Pages;
 
 public partial class GamePage : ContentPage
 {
     GameViewModel _gameViewModel;
+
     public GamePage(GameViewModel gameViewModel)
     {
         InitializeComponent();
+
         BindingContext = gameViewModel;
         this._gameViewModel = gameViewModel;
     }
 
     private void Entry_TeamName_Changed(object sender, TextChangedEventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text))
+        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text)
+            && entry1.Text.All(x => char.IsDigit(x)) && entry2.Text.All(x => char.IsDigit(x)))
         {
             btn_Create.IsEnabled = true;
 
@@ -28,18 +32,9 @@ public partial class GamePage : ContentPage
         }
     }
 
-    private async  void Save_Points_Clicked(object sender, EventArgs e)
+    private async void Save_Points_Clicked(object sender, EventArgs e)
     {
-        var isCurrentGameFinished = this._gameViewModel.Game.IsGameFinished;
-
-        if (isCurrentGameFinished)
-        {
-            bool answer = await DisplayAlert("Белот", "Играта на белот приключи ли?", "Да", "Не");
-
-            if (answer)
-            {
-                await Shell.Current.GoToAsync(nameof(MainPage));
-            }
-        }
+        this.entry1.Text = null;
+        this.entry2.Text = null;
     }
 }

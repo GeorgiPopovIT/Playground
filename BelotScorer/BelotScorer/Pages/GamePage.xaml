@@ -6,92 +6,97 @@
              x:Class="BelotScorer.Pages.GamePage"
              Title="Игра"
              BackgroundImageSource="table_background.jpg">
+    <RefreshView>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding Game.Team1Name}"
+                       FontSize="Large" HorizontalOptions="CenterAndExpand"/>
 
-    <!--<ScrollView>
-        <Grid RowDefinitions="*,*,*">
-            <Label Text="Start"  BackgroundColor="Silver" FontSize="40" />
-            <Label Text="End"  BackgroundColor="Silver" FontSize="40" />
-        </Grid>
-        
-    </ScrollView>-->
-    <ScrollView>
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="0.4*" />
-                <RowDefinition />
-                <RowDefinition Height="100" />
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-            </Grid.ColumnDefinitions>
-            <Label FontSize="Large" Text="{Binding Game.Team1Name}"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
-            <Label  FontSize="Large" Grid.Column="1"
-               Text="{Binding Game.Team2Name}"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />
-            <!--<BoxView Grid.Row="1"
-                 Color="Teal" />-->
-            <CollectionView HorizontalOptions="Center" VerticalOptions="Center"
-                        Grid.Row="1" ItemsSource="{Binding Game.Team1Points}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame>
-                            <Label Text="{Binding .}" />
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-
-          
-                <Entry HorizontalOptions="Center" VerticalOptions="Center"
-                       Grid.Column="0" Grid.Row="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1" 
-                       TextColor="Black" TextChanged="Entry_TeamName_Changed"
-                       PlaceholderColor="Black" MaxLength="15"
-                       Placeholder="Точки на отбор 1"/>
+                    <Label FontSize="Large" Text="-"/>
+                    <Label  Text="{Binding Game.Team2Name}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <ScrollView>
+                    <!--<StackLayout Orientation="Horizontal">
+               
             
-            <!--<Label Grid.Row="1"
-               Text="Row 1, Column 0"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />-->
-            <!--<BoxView Grid.Row="1"
-                 Grid.Column="1"
-                 Color="Purple" />-->
 
-            <ListView HorizontalOptions="Center" VerticalOptions="Center"
-                        Grid.Row="1" Grid.Column="1" ItemsSource="{Binding Game.Team2Points}">
-                <ListView.ItemTemplate>
-                    <DataTemplate x:DataType="{x:Type x:Int32}">
-                        <TextCell Text="{Binding .}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-
-            </ListView>
-
-           
-                <Entry HorizontalOptions="Center" VerticalOptions="Center"
-                        Grid.Row="1" Grid.Column="1"  Text="{Binding Team2PointsToAdd}" x:Name="entry2" 
-                       TextColor="Black" TextChanged="Entry_TeamName_Changed"
-                       PlaceholderColor="Black" MaxLength="15"
-                       Placeholder="Точки на отбор 2"/>
-           
-            <!--<Label Grid.Row="1"
-               Grid.Column="1"
-               Text="Row1, Column 1"
-               HorizontalOptions="Center"
-               VerticalOptions="Center" />-->
-            <!--<BoxView Grid.Row="2"
-                 Grid.ColumnSpan="2"
-                 Color="Red" />-->
-
-            <Button Grid.Row="2" Grid.ColumnSpan="2" x:Name="btn_Create"
-                    Margin="20" Padding="5" IsEnabled="False"
+        
+                <CollectionView HorizontalOptions="StartAndExpand" ItemsSource="{Binding PointsTeam1}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label FontSize="Medium" Text="{Binding .}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <CollectionView HorizontalOptions="EndAndExpand" ItemsSource="{Binding PointsTeam2}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label FontSize="Medium" Text="{Binding .}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+          </StackLayout>-->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <ListView Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextCell Text="{Binding .}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <ListView x:Name="t2Score"  Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                            <TextCell Text="{Binding .}"/>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                            <!--<CollectionView Margin="70" HorizontalOptions="End"  Grid.Column="0" VerticalOptions="CenterAndExpand"  ItemsSource="{Binding PointsTeam1}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                    <Label FontSize="Medium" Text="{Binding .}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <CollectionView Margin="70" HorizontalOptions="EndAndExpand" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                    <Label FontSize="Medium" Text="{Binding .}"/>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>-->
+                        </Grid>
+                </ScrollView>
+                <VerticalStackLayout VerticalOptions="EndAndExpand">
+                    <StackLayout Orientation="Horizontal">
+                        <StackLayout HorizontalOptions="Center">
+                            <Label  Grid.Column="1" FontSize="Medium">Точки за отбор 1</Label>
+                            <Entry Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"
+                       TextChanged="Entry_TeamName_Changed" TextColor="Black"
+                       Placeholder="Точки за отбор ..." MaxLength="4"
+                       PlaceholderColor="Black"/>
+                        </StackLayout>
+                        <StackLayout HorizontalOptions="EndAndExpand">
+                            <Label FontSize="Medium">Точки за отбор 2</Label>
+                            <Entry Text="{Binding Team2PointsToAdd}" x:Name="entry2"
+                       TextChanged="Entry_TeamName_Changed" TextColor="Black"
+                       Placeholder="Точки за отбор ..." MaxLength="4"
+                       PlaceholderColor="Black"/>
+                        </StackLayout>
+                    </StackLayout>
+                    <Button  x:Name="btn_Create"
+                    Margin="10" Padding="5" IsEnabled="False"
                     BackgroundColor="Grey" TextTransform="Uppercase"
                     Text="Въведи точки"
                     Clicked="Save_Points_Clicked"
                     Command="{Binding AddPointsToTeamsCommand}" />
-        </Grid>
-    </ScrollView>
+                </VerticalStackLayout>
+            </StackLayout>
+        </ScrollView>
+    </RefreshView>
 </ContentPage>

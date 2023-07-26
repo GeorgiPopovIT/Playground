@@ -13,7 +13,8 @@ public partial class CreateGamePage : ContentPage
 
     private void Entry_TeamName_Changed(object sender, TextChangedEventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text))
+        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text)
+            && entry1.Text.All(x => char.IsLetter(x)) && entry2.Text.All(x => char.IsLetter(x)))
         {
             btn_Create.IsEnabled = true;
 

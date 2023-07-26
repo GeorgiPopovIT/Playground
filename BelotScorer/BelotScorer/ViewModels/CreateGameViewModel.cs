@@ -5,6 +5,8 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace BelotScorer.ViewModels;
 
+[QueryProperty("Team1Name","Team1Name")]
+[QueryProperty("Team2Name", "Team2Name")]
 public partial class CreateGameViewModel : ObservableObject
 {
     GameRepository _gameRepo;
@@ -13,10 +15,10 @@ public partial class CreateGameViewModel : ObservableObject
     Game game;
 
     [ObservableProperty]
-    string team1Name;
+    string team1Name = "Ние";
 
     [ObservableProperty]
-    string team2Name;
+    string team2Name = "Вие";
 
     public CreateGameViewModel(GameRepository gameRepo)
     {
@@ -38,7 +40,6 @@ public partial class CreateGameViewModel : ObservableObject
             Team1Name = team1Name,
             Team2Name = team2Name,
         };
-
         await Shell.Current.GoToAsync("playGame", new Dictionary<string, object>
         {
             {"CurrentGame", currentGame}

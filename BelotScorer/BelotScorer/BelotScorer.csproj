@@ -36,8 +36,7 @@
 
   <ItemGroup>
     <!-- App Icon -->
-    <!--<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />-->
-    <MauiIcon Include="Resources\AppIcon\card_ace_icon.svg" ForegroundFile="Resources\AppIcon\card_ace_icon.svg"/>
+    <MauiIcon Include="Resources\AppIcon\card_icon.svg" Color="#A9A9A9" />
 
     <!-- Splash Screen -->
     <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
@@ -51,6 +50,16 @@
 
     <!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
     <MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <None Remove="Resources\AppIcon\card_icon.svg" />
+    <None Remove="Resources\AppIcon\card_iconconfg.svg" />
+    <None Remove="Resources\AppIcon\playing_cards.svg" />
+  </ItemGroup>-->
+
+  <ItemGroup>
+    <MauiIcon Include="Resources\AppIcon\card_icon.svg" Color="#A9A9A9" />
   </ItemGroup>
 
   <ItemGroup>

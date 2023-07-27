@@ -43,18 +43,18 @@
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
-                            <ListView Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
+                            <ListView Margin="60,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <TextCell Text="{Binding .}"/>
+                                <TextCell TextColor="Black" Text="{Binding .}"/>
                                     <!--<Label Text="{Binding .}"/>-->
                                 </DataTemplate>
                                 </ListView.ItemTemplate>
                             </ListView>
-                            <ListView x:Name="t2Score"  Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
+                            <ListView Margin="60,25" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                    <TextCell Text="{Binding .}"/>
+                                    <TextCell TextColor="Black" Text="{Binding .}"/>
                                     <!--<Label FontSize="Medium" Text="{Binding .}"/>-->
                                 </DataTemplate>
                                 </ListView.ItemTemplate>

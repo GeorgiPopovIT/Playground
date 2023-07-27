@@ -3,6 +3,7 @@ using BelotScorer.ViewModels;
 
 namespace BelotScorer.Views;
 
+//[XamlCompilation(XamlCompilationOptions.Skip)]
 public partial class GamePage : ContentPage
 {
     GameViewModel _gameViewModel;
@@ -17,8 +18,7 @@ public partial class GamePage : ContentPage
 
     private void Entry_TeamName_Changed(object sender, TextChangedEventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text)
-            && entry1.Text.All(x => char.IsDigit(x)) && entry2.Text.All(x => char.IsDigit(x)))
+        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text))
         {
             btn_Create.IsEnabled = true;
 

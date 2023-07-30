@@ -12,9 +12,10 @@
         <BackButtonBehavior IsVisible="False" IsEnabled="False"/>
     </Shell.BackButtonBehavior>
 
+
     <ScrollView>
         <StackLayout>
-            <StackLayout Orientation="Horizontal">
+            <StackLayout Margin="0,15" Orientation="Horizontal">
                 <Label Text="{Binding Game.Team1Name}"
                        FontSize="Large" HorizontalOptions="CenterAndExpand"/>
 
@@ -22,33 +23,15 @@
                 <Label  Text="{Binding Game.Team2Name}" FontSize="Large" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <ScrollView>
-                <!--<StackLayout Orientation="Horizontal">
-        
-                <CollectionView HorizontalOptions="StartAndExpand" ItemsSource="{Binding PointsTeam1}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Label FontSize="Medium" Text="{Binding .}"/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-                <CollectionView HorizontalOptions="EndAndExpand" ItemsSource="{Binding PointsTeam2}">
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate>
-                            <Label FontSize="Medium" Text="{Binding .}"/>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-          </StackLayout>-->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <ListView Margin="60,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
+                    <!--<ListView Margin="60,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell TextColor="Black" Text="{Binding .}"/>
-                                <!--<Label Text="{Binding .}"/>-->
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>
@@ -56,28 +39,27 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <TextCell TextColor="Black" Text="{Binding .}"/>
-                                <!--<Label FontSize="Medium" Text="{Binding .}"/>-->
                             </DataTemplate>
                         </ListView.ItemTemplate>
-                    </ListView>
-                    <!--<CollectionView Margin="70" HorizontalOptions="End"  Grid.Column="0" VerticalOptions="CenterAndExpand"  ItemsSource="{Binding PointsTeam1}">
+                    </ListView>-->
+                    <CollectionView Margin="70,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                    <Label FontSize="Medium" Text="{Binding .}"/>
+                                <Label Margin="0,6" FontSize="Medium" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <CollectionView Margin="70" HorizontalOptions="EndAndExpand" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
+                    <CollectionView Margin="70,25" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                    <Label FontSize="Medium" Text="{Binding .}"/>
+                                    <Label Margin="0,6" FontSize="Medium" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
-                    </CollectionView>-->
+                    </CollectionView>
                 </Grid>
             </ScrollView>
             <VerticalStackLayout VerticalOptions="EndAndExpand">
-                <StackLayout Orientation="Horizontal">
+                <StackLayout Background="#CD853F" Orientation="Horizontal">
                     <StackLayout HorizontalOptions="Center">
                         <Label FontSize="Large" Grid.Column="1">Точки за отбор 1</Label>
                         <Entry Keyboard="Numeric" FontSize="Medium" Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"

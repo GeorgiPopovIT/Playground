@@ -1,9 +1,8 @@
-﻿using BelotScorer.Data;
-using BelotScorer.ViewModels;
+﻿using BelotScorer.ViewModels;
 
 namespace BelotScorer.Views;
 
-//[XamlCompilation(XamlCompilationOptions.Skip)]
+[XamlCompilation(XamlCompilationOptions.Skip)]
 public partial class GamePage : ContentPage
 {
     GameViewModel _gameViewModel;

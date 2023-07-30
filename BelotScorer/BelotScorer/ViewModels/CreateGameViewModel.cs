@@ -44,7 +44,6 @@ public partial class CreateGameViewModel : ObservableObject
         {
             {"CurrentGame", currentGame}
         });
-        //await Shell.Current.GoToAsync("playGame");
         //await Task.WhenAll(this._gameRepo.CreateGame(team1Name, team2Name),
         //    Shell.Current.GoToAsync("playGame"));
 

@@ -1,35 +1,70 @@
 ﻿//using SendGrid.Helpers.Mail;
 //using SendGrid;
 //using ConsoleApp3;
-var linkedlist = new LinkedList<int>();
-linkedlist.AddFirst(1);
-linkedlist.AddFirst(2);
+var list1 = new ListNode(1,new ListNode(2,new ListNode(4)));
+var list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
 
-Console.WriteLine(GetTotalCoinsFromSum(new List<int> { 1, 2, 3, 5, 10, 20, 50, 100 }, 81));
-static int GetTotalCoinsFromSum(IEnumerable<int> input, int target)
+Console.WriteLine(MergeTwoLists(list1,list2));
+static ListNode MergeTwoLists(ListNode list1, ListNode list2)
 {
-    var coins = new Queue<int>(input.OrderByDescending(x => x));
+    var merged = new ListNode();
 
-    int totalCoins = 0;
-
-    while (target > 0 && coins.Count > 0)
+    while (list1 != null && list2 != null)
     {
-        var currentCoin = coins.Dequeue();
-
-        var count = target / currentCoin;
-
-        if (count == 0)
+        if (list1.val < list2.val)
         {
-            continue;
+            merged.next = list1;
+            list1 = list1.next;
+        }
+        else
+        {
+            merged.next = list2;
+            list2 = list2.next;
         }
 
-        target %= currentCoin;
-
-        totalCoins += count;
+        merged = merged.next;
     }
 
-    return totalCoins;
+    merged.next = list1 ?? list2;
+    return merged.next;
 }
+
+public class ListNode
+{
+    public int val;
+    public ListNode next;
+    public ListNode(int val = 0, ListNode next = null)
+    {
+        this.val = val;
+        this.next = next;
+    }
+}
+
+//Console.WriteLine(GetTotalCoinsFromSum(new List<int> { 1, 2, 3, 5, 10, 20, 50, 100 }, 81));
+//static int GetTotalCoinsFromSum(IEnumerable<int> input, int target)
+//{
+//    var coins = new Queue<int>(input.OrderByDescending(x => x));
+
+//    int totalCoins = 0;
+
+//    while (target > 0 && coins.Count > 0)
+//    {
+//        var currentCoin = coins.Dequeue();
+
+//        var count = target / currentCoin;
+
+//        if (count == 0)
+//        {
+//            continue;
+//        }
+
+//        target %= currentCoin;
+
+//        totalCoins += count;
+//    }
+
+//    return totalCoins;
+//}
 
 //foreach (var item in linkedlist)
 //{

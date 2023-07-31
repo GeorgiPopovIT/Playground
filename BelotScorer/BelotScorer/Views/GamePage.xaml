@@ -42,14 +42,14 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>-->
-                    <CollectionView Margin="70,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
+                    <CollectionView Margin="50,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Label Margin="0,6" FontSize="Medium" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <CollectionView Margin="70,25" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
+                    <CollectionView Margin="50,25" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                     <Label Margin="0,6" FontSize="Medium" Text="{Binding .}"/>
@@ -64,14 +64,14 @@
                         <Label FontSize="Large" Grid.Column="1">Точки за отбор 1</Label>
                         <Entry Keyboard="Numeric" FontSize="Medium" Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
-                       Placeholder="Точки за отбор ..." MaxLength="4"
+                       Placeholder="Точки за отбор ..." MaxLength="3"
                        PlaceholderColor="Black"/>
                     </StackLayout>
                     <StackLayout HorizontalOptions="EndAndExpand">
                         <Label FontSize="Large">Точки за отбор 2</Label>
                         <Entry Keyboard="Numeric" FontSize="Medium" Text="{Binding Team2PointsToAdd}" x:Name="entry2"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
-                       Placeholder="Точки за отбор ..." MaxLength="4"
+                       Placeholder="Точки за отбор ..." MaxLength="3"
                        PlaceholderColor="Black"/>
                     </StackLayout>
                 </StackLayout>

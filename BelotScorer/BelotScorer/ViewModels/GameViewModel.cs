@@ -36,18 +36,17 @@ public partial class GameViewModel : ObservableObject
         {
             try
             {
-                //this.pointsTeam1.Add($"{this.game.Team1Score} - {this.team1PointsToAdd}");
-                //this.pointsTeam2.Add($"{this.game.Team2Score} - {this.team2PointsToAdd}");
-
                 this._gameRepository.SavePointsToTeams(this.game, team1PointsToAdd, team2PointsToAdd);
                 if (this.Game.Team1FinalPoints == this.team1PointsToAdd)
                 {
                     this.PointsTeam1.Add($"0 - {this.team1PointsToAdd}");
                     this.PointsTeam2.Add($"0 - {this.team2PointsToAdd}");
-                    return;
                 }
-                this.PointsTeam1.Add($"{this.Game.Team1Score} - {this.team1PointsToAdd}");
-                this.PointsTeam2.Add($"{this.Game.Team2Score} - {this.team2PointsToAdd}");
+                else
+                {
+                    this.PointsTeam1.Add($"{this.team1PointsToAdd} - {this.Game.Team1Score}");
+                    this.PointsTeam2.Add($"{this.team2PointsToAdd} - {this.Game.Team2Score}");
+                }
 
                 var isCurrentGameFinished = this.game.IsGameFinished;
 

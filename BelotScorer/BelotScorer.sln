@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelotScorer", "BelotScorer\BelotScorer.csproj", "{72A75FF0-F594-4ED4-84AA-048828D19E39}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelotScorer.Tests", "BelotScorer.Tests\BelotScorer.Tests.csproj", "{11036AF5-D1EA-4B2A-86FC-BB0D85AC5830}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{72A75FF0-F594-4ED4-84AA-048828D19E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72A75FF0-F594-4ED4-84AA-048828D19E39}.Release|Any CPU.Build.0 = Release|Any CPU
 		{72A75FF0-F594-4ED4-84AA-048828D19E39}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{11036AF5-D1EA-4B2A-86FC-BB0D85AC5830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11036AF5-D1EA-4B2A-86FC-BB0D85AC5830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11036AF5-D1EA-4B2A-86FC-BB0D85AC5830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11036AF5-D1EA-4B2A-86FC-BB0D85AC5830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

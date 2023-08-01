@@ -4,30 +4,25 @@
 var list1 = new ListNode(1,new ListNode(2,new ListNode(4)));
 var list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
 
-Console.WriteLine(MergeTwoLists(list1,list2));
-static ListNode MergeTwoLists(ListNode list1, ListNode list2)
+Console.WriteLine(string.Join(", ",PlusOne(new int[] { 1, 2, 3, 9 })));
+static int[] PlusOne(int[] digits)
 {
-    var merged = new ListNode();
-
-    while (list1 != null && list2 != null)
+    for (int i = digits.Length - 1; i >= 0; i--)
     {
-        if (list1.val < list2.val)
+        if (digits[i] == 9)
         {
-            merged.next = list1;
-            list1 = list1.next;
+            digits[i] = 0;
         }
         else
         {
-            merged.next = list2;
-            list2 = list2.next;
+            digits[i]++;
+            return digits;
         }
-
-        merged = merged.next;
     }
-
-    merged.next = list1 ?? list2;
-    return merged.next;
+    var a = new int[] { 1 }.Concat(digits);
+    return a.ToArray();
 }
+
 
 public class ListNode
 {

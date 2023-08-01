@@ -42,14 +42,14 @@
                             </DataTemplate>
                         </ListView.ItemTemplate>
                     </ListView>-->
-                    <CollectionView Margin="50,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
+                    <CollectionView Margin="60,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                 <Label Margin="0,6" FontSize="Medium" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
-                    <CollectionView Margin="50,25" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
+                    <CollectionView Margin="60,25" Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
                                     <Label Margin="0,6" FontSize="Medium" Text="{Binding .}"/>

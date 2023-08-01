@@ -37,7 +37,8 @@ public partial class GameViewModel : ObservableObject
             try
             {
                 this._gameRepository.SavePointsToTeams(this.game, team1PointsToAdd, team2PointsToAdd);
-                if (this.Game.Team1FinalPoints == this.team1PointsToAdd)
+
+                if (this.Game.Team1Points.Count == 0 && this.Game.Team2Points.Count == 0)
                 {
                     this.PointsTeam1.Add($"0 - {this.team1PointsToAdd}");
                     this.PointsTeam2.Add($"0 - {this.team2PointsToAdd}");

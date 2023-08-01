@@ -33,7 +33,7 @@ public partial class GamePage : ContentPage
 
     private  void Save_Points_Clicked(object sender, EventArgs e)
     {
-        this.entry1.Text = null;
-        this.entry2.Text = null;
+        this.entry1.Text = "";
+        this.entry2.Text = "";
     }
 }

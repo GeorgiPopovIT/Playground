@@ -30,10 +30,58 @@ public class GameTests
         this._gameRepository.SavePointsToTeams(this._game, team1Points, team2Points);
 
         //Assert
-        Assert.AreEqual(this._game.Team1FinalPoints, team1Points);
-        Assert.AreEqual(this._game.Team2FinalPoints,team2Points);
+        Assert.That(team1Points, Is.EqualTo(this._game.Team1FinalPoints));
+        Assert.That(team2Points, Is.EqualTo(this._game.Team2FinalPoints));
 
         Assert.AreEqual(this._game.Team1Points.Count, 1);
         Assert.AreEqual(this._game.Team2Points.Count, 1);
+    }
+    [Test]
+    public void AddPointsAndTeam1Win()
+    {
+        //Act
+        this._gameRepository.SavePointsToTeams(this._game, 26, 0);
+        this._gameRepository.SavePointsToTeams(this._game, 2, 14);
+        this._gameRepository.SavePointsToTeams(this._game, 52, 0);
+        this._gameRepository.SavePointsToTeams(this._game, 0, 16);
+        this._gameRepository.SavePointsToTeams(this._game, 36, 0);
+        this._gameRepository.SavePointsToTeams(this._game, 35, 0);
+
+        //Assert
+        Assert.AreEqual(true, this._game.IsGameFinished);
+        Assert.AreEqual(true, this._game.Team1FinalPoints >= 151);
+    }
+    [Test]
+    public void AddPointsAndTeam2Win()
+    {
+        //Act
+        this._gameRepository.SavePointsToTeams(this._game, 3, 15);
+        this._gameRepository.SavePointsToTeams(this._game, 26, 0);
+        this._gameRepository.SavePointsToTeams(this._game, 0, 35);
+        this._gameRepository.SavePointsToTeams(this._game, 0, 26);
+        this._gameRepository.SavePointsToTeams(this._game, 9, 7);
+        this._gameRepository.SavePointsToTeams(this._game, 11, 17);
+        this._gameRepository.SavePointsToTeams(this._game, 10, 28);
+        this._gameRepository.SavePointsToTeams(this._game, 14, 2);
+        this._gameRepository.SavePointsToTeams(this._game, 0, 32);
+
+        //Assert
+        Assert.AreEqual(true, this._game.IsGameFinished);
+        Assert.AreEqual(true, this._game.Team2FinalPoints >= 151);
+    }
+
+    [Test]
+    public void AddScoreWithNegativeNumbers()
+    {
+        //Act
+        this._gameRepository.SavePointsToTeams(this._game, 24, 12);
+        this._gameRepository.SavePointsToTeams(this._game, -2, -12);
+        this._gameRepository.SavePointsToTeams(this._game, -26, -34);
+
+
+        //Assert
+        Assert.Negative(this._game.Team1FinalPoints);
+        Assert.Negative(this._game.Team2FinalPoints);
+
     }
 }

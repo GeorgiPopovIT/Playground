@@ -13,7 +13,7 @@
         <VerticalStackLayout HorizontalOptions="Center">
 
             <StackLayout Margin="10" HorizontalOptions="Center">
-                <Label FontSize="Medium" FontFamily="bold">Име на отбор</Label>
+                <Label FontSize="Medium" FontAttributes="Bold">Име на отбор</Label>
                 <Entry Text="{Binding Team1Name}" x:Name="entry1"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
                        Placeholder="Име на отбор ..." MaxLength="15"
@@ -21,7 +21,7 @@
             </StackLayout>
 
             <StackLayout Margin="10" HorizontalOptions="Center">
-                <Label FontSize="Medium" FontFamily="Bold">Име на отбор</Label>
+                <Label FontSize="Medium" FontAttributes="Bold">Име на отбор</Label>
                 <Entry Text="{Binding Team2Name}" x:Name="entry2" 
                        TextColor="Black" TextChanged="Entry_TeamName_Changed"
                        PlaceholderColor="Black" MaxLength="15"
@@ -29,7 +29,7 @@
             </StackLayout>
 
             <Button x:Name="btn_Create"
-                    Margin="10" Padding="5" IsEnabled="False"
+                    Margin="10" Padding="5"  FontAttributes="Bold" IsEnabled="False"
                     BackgroundColor="Grey" TextTransform="Uppercase"
                     Text="Нова игра"
                     Command="{Binding CreateGameCommand}" />

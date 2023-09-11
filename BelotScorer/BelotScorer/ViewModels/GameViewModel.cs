@@ -58,10 +58,10 @@ public partial class GameViewModel : ObservableObject
                     if (answer)
                     {
                         await Shell.Current.GoToAsync("createGame", new Dictionary<string, object>
-                    {
-                        {"Team1Name", this.game.Team1Name},
-                        {"Team2Name", this.game.Team2Name}
-                    });
+                        {
+                            {"Team1Name", this.game.Team1Name},
+                            {"Team2Name", this.game.Team2Name}
+                        });
                     }
                     else
                     {
@@ -71,7 +71,7 @@ public partial class GameViewModel : ObservableObject
             }
             catch (Exception ex)
             {
-
+                await Console.Out.WriteLineAsync(ex.Message);
             }
         }
     }

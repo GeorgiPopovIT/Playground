@@ -1,7 +1,6 @@
 ﻿using BelotScorer.Common;
 using BelotScorer.Models;
 using SQLite;
-
 using static BelotScorer.Common.Constants;
 
 namespace BelotScorer.Data

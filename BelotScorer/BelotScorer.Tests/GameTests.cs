@@ -1,4 +1,4 @@
-using BelotScorer.Data;
+﻿using BelotScorer.Data;
 using BelotScorer.Models;
 
 namespace BelotScorer.Tests;
@@ -82,6 +82,22 @@ public class GameTests
         //Assert
         Assert.Negative(this._game.Team1FinalPoints);
         Assert.Negative(this._game.Team2FinalPoints);
+
+    }
+
+    [Test]
+    public void CreateNewGameSuccessfully()
+    {
+        //Arrange
+        var game = new Game
+        {
+            Team1Name = "Ние",
+            Team2Name = "Вие"
+        };
+
+        //Assert
+        Assert.AreEqual("Ние", game.Team1Name);
+        Assert.AreEqual("Вие", game.Team2Name);
 
     }
 }

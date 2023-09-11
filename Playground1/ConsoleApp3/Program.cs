@@ -1,39 +1,16 @@
 ﻿//using SendGrid.Helpers.Mail;
 //using SendGrid;
 //using ConsoleApp3;
-var list1 = new ListNode(1,new ListNode(2,new ListNode(4)));
-var list2 = new ListNode(1, new ListNode(3, new ListNode(4)));
-
-Console.WriteLine(string.Join(", ",PlusOne(new int[] { 1, 2, 3, 9 })));
-static int[] PlusOne(int[] digits)
-{
-    for (int i = digits.Length - 1; i >= 0; i--)
-    {
-        if (digits[i] == 9)
-        {
-            digits[i] = 0;
-        }
-        else
-        {
-            digits[i]++;
-            return digits;
-        }
-    }
-    var a = new int[] { 1 }.Concat(digits);
-    return a.ToArray();
-}
+//using MailKit;
+//using System.Numerics;
 
 
-public class ListNode
-{
-    public int val;
-    public ListNode next;
-    public ListNode(int val = 0, ListNode next = null)
-    {
-        this.val = val;
-        this.next = next;
-    }
-}
+using ConsoleApp3;
+
+FizzBuzz fizzBuzz = new(15);
+
+
+
 
 //Console.WriteLine(GetTotalCoinsFromSum(new List<int> { 1, 2, 3, 5, 10, 20, 50, 100 }, 81));
 //static int GetTotalCoinsFromSum(IEnumerable<int> input, int target)

@@ -1,5 +1,6 @@
 ﻿using BelotScorer.Data;
 using BelotScorer.Models;
+using NUnit.Framework.Legacy;
 
 namespace BelotScorer.Tests;
 
@@ -33,8 +34,8 @@ public class GameTests
         Assert.That(team1Points, Is.EqualTo(this._game.Team1FinalPoints));
         Assert.That(team2Points, Is.EqualTo(this._game.Team2FinalPoints));
 
-        Assert.AreEqual(this._game.Team1Points.Count, 1);
-        Assert.AreEqual(this._game.Team2Points.Count, 1);
+        Assert.That(1, Is.EqualTo(this._game.Team1Points.Count));
+        Assert.That(1, Is.EqualTo(this._game.Team2Points.Count));
     }
     [Test]
     public void AddPointsAndTeam1Win()
@@ -48,8 +49,8 @@ public class GameTests
         this._gameRepository.SavePointsToTeams(this._game, 35, 0);
 
         //Assert
-        Assert.AreEqual(true, this._game.IsGameFinished);
-        Assert.AreEqual(true, this._game.Team1FinalPoints >= 151);
+        Assert.That(this._game.IsGameFinished, Is.EqualTo(true));
+        Assert.That(this._game.Team1FinalPoints >= 151, Is.EqualTo(true));
     }
     [Test]
     public void AddPointsAndTeam2Win()
@@ -66,8 +67,8 @@ public class GameTests
         this._gameRepository.SavePointsToTeams(this._game, 0, 32);
 
         //Assert
-        Assert.AreEqual(true, this._game.IsGameFinished);
-        Assert.AreEqual(true, this._game.Team2FinalPoints >= 151);
+        Assert.That(this._game.IsGameFinished, Is.EqualTo(true));
+        Assert.That(this._game.Team2FinalPoints >= 151, Is.EqualTo(true));
     }
 
     [Test]
@@ -80,8 +81,8 @@ public class GameTests
 
 
         //Assert
-        Assert.Negative(this._game.Team1FinalPoints);
-        Assert.Negative(this._game.Team2FinalPoints);
+        ClassicAssert.Negative(this._game.Team1FinalPoints);
+        ClassicAssert.Negative(this._game.Team2FinalPoints);
 
     }
 
@@ -96,8 +97,8 @@ public class GameTests
         };
 
         //Assert
-        Assert.AreEqual("Ние", game.Team1Name);
-        Assert.AreEqual("Вие", game.Team2Name);
+        Assert.That(game.Team1Name, Is.EqualTo("Ние"));
+        Assert.That(game.Team2Name, Is.EqualTo("Вие"));
 
     }
 }

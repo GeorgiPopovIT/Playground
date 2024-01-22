@@ -17,11 +17,11 @@
         <StackLayout>
             <StackLayout Margin="0,15" Orientation="Horizontal">
                 <Label Text="{Binding Game.Team1Name}"
-                       FontSize="Large" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                       FontSize="25" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
 
-                <Label FontSize="Large" Text="-"/>
+                <Label FontSize="25" Text="-"/>
                 <Label Text="{Binding Game.Team2Name}"
-                       FontSize="Large" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                       FontSize="25" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
             <ScrollView>
                 <Grid>
@@ -32,14 +32,14 @@
                     <CollectionView Margin="60,25" Grid.Column="0" ItemsSource="{Binding PointsTeam1}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Label Margin="0,6" FontSize="Medium" FontAttributes="Bold" Text="{Binding .}"/>
+                                <Label Margin="0,6" FontSize="20" FontAttributes="Bold" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                     <CollectionView Margin="60,25"  Grid.Column="1" ItemsSource="{Binding PointsTeam2}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Label Margin="0,6" FontSize="Medium" FontAttributes="Bold" Text="{Binding .}"/>
+                                <Label Margin="0,6" FontSize="20" FontAttributes="Bold" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
@@ -63,11 +63,16 @@
                     </StackLayout>
                 </StackLayout>
                 <Button  x:Name="btn_Create"
-                    Margin="10" Padding="5" FontAttributes="Bold" IsEnabled="False"
-                    BackgroundColor="Grey" TextTransform="Uppercase"
-                    Text="Въведи точки"
-                    Clicked="Save_Points_Clicked"
-                    Command="{Binding AddPointsToTeamsCommand}" />
+                         Margin="10"
+                         Padding="5"
+                         CornerRadius="20"
+                         FontAttributes="Bold"
+                         IsEnabled="False"
+                         BackgroundColor="Grey" 
+                         TextTransform="Uppercase"
+                         Text="Въведи точки"
+                         Clicked="Save_Points_Clicked"
+                         Command="{Binding AddPointsToTeamsCommand}" />
             </VerticalStackLayout>
         </StackLayout>
     </ScrollView>

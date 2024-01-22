@@ -7,7 +7,11 @@
 
     <Shell.TitleView>
         <Grid>
-            <Label FontSize="Large" TextColor="White" Text="Belot Scorer" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label FontSize="Large" 
+                   TextColor="White" 
+                   Text="Belot Scorer" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Center" />
         </Grid>
     </Shell.TitleView>
 
@@ -18,12 +22,13 @@
             Padding="20">
 
                 <Button FontSize="Large"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                 TextColor="White"
-                 Text="Нова игра"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    TextColor="White"
+                    Text="Нова игра"
+                    CornerRadius="15"
                     Command="{Binding }"
-                  Clicked="GoToCreateGame"/>
+                    Clicked="GoToCreateGame"/>
             </VerticalStackLayout>
         </ScrollView>
     </Grid>

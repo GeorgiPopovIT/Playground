@@ -19,7 +19,7 @@ namespace BelotScorer.Data
                 return;
 
             _database = new SQLiteAsyncConnection(Constants.DatabasePath);
-            var result = await _database.CreateTableAsync<Game>();
+            await _database.CreateTableAsync<Game>();
         }
 
         public async Task<int> CreateGame(string team1Name, string team2Name)

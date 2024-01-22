@@ -11,10 +11,10 @@ public partial class Game : ObservableObject
     public int Id { get; set; }
 
     [MaxLength(TEAM_NAME_MAX_LENGTH)]
-    public string Team1Name { get; set; }
+    public  string Team1Name { get; set; }
 
     [MaxLength(TEAM_NAME_MAX_LENGTH)]
-    public string Team2Name { get; set; }
+    public  string Team2Name { get; set; }
 
     public int Team1FinalPoints => this.Team1Points.Sum();
 

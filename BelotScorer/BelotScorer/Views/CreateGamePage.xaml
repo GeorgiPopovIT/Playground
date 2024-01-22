@@ -12,25 +12,39 @@
     <Grid HorizontalOptions="Center">
         <VerticalStackLayout HorizontalOptions="Center">
 
-            <StackLayout Margin="10" HorizontalOptions="Center">
-                <Label FontSize="Medium" FontAttributes="Bold">Име на отбор</Label>
-                <Entry Text="{Binding Team1Name}" x:Name="entry1"
-                       TextChanged="Entry_TeamName_Changed" TextColor="Black"
-                       Placeholder="Име на отбор ..." MaxLength="15"
+            <StackLayout Margin="12" HorizontalOptions="Center">
+                <Label FontSize="20" 
+                       FontAttributes="Bold">Име на отбор</Label>
+                <Entry Text="{Binding Team1Name}" 
+                       x:Name="entry1"
+                       FontSize="18"
+                       TextChanged="Entry_TeamName_Changed" 
+                       TextColor="Black"
+                       Placeholder="Име на отбор ..." 
+                       MaxLength="15"
                        PlaceholderColor="Black"/>
             </StackLayout>
 
             <StackLayout Margin="10" HorizontalOptions="Center">
-                <Label FontSize="Medium" FontAttributes="Bold">Име на отбор</Label>
-                <Entry Text="{Binding Team2Name}" x:Name="entry2" 
-                       TextColor="Black" TextChanged="Entry_TeamName_Changed"
-                       PlaceholderColor="Black" MaxLength="15"
+                <Label FontSize="20" 
+                       FontAttributes="Bold">Име на отбор</Label>
+                <Entry Text="{Binding Team2Name}" 
+                       x:Name="entry2"
+                        FontSize="18"
+                       TextColor="Black" 
+                       TextChanged="Entry_TeamName_Changed"
+                       PlaceholderColor="Black" 
+                       MaxLength="15"
                        Placeholder="Име на отбор ..."/>
             </StackLayout>
 
             <Button x:Name="btn_Create"
-                    Margin="10" Padding="5"  FontAttributes="Bold" IsEnabled="False"
-                    BackgroundColor="Grey" TextTransform="Uppercase"
+                    Margin="10" Padding="5"  
+                    FontAttributes="Bold" 
+                    IsEnabled="False"
+                    CornerRadius="15"
+                    BackgroundColor="Grey" 
+                    TextTransform="Uppercase"
                     Text="Нова игра"
                     Command="{Binding CreateGameCommand}" />
 

@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelotScorer", "BelotScorer\BelotScorer.csproj", "{72A75FF0-F594-4ED4-84AA-048828D19E39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BelotScorer.Tests", "BelotScorer.Tests\BelotScorer.Tests.csproj", "{B8ABCFEF-B465-43CF-9849-D9994F4F0D5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BelotScorer.Tests", "BelotScorer.Tests\BelotScorer.Tests.csproj", "{B8ABCFEF-B465-43CF-9849-D9994F4F0D5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

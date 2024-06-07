@@ -1,15 +1,16 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost"));
-
-//builder.Services.AddStackExchangeRedisCache(conf =>
-//{
-//    conf.
-//});
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("MyRedisConStr");
+    options.InstanceName = "SampleInstance";
+});
 
 var app = builder.Build();
 
@@ -24,13 +25,25 @@ app.MapGet("/redis", async ([FromQuery] string name, IConnectionMultiplexer muxe
     var result = await _redis.StringGetAsync("hi");
     if (string.IsNullOrEmpty(result))
     {
-        var setTask =  _redis.StringSetAsync("hi", name);
-        var expireTask =  _redis.KeyExpireAsync("hi", new TimeSpan(0,0,5));
+        var setTask = _redis.StringSetAsync("hi", name);
+        var expireTask = _redis.KeyExpireAsync("hi", new TimeSpan(0, 0, 5));
 
         await Task.WhenAll(setTask, expireTask);
         result = await _redis.StringGetAsync("hi");
     }
 
+
+    return TypedResults.Ok(result);
+});
+
+app.MapGet("/redis2", async ([FromQuery] string name, IDistributedCache redis) =>
+{
+    var result = await redis.GetStringAsync("hi");
+    if (string.IsNullOrEmpty(result))
+    {
+        await redis.SetStringAsync("hi", name);
+        result = await redis.GetStringAsync("hi");
+    }
 
     return TypedResults.Ok(result);
 });

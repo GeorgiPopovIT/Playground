@@ -5,3 +5,5 @@ GET {{Redis_Demo_HostAddress}}/redis?name=one
 Accept: application/json
 
 ###
+GET {{Redis_Demo_HostAddress}}/redis2?name=one
+Accept: application/json

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test_Fluent_Validation", "T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Grpc-Web-Demo", "Grpc-Web-Demo\Grpc-Web-Demo.csproj", "{1E904664-29A0-4D53-ABDF-369D0684EFEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentAssertion_Demo", "FluentAssertion_Demo\FluentAssertion_Demo.csproj", "{26F10EE7-7BC6-4981-9EC2-C19D6A91E0B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentAssertion_Demo", "FluentAssertion_Demo\FluentAssertion_Demo.csproj", "{26F10EE7-7BC6-4981-9EC2-C19D6A91E0B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Redis-Demo", "Redis-Demo\Redis-Demo.csproj", "{23D3C374-E6D5-4129-AC90-71568141CB70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{26F10EE7-7BC6-4981-9EC2-C19D6A91E0B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26F10EE7-7BC6-4981-9EC2-C19D6A91E0B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26F10EE7-7BC6-4981-9EC2-C19D6A91E0B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23D3C374-E6D5-4129-AC90-71568141CB70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23D3C374-E6D5-4129-AC90-71568141CB70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23D3C374-E6D5-4129-AC90-71568141CB70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23D3C374-E6D5-4129-AC90-71568141CB70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

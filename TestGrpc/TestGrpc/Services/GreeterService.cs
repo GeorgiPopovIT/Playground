@@ -1,5 +1,4 @@
 using Grpc.Core;
-using TestGrpc;
 
 namespace TestGrpc.Services
 {

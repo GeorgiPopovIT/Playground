@@ -1,15 +1,28 @@
-﻿//using SendGrid.Helpers.Mail;
-//using SendGrid;
-//using ConsoleApp3;
-//using MailKit;
-//using System.Numerics;
+﻿
+Console.WriteLine(Generate(5);
 
 
-using ConsoleApp3;
+IList<IList<int>> Generate(int numRows)
+{
+    int[][] pascalTriangle = new int[numRows][];
+    for (int i = 0; i < numRows; i++)
+    {
+        pascalTriangle[i] = new int[i + 1];
+    }
+    pascalTriangle[0][0] = 1;
+    for (int i = 0; i < numRows; i++)
+    {
+        pascalTriangle[i][0] = 1;
+        pascalTriangle[i][pascalTriangle[i].Length - 1] = 1;
+        for (int j = 1; j < pascalTriangle[i].Length - 1; j++)
+        {
+            pascalTriangle[i][j] = pascalTriangle[i - 1][j]
+                + pascalTriangle[i - 1][j - 1];
+        }
+    }
 
-FizzBuzz fizzBuzz = new(15);
-
-
+    return pascalTriangle;
+}
 
 
 //Console.WriteLine(GetTotalCoinsFromSum(new List<int> { 1, 2, 3, 5, 10, 20, 50, 100 }, 81));

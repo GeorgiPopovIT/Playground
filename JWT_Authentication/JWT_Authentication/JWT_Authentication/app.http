@@ -3,3 +3,8 @@
 
 GET http://localhost:5163/hello
 Authorization: Bearer {{AccessToken}}
+
+### Try policy
+
+GET http://localhost:5163/policy
+Authorization: Bearer {{AccessToken}}

@@ -1,14 +1,24 @@
-using Microsoft.AspNetCore.Authentication;
+using JWT_Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Options;
 using System.Security.Claims;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddAuthorizationBuilder();
-    //.AddPolicy("premium-user", policy => policy
-    //.RequireAuthenticatedUser()
-    //.RequireClaim(CustomClaims.Subscription, 
-    //allowedValues: [Subscription.Gold.ToString(),Subscription.Platinum.ToString()]));
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("Admin", policy =>
+    {
+        policy.AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme);
+        policy.RequireAuthenticatedUser();
+
+        policy.Requirements.Add(new AdminRequirement());
+    })
+     .AddPolicy("AtLeast21", policy =>
+        policy.Requirements.Add(new MinimumAgeRequirement(21))); ;
+
+builder.Services.AddSingleton<IAuthorizationHandler,AdminRequirementAuthorizationHandler>();
+builder.Services.AddSingleton<IAuthorizationHandler, MinimumAgeHandler>();
 
 builder.Services
     .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -26,6 +36,16 @@ app.MapGet("/hello", (ClaimsPrincipal user) =>
 {
     return $"Hello {user.Identity?.Name}";
 }).RequireAuthorization();
+
+app.MapGet("/policy2", (ClaimsPrincipal user) =>
+{
+    return "Successfulyy entered ";
+}).RequireAuthorization("AtLeast21");
+
+app.MapGet("/policy", () =>
+{
+    return "Successfulyy entered ";
+}).RequireAuthorization("Admin");
 
 app.Run();
 

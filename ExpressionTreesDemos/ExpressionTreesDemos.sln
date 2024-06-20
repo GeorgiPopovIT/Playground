@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpressionTreesDemos", "ExpressionTreesDemos\ExpressionTreesDemos.csproj", "{197C68BE-550D-4973-A116-FBF99E6947A6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{197C68BE-550D-4973-A116-FBF99E6947A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{197C68BE-550D-4973-A116-FBF99E6947A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{197C68BE-550D-4973-A116-FBF99E6947A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{197C68BE-550D-4973-A116-FBF99E6947A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3ED1673D-D930-4FA4-A6F6-9F0953D4B6C2}
+	EndGlobalSection
+EndGlobal

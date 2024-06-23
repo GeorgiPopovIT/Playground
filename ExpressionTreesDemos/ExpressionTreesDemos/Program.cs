@@ -43,8 +43,22 @@ var executableFunc = Expression.Lambda(sum3);
 
 var func3 = (Func<int>)executableFunc.Compile();
 var answer = func3();
-Console.WriteLine(answer);
+//Console.WriteLine(answer);
 
+var numberConstant = Expression.Constant(42);
+var textContant = Expression.Constant("My Expression Tree test");
+
+var myClassType = typeof(MyClass);
+
+var parameterExpression = Expression.Parameter(myClassType, "c");
+
+var methodInfo = myClassType.GetMethod(nameof(MyClass.MyMethod));
+
+var callExpression = Expression.Call(parameterExpression,methodInfo,numberConstant, textContant);
+
+var lamdaExpression = Expression.Lambda<Func<MyClass, string>>(callExpression,parameterExpression);
+
+Console.WriteLine(lamdaExpression.Compile()(myClass));
 static void AnotherMethod(Func<MyClass,string> someFunc)
 {
 

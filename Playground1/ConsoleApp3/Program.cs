@@ -1,28 +1,27 @@
 ﻿
-Console.WriteLine(Generate(5);
 
 
-IList<IList<int>> Generate(int numRows)
-{
-    int[][] pascalTriangle = new int[numRows][];
-    for (int i = 0; i < numRows; i++)
-    {
-        pascalTriangle[i] = new int[i + 1];
-    }
-    pascalTriangle[0][0] = 1;
-    for (int i = 0; i < numRows; i++)
-    {
-        pascalTriangle[i][0] = 1;
-        pascalTriangle[i][pascalTriangle[i].Length - 1] = 1;
-        for (int j = 1; j < pascalTriangle[i].Length - 1; j++)
-        {
-            pascalTriangle[i][j] = pascalTriangle[i - 1][j]
-                + pascalTriangle[i - 1][j - 1];
-        }
-    }
+//IList<IList<int>> Generate(int numRows)
+//{
+//    int[][] pascalTriangle = new int[numRows][];
+//    for (int i = 0; i < numRows; i++)
+//    {
+//        pascalTriangle[i] = new int[i + 1];
+//    }
+//    pascalTriangle[0][0] = 1;
+//    for (int i = 0; i < numRows; i++)
+//    {
+//        pascalTriangle[i][0] = 1;
+//        pascalTriangle[i][pascalTriangle[i].Length - 1] = 1;
+//        for (int j = 1; j < pascalTriangle[i].Length - 1; j++)
+//        {
+//            pascalTriangle[i][j] = pascalTriangle[i - 1][j]
+//                + pascalTriangle[i - 1][j - 1];
+//        }
+//    }
 
-    return pascalTriangle;
-}
+//    return pascalTriangle;
+//}
 
 
 //Console.WriteLine(GetTotalCoinsFromSum(new List<int> { 1, 2, 3, 5, 10, 20, 50, 100 }, 81));
@@ -56,101 +55,101 @@ IList<IList<int>> Generate(int numRows)
 //    Console.WriteLine(item);
 //}
 
-public class LinkedListNode<T>
-{
-    public T Value { get; set; }
-    public LinkedListNode<T> Next { get; set; }
+//public class LinkedListNode<T>
+//{
+//    public T Value { get; set; }
+//    public LinkedListNode<T> Next { get; set; }
 
-    public LinkedListNode(T value)
-    {
-        Value = value;
-        Next = null;
-    }
-}
+//    public LinkedListNode(T value)
+//    {
+//        Value = value;
+//        Next = null;
+//    }
+//}
 
-public class LinkedList<T>
-{
-    private LinkedListNode<T> head;
-    private LinkedListNode<T> tail;
-    private int count;
+//public class LinkedList<T>
+//{
+//    private LinkedListNode<T> head;
+//    private LinkedListNode<T> tail;
+//    private int count;
 
-    public int Count { get { return count; } }
+//    public int Count { get { return count; } }
 
-    public void AddLast(T value)
-    {
-        LinkedListNode<T> node = new LinkedListNode<T>(value);
-        if (head == null)
-        {
-            head = node;
-            tail = node;
-        }
-        else
-        {
-            tail.Next = node;
-            tail = node;
-        }
-        count++;
-    }
+//    public void AddLast(T value)
+//    {
+//        LinkedListNode<T> node = new LinkedListNode<T>(value);
+//        if (head == null)
+//        {
+//            head = node;
+//            tail = node;
+//        }
+//        else
+//        {
+//            tail.Next = node;
+//            tail = node;
+//        }
+//        count++;
+//    }
 
-    public void AddFirst(T value)
-    {
-        LinkedListNode<T> node = new LinkedListNode<T>(value);
-        if (head == null)
-        {
-            head = node;
-            tail = node;
-        }
-        else
-        {
-            node.Next = head;
-            head = node;
-        }
-        count++;
-    }
+//    public void AddFirst(T value)
+//    {
+//        LinkedListNode<T> node = new LinkedListNode<T>(value);
+//        if (head == null)
+//        {
+//            head = node;
+//            tail = node;
+//        }
+//        else
+//        {
+//            node.Next = head;
+//            head = node;
+//        }
+//        count++;
+//    }
 
-    public void Remove(T value)
-    {
-        LinkedListNode<T> current = head;
-        LinkedListNode<T> previous = null;
+//    public void Remove(T value)
+//    {
+//        LinkedListNode<T> current = head;
+//        LinkedListNode<T> previous = null;
 
-        while (current != null)
-        {
-            if (current.Value.Equals(value))
-            {
-                if (previous == null)
-                {
-                    head = current.Next;
-                }
-                else
-                {
-                    previous.Next = current.Next;
-                }
+//        while (current != null)
+//        {
+//            if (current.Value.Equals(value))
+//            {
+//                if (previous == null)
+//                {
+//                    head = current.Next;
+//                }
+//                else
+//                {
+//                    previous.Next = current.Next;
+//                }
 
-                if (current == tail)
-                {
-                    tail = previous;
-                }
+//                if (current == tail)
+//                {
+//                    tail = previous;
+//                }
 
-                count--;
-                break;
-            }
+//                count--;
+//                break;
+//            }
 
-            previous = current;
-            current = current.Next;
-        }
-    }
+//            previous = current;
+//            current = current.Next;
+//        }
+//    }
 
-    public IEnumerator<T> GetEnumerator()
-    {
-        LinkedListNode<T> current = head;
+//    public IEnumerator<T> GetEnumerator()
+//    {
+//        LinkedListNode<T> current = head;
 
-        while (current != null)
-        {
-            yield return current.Value;
-            current = current.Next;
-        }
-    }
-}
+//        while (current != null)
+//        {
+//            yield return current.Value;
+//            current = current.Next;
+//        }
+//    }
+//}
 
 
 //var p1 = new Person("Georgi", "Popov");
@@ -164,52 +163,32 @@ public class LinkedList<T>
 //    }
 //}
 
-class Person
+
+using ConsoleApp3;
+using ConsoleApp3.MongoDbTest;
+using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
+
+
+var mongoClient = new MongoClient(CustometDatabaseSettings.ConnectionString);
+
+var dbContextOptions =
+    new DbContextOptionsBuilder<AnimalDbContext>()
+    .UseMongoDB(mongoClient, CustometDatabaseSettings.DatabaseName);
+
+var db = new AnimalDbContext(dbContextOptions.Options);
+
+db.Customers.Add(new Customer() { Name = "Misho", Order = "Pizza",Address= new()
 {
-    private string _fName;
-    private string _lName;
-
-    public Person()
-    {
-
-    }
-
-    public Person(string fName, string lName)
-        => (FirstName, LastName) = (fName, lName);
-
-    public string FirstName
-    {
-        get => this._fName;
-        set => this._fName = !string.IsNullOrWhiteSpace(value)
-            ? value : throw new ArgumentNullException();
-    }
-
-    public string LastName
-    {
-        get => this._lName;
-        init => this._lName = value ?? throw new ArgumentNullException();
-    }
+    Street = "Bul. Maritsa 143",
+    City = "Plovdiv"
 }
+});
+db.SaveChanges();
 
+var countDb = db.Customers.Count();
 
-
-//var db = new AnimalDbContext();
-
-//db.Animals.Add(new Animal
-//{
-//    Name = "Martin"
-//});
-// Create the service using the client credentials.
-//using ConsoleApp3.MongoDbTest;
-//using MongoDB.Driver;
-
-
-//var mongoClient = new MongoClient(CustometDatabaseSettings.ConnectionString);
-//var mongoDatabase = mongoClient.GetDatabase(CustometDatabaseSettings.DatabaseName);
-
-//var customersCollection = mongoDatabase.GetCollection<Customer>(CustometDatabaseSettings.BooksCollectionName);
-
-//customersCollection.InsertOne(new Customer { Name = "Georgi" });
+Console.WriteLine(countDb);
 
 //using SpotifyAPI.Web;
 //Cloudinary

@@ -1,12 +1,21 @@
-﻿using MongoDB.Bson.Serialization.Attributes;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace ConsoleApp3.MongoDbTest;
 
 public class Customer
 {
-    [BsonId]
-    public string? Id { get; set; }
+    public Customer()
+    {
+        this.Id = ObjectId.GenerateNewId();
+    }
 
-    [BsonElement("FirstName")]
-    public string? Name { get; set; }   
+    [BsonId]
+    public ObjectId? Id { get; set; }
+  
+    public string? Name { get; set; }
+
+    public string? Order { get; set; }
+
+    public Address Address { get; set; }
 }

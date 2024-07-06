@@ -1,5 +1,29 @@
-﻿
+﻿using ConsoleApp3;
 
+var db = new AnimalDbContext();
+//var animal = new Animal
+//{
+//    Name = "Rizko3",
+//    Country = new Country
+//    {
+//        Name = "Austria",
+//        Code = "TRt"
+//    }
+//};
+
+//await db.Articles.AddAsync(new ConsoleApp3.MongoDbTest.Article
+//{
+//    Author = "Gorges",
+//    Date = "2024-12-05",
+//    Rating = "10",
+//    Name = "Test ANimal BLog",
+//    Animals = new List<Animal> { animal }
+//});
+//await db.SaveChangesAsync();
+
+var animal = db.Animals.FirstOrDefault(a => a.Country.Id == 1);
+
+Console.WriteLine(animal.ToString());
 
 //IList<IList<int>> Generate(int numRows)
 //{
@@ -24,171 +48,25 @@
 //}
 
 
-//Console.WriteLine(GetTotalCoinsFromSum(new List<int> { 1, 2, 3, 5, 10, 20, 50, 100 }, 81));
-//static int GetTotalCoinsFromSum(IEnumerable<int> input, int target)
+//var mongoClient = new MongoClient(CustometDatabaseSettings.ConnectionString);
+
+//var dbContextOptions =
+//    new DbContextOptionsBuilder<AnimalDbContext>()
+//    .UseMongoDB(mongoClient, CustometDatabaseSettings.DatabaseName);
+
+//var db = new AnimalDbContext(dbContextOptions.Options);
+
+//db.Customers.Add(new Customer() { Name = "Misho", Order = "Pizza",Address= new()
 //{
-//    var coins = new Queue<int>(input.OrderByDescending(x => x));
-
-//    int totalCoins = 0;
-
-//    while (target > 0 && coins.Count > 0)
-//    {
-//        var currentCoin = coins.Dequeue();
-
-//        var count = target / currentCoin;
-
-//        if (count == 0)
-//        {
-//            continue;
-//        }
-
-//        target %= currentCoin;
-
-//        totalCoins += count;
-//    }
-
-//    return totalCoins;
+//    Street = "Bul. Maritsa 143",
+//    City = "Plovdiv"
 //}
+//});
+//db.SaveChanges();
 
-//foreach (var item in linkedlist)
-//{
-//    Console.WriteLine(item);
-//}
+//var countDb = db.Customers.Count();
 
-//public class LinkedListNode<T>
-//{
-//    public T Value { get; set; }
-//    public LinkedListNode<T> Next { get; set; }
-
-//    public LinkedListNode(T value)
-//    {
-//        Value = value;
-//        Next = null;
-//    }
-//}
-
-//public class LinkedList<T>
-//{
-//    private LinkedListNode<T> head;
-//    private LinkedListNode<T> tail;
-//    private int count;
-
-//    public int Count { get { return count; } }
-
-//    public void AddLast(T value)
-//    {
-//        LinkedListNode<T> node = new LinkedListNode<T>(value);
-//        if (head == null)
-//        {
-//            head = node;
-//            tail = node;
-//        }
-//        else
-//        {
-//            tail.Next = node;
-//            tail = node;
-//        }
-//        count++;
-//    }
-
-//    public void AddFirst(T value)
-//    {
-//        LinkedListNode<T> node = new LinkedListNode<T>(value);
-//        if (head == null)
-//        {
-//            head = node;
-//            tail = node;
-//        }
-//        else
-//        {
-//            node.Next = head;
-//            head = node;
-//        }
-//        count++;
-//    }
-
-//    public void Remove(T value)
-//    {
-//        LinkedListNode<T> current = head;
-//        LinkedListNode<T> previous = null;
-
-//        while (current != null)
-//        {
-//            if (current.Value.Equals(value))
-//            {
-//                if (previous == null)
-//                {
-//                    head = current.Next;
-//                }
-//                else
-//                {
-//                    previous.Next = current.Next;
-//                }
-
-//                if (current == tail)
-//                {
-//                    tail = previous;
-//                }
-
-//                count--;
-//                break;
-//            }
-
-//            previous = current;
-//            current = current.Next;
-//        }
-//    }
-
-//    public IEnumerator<T> GetEnumerator()
-//    {
-//        LinkedListNode<T> current = head;
-
-//        while (current != null)
-//        {
-//            yield return current.Value;
-//            current = current.Next;
-//        }
-//    }
-//}
-
-
-//var p1 = new Person("Georgi", "Popov");
-//Console.WriteLine(p1.FirstName + " " + p1.LastName);
-//public record Person(string FirstName, string LastName)
-//{
-//    public int Age { get; set; }
-//    void Write()
-//    {
-
-//    }
-//}
-
-
-using ConsoleApp3;
-using ConsoleApp3.MongoDbTest;
-using Microsoft.EntityFrameworkCore;
-using MongoDB.Driver;
-
-
-var mongoClient = new MongoClient(CustometDatabaseSettings.ConnectionString);
-
-var dbContextOptions =
-    new DbContextOptionsBuilder<AnimalDbContext>()
-    .UseMongoDB(mongoClient, CustometDatabaseSettings.DatabaseName);
-
-var db = new AnimalDbContext(dbContextOptions.Options);
-
-db.Customers.Add(new Customer() { Name = "Misho", Order = "Pizza",Address= new()
-{
-    Street = "Bul. Maritsa 143",
-    City = "Plovdiv"
-}
-});
-db.SaveChanges();
-
-var countDb = db.Customers.Count();
-
-Console.WriteLine(countDb);
+//Console.WriteLine(countDb);
 
 //using SpotifyAPI.Web;
 //Cloudinary
@@ -253,47 +131,6 @@ Console.WriteLine(countDb);
 //    throw;
 //}
 
-
-//string s = "a";
-//long n = 1000000000000;
-
-//var sb = new StringBuilder();
-
-//for (int i = 0; i < n; i++)
-//{
-//    //if (sb.Append(s).Length > n)
-//    //{
-//    //    var subStr = sb.ToString(0, Convert.ToInt32(n));
-//    //    sb.Replace(sb.ToString(), subStr);
-
-//    //    break;
-//    //}
-//    sb.Append(s);
-
-//}
-
-//Console.WriteLine((long)sb.ToString().Count(c => c == 'a'));
-
-
-
-
-//return;
-//C# 10 FEATURE
-
-//Person p1 = new Person("Georgi", 11);
-
-//if (p1 is { Name: "Georgi", Age: 11 })
-//{
-//    Console.WriteLine(true);
-//    return;
-//}
-//Console.WriteLine(false);
-//record Person(string Name, int Age);
-
-class Address
-{
-    public string AddressName { get; init; } = "ff";
-}
 //Account account = new Account(
 //"daxn3ngly",
 //"911681576639439",
@@ -357,8 +194,6 @@ class Address
 
 
 //record CsvLine([Index(8)] string Song, [Index(10)] string AudioLink, [Index(19)] string ImageLink);
-
-
 
 //SendGrid
 

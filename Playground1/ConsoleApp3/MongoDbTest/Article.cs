@@ -4,6 +4,7 @@ namespace ConsoleApp3.MongoDbTest;
 
 public class Article
 {
+    public int Id { get; set; }
     [BsonElement("author")]
     public string Author { get; set; }
 
@@ -15,4 +16,6 @@ public class Article
 
     [BsonElement("rating")]
     public string Rating { get; set; }
+
+    public List<Animal> Animals { get; set; } = new List<Animal>();
 }

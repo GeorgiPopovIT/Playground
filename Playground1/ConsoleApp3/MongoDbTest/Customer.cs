@@ -10,7 +10,7 @@ public class Customer
         this.Id = ObjectId.GenerateNewId();
     }
 
-    [BsonId]
+    //[BsonId]
     public ObjectId? Id { get; set; }
   
     public string? Name { get; set; }

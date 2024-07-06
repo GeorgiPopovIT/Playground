@@ -19,20 +19,24 @@ public class AnimalDbContext : DbContext
     {
 
     }
+    public DbSet<Article> Articles { get; set; }
+    public DbSet<Animal> Animals { get; set; }
 
-
-    public DbSet<Customer> Customers { get; init; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Server=.; Database=testJsonColumns;IntegratedSecurity=true");
-
+        optionsBuilder.UseSqlServer("Server=.;Database=testJsonColumns;Integrated Security=true;TrustServerCertificate=True");
         base.OnConfiguring(optionsBuilder);
     }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<Customer>().ToCollection("CustomerData");
+        // builder.Entity<Customer>().ToCollection("CustomerData");
+        builder.Entity<Animal>().OwnsOne(
+            animal => animal.Country, ownedNavigationBuilder =>
+            {
+                ownedNavigationBuilder.ToJson();
+            });
 
         base.OnModelCreating(builder);
     }

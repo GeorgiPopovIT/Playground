@@ -29,10 +29,10 @@ app.MapPost("orders", async (OrdersDbContext _context, IMessageProducer _message
         Quantity = orderDto.Quantity
     };
 
-    _context.Orders.Add(order);
-    await _context.SaveChangesAsync();
-
-    _messagePublisher.SendMessage(order);
+    //_context.Orders.Add(order);
+    //await _context.SaveChangesAsync();
+   // _messagePublisher.SendMessage<Order>(order);
+    _messagePublisher.PublishAndSubscripe(order);
 
     return Results.Ok(new { id = order.Id });
 });

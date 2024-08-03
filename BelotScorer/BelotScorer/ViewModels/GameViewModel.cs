@@ -30,13 +30,15 @@ public partial class GameViewModel : ObservableObject
     Game game;
 
     [RelayCommand]
-    async Task AddPointsToTeams()
+    async void AddPointsToTeams()
     {
         if (this.game.IsGameFinished is false)
         {
             try
             {
                 this._gameRepository.SavePointsToTeams(this.game, team1PointsToAdd, team2PointsToAdd);
+
+                await this._gameRepository.UpdateGameAsync(this.game);
 
                 if (this.Game.Team1Points.Count == 0 && this.Game.Team2Points.Count == 0)
                 {
@@ -57,6 +59,8 @@ public partial class GameViewModel : ObservableObject
 
                     if (answer)
                     {
+                        await this._gameRepository.DeleteGameAsync(this.game);
+
                         await Shell.Current.GoToAsync("createGame", new Dictionary<string, object>
                         {
                             {"Team1Name", this.game.Team1Name},

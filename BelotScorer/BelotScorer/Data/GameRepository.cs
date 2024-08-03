@@ -7,7 +7,7 @@ namespace BelotScorer.Data
 {
     public class GameRepository
     {
-        private SQLiteAsyncConnection _database;
+        SQLiteAsyncConnection _database;
 
         public GameRepository()
         { }
@@ -15,14 +15,24 @@ namespace BelotScorer.Data
 
         async Task Init()
         {
-            if (_database is not null)
+            if (this._database is not null)
+            {
                 return;
+            }
 
-            _database = new SQLiteAsyncConnection(Constants.DatabasePath);
-            await _database.CreateTableAsync<Game>();
+            try
+            {
+                this._database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+                await this._database.CreateTableAsync<Game>();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                throw;
+            }
         }
 
-        public async Task<int> CreateGame(string team1Name, string team2Name)
+        public async Task<Game> CreateGame(string team1Name, string team2Name)
         {
             await Init();
 
@@ -34,15 +44,13 @@ namespace BelotScorer.Data
 
             await this._database.InsertAsync(game);
 
-
-            return game.Id;
-
+            return game;
         }
 
         public void SavePointsToTeams(Game game, int team1PointToAdd, int team2PointToAdd)
         {
-            //var currentGame = this.GetGameAsync(gameId).Result;
-            var currentGame = game;
+            var currentGame = this.GetGameAsync(game.Id).Result;
+            //var currentGame = game;
 
             currentGame.Team1Points.Add(team1PointToAdd);
             currentGame.Team2Points.Add(team2PointToAdd);
@@ -70,16 +78,22 @@ namespace BelotScorer.Data
         public async Task<Game> GetGameAsync(int id)
         {
             await Init();
-            return await _database.Table<Game>().Where(i => i.Id == id).FirstOrDefaultAsync();
+            return await _database.Table<Game>().FirstOrDefaultAsync(i => i.Id == id);
         }
 
-        public async Task<int> SaveGameAsync(Game item)
+        public async Task<Game> GetLastGameAsync()
         {
             await Init();
-            if (item.Id != 0)
-                return await _database.UpdateAsync(item);
-            else
-                return await _database.InsertAsync(item);
+
+            return await _database.Table<Game>()
+                .OrderByDescending(i => i.Id)
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<int> UpdateGameAsync(Game item)
+        {
+            await Init();
+            return await _database.UpdateAsync(item);
         }
 
         public async Task<int> DeleteGameAsync(Game item)
@@ -87,5 +101,6 @@ namespace BelotScorer.Data
             await Init();
             return await _database.DeleteAsync(item);
         }
+
     }
 }

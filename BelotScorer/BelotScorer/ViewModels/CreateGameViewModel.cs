@@ -9,7 +9,7 @@ namespace BelotScorer.ViewModels;
 [QueryProperty("Team2Name", "Team2Name")]
 public partial class CreateGameViewModel : ObservableObject
 {
-    GameRepository _gameRepo;
+    GameRepository _gameRepository;
 
     [ObservableProperty]
     Game game;
@@ -22,19 +22,19 @@ public partial class CreateGameViewModel : ObservableObject
 
     public CreateGameViewModel(GameRepository gameRepo)
     {
-        this._gameRepo = gameRepo;
+        this._gameRepository = gameRepo;
     }
 
     [RelayCommand]
-    async Task CreateGame()
+    async void CreateGame()
     {
         if (team1Name is null || team2Name is null)
         {
             return;
         }
-        //var currGameId = await this._gameRepo.CreateGame(game.Team1Name, game.Team2Name);
+        //var currGameId = await this._gameRepository.CreateGame(game.Team1Name, game.Team2Name);
 
-        //  var currentGame = await this._gameRepo.GetGameAsync(currGameId);
+        //  var currentGame = await this._gameRepository.GetGameAsync(currGameId);
         var currentGame = new Game
         {
             Team1Name = team1Name,
@@ -44,7 +44,7 @@ public partial class CreateGameViewModel : ObservableObject
         {
             {"CurrentGame", currentGame}
         });
-        //await Task.WhenAll(this._gameRepo.CreateGame(team1Name, team2Name),
+        //await Task.WhenAll(this._gameRepository.CreateGame(team1Name, team2Name),
         //    Shell.Current.GoToAsync("playGame"));
 
     }

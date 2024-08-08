@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 namespace BelotScorer.ViewModels;
 
 [QueryProperty("Game", "CurrentGame")]
+[QueryProperty("Team1Points","team1Points")]
+[QueryProperty("Team2Points","team2Points")]
 public partial class GameViewModel : ObservableObject
 {
     GameRepository _gameRepository;
@@ -16,9 +18,9 @@ public partial class GameViewModel : ObservableObject
         this._gameRepository = gameRepo;
     }
 
-    public ObservableCollection<string> PointsTeam1 { get; } = new();
+    public ObservableCollection<string> Team1Points { get; } = new();
 
-    public ObservableCollection<string> PointsTeam2 { get; } = new();
+    public ObservableCollection<string> Team2Points { get; } = new();
 
     [ObservableProperty]
     int team1PointsToAdd;
@@ -30,25 +32,25 @@ public partial class GameViewModel : ObservableObject
     Game game;
 
     [RelayCommand]
-    async void AddPointsToTeams()
+    async Task AddPointsToTeams()
     {
         if (this.game.IsGameFinished is false)
         {
             try
             {
-                this._gameRepository.SavePointsToTeams(this.game, team1PointsToAdd, team2PointsToAdd);
+                await this._gameRepository.SavePointsToTeams(this.game, team1PointsToAdd, team2PointsToAdd);
 
                 await this._gameRepository.UpdateGameAsync(this.game);
 
-                if (this.Game.Team1Points.Count == 0 && this.Game.Team2Points.Count == 0)
+                if (this.Game.Team1Score == 0 && this.Game.Team2Score == 0)
                 {
-                    this.PointsTeam1.Add($"0 - {this.team1PointsToAdd}");
-                    this.PointsTeam2.Add($"0 - {this.team2PointsToAdd}");
+                    this.Team1Points.Add($"0 - {this.team1PointsToAdd}");
+                    this.Team2Points.Add($"0 - {this.team2PointsToAdd}");
                 }
                 else
                 {
-                    this.PointsTeam1.Add($"{this.team1PointsToAdd} - {this.Game.Team1Score}");
-                    this.PointsTeam2.Add($"{this.team2PointsToAdd} - {this.Game.Team2Score}");
+                    this.Team1Points.Add($"{this.team1PointsToAdd} - {this.Game.Team1Score}");
+                    this.Team2Points.Add($"{this.team2PointsToAdd} - {this.Game.Team2Score}");
                 }
 
                 var isCurrentGameFinished = this.game.IsGameFinished;
@@ -60,6 +62,7 @@ public partial class GameViewModel : ObservableObject
                     if (answer)
                     {
                         await this._gameRepository.DeleteGameAsync(this.game);
+                        await this._gameRepository.DeleteAllPoints();
 
                         await Shell.Current.GoToAsync("createGame", new Dictionary<string, object>
                         {

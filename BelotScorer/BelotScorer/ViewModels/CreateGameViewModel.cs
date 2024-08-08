@@ -32,20 +32,13 @@ public partial class CreateGameViewModel : ObservableObject
         {
             return;
         }
-        //var currGameId = await this._gameRepository.CreateGame(game.Team1Name, game.Team2Name);
 
-        //  var currentGame = await this._gameRepository.GetGameAsync(currGameId);
-        var currentGame = new Game
-        {
-            Team1Name = team1Name,
-            Team2Name = team2Name,
-        };
+        var currentGame = await this._gameRepository.CreateGame(team1Name, team2Name);
+
         await Shell.Current.GoToAsync("playGame", new Dictionary<string, object>
         {
             {"CurrentGame", currentGame}
         });
-        //await Task.WhenAll(this._gameRepository.CreateGame(team1Name, team2Name),
-        //    Shell.Current.GoToAsync("playGame"));
 
     }
 }

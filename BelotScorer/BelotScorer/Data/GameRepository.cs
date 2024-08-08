@@ -24,6 +24,7 @@ namespace BelotScorer.Data
             {
                 this._database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
                 await this._database.CreateTableAsync<Game>();
+                await this._database.CreateTableAsync<Point>();
             }
             catch (Exception e)
             {
@@ -42,24 +43,36 @@ namespace BelotScorer.Data
                 Team2Name = team2Name
             };
 
-            await this._database.InsertAsync(game);
-
-            return game;
+            var gameId = await this._database.InsertAsync(game);
+            game.Id = gameId;
+            return game ;
         }
 
-        public void SavePointsToTeams(Game game, int team1PointToAdd, int team2PointToAdd)
+        public async Task SavePointsToTeams(Game game, int team1PointToAdd, int team2PointToAdd)
         {
-            var currentGame = this.GetGameAsync(game.Id).Result;
-            //var currentGame = game;
+            var currentGame = await this.GetGameAsync(game.Id);
+           
+            var pointTeam1 = new Point
+            {
+                Value = $"{game.Team1Score} - {team1PointToAdd}",
+                GameId = game.Id,
+                TeamName = game.Team1Name
+            };
 
-            currentGame.Team1Points.Add(team1PointToAdd);
-            currentGame.Team2Points.Add(team2PointToAdd);
+            var pointTeam2 = new Point
+            {
+                Value = $"{game.Team2Score} - {team2PointToAdd}",
+                GameId = game.Id,
+                TeamName = game.Team1Name
+            };
+
+            await this.AddPoints(pointTeam1, pointTeam2);
 
             currentGame.Team1Score += team1PointToAdd;
             currentGame.Team2Score += team2PointToAdd;
 
-            if (currentGame.Team1FinalPoints >= Constants.END_GAME_POINT ||
-                currentGame.Team2FinalPoints >= Constants.END_GAME_POINT)
+            if (currentGame.Team1Score >= Constants.END_GAME_POINT ||
+                currentGame.Team2Score >= Constants.END_GAME_POINT)
             {
                 currentGame.IsGameFinished = true;
             }
@@ -67,6 +80,8 @@ namespace BelotScorer.Data
             {
                 currentGame.IsGameFinished = false;
             }
+
+            await this._database.UpdateAsync(currentGame);
         }
 
         public async Task<List<Game>> GetGamesAsync()
@@ -101,6 +116,30 @@ namespace BelotScorer.Data
             await Init();
             return await _database.DeleteAsync(item);
         }
+
+        public async Task<IEnumerable<Point>> GetPointsForTeam(string teamName, int gameId)
+        {
+            await Init();
+
+            return await this._database.Table<Point>()
+                .Where(p => p.GameId == gameId
+                && p.TeamName == teamName)
+                .OrderBy(p => p.Id)
+                .ToListAsync();
+        }
+
+        public async Task AddPoints(params Point[] points)
+        {
+            await Init();
+            await this._database.InsertAllAsync(points);
+        }
+
+        public async Task DeleteAllPoints()
+        {
+            await Init();
+            await this._database.DeleteAllAsync<Point>();
+        }
+
 
     }
 }

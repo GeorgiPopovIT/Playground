@@ -16,9 +16,9 @@ public partial class Game : ObservableObject
     [MaxLength(TEAM_NAME_MAX_LENGTH)]
     public  string Team2Name { get; set; }
 
-    public int Team1FinalPoints => this.Team1Points.Sum();
+    public int Team1FinalPoints { get; set; }
 
-    public int Team2FinalPoints => this.Team2Points.Sum();
+    public int Team2FinalPoints { get; set; }
 
     public bool IsGameFinished { get; set; }
 
@@ -30,8 +30,8 @@ public partial class Game : ObservableObject
     [ObservableProperty]
     int team2Score;
 
-    public List<int> Team1Points { get; init; } = new();
+    //public List<int> Team1Points { get; init; } = new();
 
-    public List<int> Team2Points { get; init; } = new();
+    //public List<int> Team2Points { get; init; } = new();
 
 }

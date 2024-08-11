@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using SQLite;
+using System.ComponentModel;
 using static BelotScorer.Common.Constants;
 
 namespace BelotScorer.Models;
@@ -29,9 +30,4 @@ public partial class Game : ObservableObject
 
     [ObservableProperty]
     int team2Score;
-
-    //public List<int> Team1Points { get; init; } = new();
-
-    //public List<int> Team2Points { get; init; } = new();
-
 }

@@ -26,14 +26,14 @@ public partial class CreateGameViewModel : ObservableObject
     }
 
     [RelayCommand]
-    async void CreateGame()
+    async Task CreateGame()
     {
-        if (team1Name is null || team2Name is null)
+        if (this.Team1Name is null || this.Team2Name is null)
         {
             return;
         }
 
-        var currentGame = await this._gameRepository.CreateGame(team1Name, team2Name);
+        var currentGame = await this._gameRepository.CreateGame(this.Team1Name, this.Team2Name);
 
         await Shell.Current.GoToAsync("playGame", new Dictionary<string, object>
         {

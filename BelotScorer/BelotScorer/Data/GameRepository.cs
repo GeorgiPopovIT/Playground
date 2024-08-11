@@ -45,29 +45,47 @@ namespace BelotScorer.Data
 
             var gameId = await this._database.InsertAsync(game);
             game.Id = gameId;
-            return game ;
+            return game;
         }
 
-        public async Task SavePointsToTeams(Game game, int team1PointToAdd, int team2PointToAdd)
+        public async Task SavePointsToTeams(Game currentGame, int team1PointToAdd, int team2PointToAdd)
         {
-            var currentGame = await this.GetGameAsync(game.Id);
-           
+            //var currentGame = await this.GetGameAsync(game.Id);
+
             var pointTeam1 = new Point
             {
-                Value = $"{game.Team1Score} - {team1PointToAdd}",
-                GameId = game.Id,
-                TeamName = game.Team1Name
+                Value = $"{currentGame.Team1Score} - {team1PointToAdd}",
+                GameId = currentGame.Id,
+                TeamName = currentGame.Team1Name
             };
 
             var pointTeam2 = new Point
             {
-                Value = $"{game.Team2Score} - {team2PointToAdd}",
-                GameId = game.Id,
-                TeamName = game.Team1Name
+                Value = $"{currentGame.Team2Score} - {team2PointToAdd}",
+                GameId = currentGame.Id,
+                TeamName = currentGame.Team2Name
             };
 
             await this.AddPoints(pointTeam1, pointTeam2);
 
+            //currentGame.Team1Score += team1PointToAdd;
+            //currentGame.Team2Score += team2PointToAdd;
+
+            //if (currentGame.Team1Score >= Constants.END_GAME_POINT ||
+            //    currentGame.Team2Score >= Constants.END_GAME_POINT)
+            //{
+            //    currentGame.IsGameFinished = true;
+            //}
+            //else
+            //{
+            //    currentGame.IsGameFinished = false;
+            //}
+
+            //await this._database.UpdateAsync(currentGame);
+        }
+
+        public async Task AddPointToEndScore(Game currentGame, int team1PointToAdd, int team2PointToAdd)
+        {
             currentGame.Team1Score += team1PointToAdd;
             currentGame.Team2Score += team2PointToAdd;
 
@@ -83,7 +101,6 @@ namespace BelotScorer.Data
 
             await this._database.UpdateAsync(currentGame);
         }
-
         public async Task<List<Game>> GetGamesAsync()
         {
             await Init();

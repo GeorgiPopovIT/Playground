@@ -43,7 +43,8 @@
                     FontAttributes="Bold" 
                     IsEnabled="False"
                     CornerRadius="15"
-                    BackgroundColor="Grey" 
+                    BackgroundColor="Blue"
+                    TextColor="White"
                     TextTransform="Uppercase"
                     Text="Нова игра"
                     Command="{Binding CreateGameCommand}" />

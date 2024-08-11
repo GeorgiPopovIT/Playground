@@ -1,4 +1,6 @@
 ﻿using BelotScorer.Data;
+using BelotScorer.Views;
+using System.Collections.ObjectModel;
 
 namespace BelotScorer;
 
@@ -26,9 +28,17 @@ public partial class MainPage : ContentPage
                 await Shell.Current.GoToAsync("playGame", new Dictionary<string, object>
                 {
                     {"CurrentGame", lastGame},
-                    {"Team1Points",team1Points.Select(p => p.Value) },
-                    {"Team2Points",team2Points.Select(p => p.Value) }
+                    {"Team1Points",new ObservableCollection<string>(team1Points.Select(p => p.Value)) },
+                    {"Team2Points",new ObservableCollection<string>(team2Points.Select(p => p.Value)) }
                 });
+                
+
+                return;
+            }
+            else
+            {
+                await this._gameRepository.DeleteGameAsync(lastGame);
+                await this._gameRepository.DeleteAllPoints();
             }
         }
         await Shell.Current.GoToAsync("createGame");

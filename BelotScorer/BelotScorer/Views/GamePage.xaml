@@ -23,6 +23,7 @@
                 <Label Text="{Binding Game.Team2Name}"
                        FontSize="25" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
+			
             <ScrollView>
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -48,14 +49,14 @@
             <VerticalStackLayout VerticalOptions="EndAndExpand">
                 <StackLayout Background="#CD853F" Orientation="Horizontal">
                     <StackLayout HorizontalOptions="Center">
-                        <Label FontSize="Large"  FontAttributes="Bold" Grid.Column="1">Точки за отбор 1</Label>
-                        <Entry Keyboard="Numeric" FontSize="Medium" Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"
+						<Label FontSize="Large"  FontAttributes="Bold" Grid.Column="1" Text="{Binding Game.Team1Name}"></Label>
+						<Entry Keyboard="Numeric" FontSize="Medium" Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
                        Placeholder="Точки за отбор ..." MaxLength="3"
                        PlaceholderColor="Black"/>
                     </StackLayout>
                     <StackLayout HorizontalOptions="EndAndExpand">
-                        <Label FontSize="Large"  FontAttributes="Bold">Точки за отбор 2</Label>
+						<Label FontSize="Large"  FontAttributes="Bold" Text="{Binding Game.Team2Name}"></Label>
                         <Entry Keyboard="Numeric" FontSize="Medium" Text="{Binding Team2PointsToAdd}" x:Name="entry2"
                        TextChanged="Entry_TeamName_Changed" TextColor="Black"
                        Placeholder="Точки за отбор ..." MaxLength="3"

@@ -2,22 +2,18 @@
 
 namespace BelotScorer.Views;
 
-[XamlCompilation(XamlCompilationOptions.Skip)]
 public partial class GamePage : ContentPage
 {
-    GameViewModel _gameViewModel;
-
     public GamePage(GameViewModel gameViewModel)
     {
         InitializeComponent();
 
         BindingContext = gameViewModel;
-        this._gameViewModel = gameViewModel;
     }
 
     private void Entry_TeamName_Changed(object sender, TextChangedEventArgs e)
     {
-        if (!string.IsNullOrWhiteSpace(entry1.Text) && !string.IsNullOrWhiteSpace(entry2.Text))
+        if (!string.IsNullOrWhiteSpace(entry1?.Text) && !string.IsNullOrWhiteSpace(entry2?.Text))
         {
             btn_Create.IsEnabled = true;
 
@@ -31,7 +27,7 @@ public partial class GamePage : ContentPage
         }
     }
 
-    private  void Save_Points_Clicked(object sender, EventArgs e)
+    private void Save_Points_Clicked(object sender, EventArgs e)
     {
         this.entry1.Text = string.Empty;
         this.entry2.Text = string.Empty;

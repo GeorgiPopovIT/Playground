@@ -3,12 +3,10 @@ using BelotScorer.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
-using System.Text.Json;
 
 namespace BelotScorer.ViewModels;
 
-[QueryProperty("Game", "CurrentGame")]
-
+[QueryProperty("Game", "Game")]
 public partial class GameViewModel : ObservableObject
 {
     private readonly GameRepository _gameRepository;
@@ -16,13 +14,15 @@ public partial class GameViewModel : ObservableObject
     public GameViewModel(GameRepository gameRepo)
     {
         this._gameRepository = gameRepo;
+        this.Team1Points = new();
+        this.Team2Points = new();
+
+        _ = InitializeGameResult();
     }
 
     [ObservableProperty]
     Game game;
 
-    [ObservableProperty]
-    string team2PointsAsString;
     public ObservableCollection<string> Team1Points { get; set; }
 
     public ObservableCollection<string> Team2Points { get; set; }
@@ -32,7 +32,6 @@ public partial class GameViewModel : ObservableObject
 
     [ObservableProperty]
     int team2PointsToAdd;
-
 
     [RelayCommand]
     async Task AddPointsToTeams()
@@ -84,8 +83,26 @@ public partial class GameViewModel : ObservableObject
             }
         }
     }
-
     private bool IsGameFinished()
         => this.Game.IsGameFinished;
+
+    private async Task InitializeGameResult()
+    {
+        var lastGame = await this._gameRepository.GetLastGameAsync();
+        if (lastGame.IsGameFinished is false)
+        {
+            var team1Points = await this._gameRepository.GetPointsForTeam(lastGame.Team1Name, lastGame.Id);
+            var team2Points = await this._gameRepository.GetPointsForTeam(lastGame.Team2Name, lastGame.Id);
+
+            foreach (var item in team1Points.Select(p => p.Value))
+            {
+                this.Team1Points.Add(item);
+            }
+            foreach (var item in team2Points.Select(p => p.Value))
+            {
+                this.Team2Points.Add(item);
+            }
+        }
+    }
 
 }

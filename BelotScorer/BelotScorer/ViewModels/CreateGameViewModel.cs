@@ -37,7 +37,7 @@ public partial class CreateGameViewModel : ObservableObject
 
         await Shell.Current.GoToAsync("playGame", new Dictionary<string, object>
         {
-            {"CurrentGame", currentGame}
+            {"Game", currentGame}
         });
 
     }

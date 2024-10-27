@@ -44,44 +44,32 @@ namespace BelotScorer.Data
             };
 
             var gameId = await this._database.InsertAsync(game);
-            game.Id = gameId;
             return game;
         }
 
         public async Task SavePointsToTeams(Game currentGame, int team1PointToAdd, int team2PointToAdd)
         {
-            //var currentGame = await this.GetGameAsync(game.Id);
+
+            var initPoint1 = currentGame.Team1Score == 0 ? currentGame.Team1Score : team1PointToAdd;
+            var secondPoint1 = currentGame.Team1Score == 0 ? team1PointToAdd : currentGame.Team1Score + team1PointToAdd;
 
             var pointTeam1 = new Point
             {
-                Value = $"{currentGame.Team1Score} - {team1PointToAdd}",
+                Value = $"{initPoint1} - {secondPoint1}",
                 GameId = currentGame.Id,
                 TeamName = currentGame.Team1Name
             };
 
+            var initPoint2 = currentGame.Team2Score == 0 ? currentGame.Team2Score : team2PointToAdd;
+            var secondPoint2 = currentGame.Team2Score == 0 ? team2PointToAdd : currentGame.Team2Score + team2PointToAdd;
             var pointTeam2 = new Point
             {
-                Value = $"{currentGame.Team2Score} - {team2PointToAdd}",
+                Value = $"{initPoint2} - {secondPoint2}",
                 GameId = currentGame.Id,
                 TeamName = currentGame.Team2Name
             };
 
             await this.AddPoints(pointTeam1, pointTeam2);
-
-            //currentGame.Team1Score += team1PointToAdd;
-            //currentGame.Team2Score += team2PointToAdd;
-
-            //if (currentGame.Team1Score >= Constants.END_GAME_POINT ||
-            //    currentGame.Team2Score >= Constants.END_GAME_POINT)
-            //{
-            //    currentGame.IsGameFinished = true;
-            //}
-            //else
-            //{
-            //    currentGame.IsGameFinished = false;
-            //}
-
-            //await this._database.UpdateAsync(currentGame);
         }
 
         public async Task AddPointToEndScore(Game currentGame, int team1PointToAdd, int team2PointToAdd)
@@ -118,7 +106,7 @@ namespace BelotScorer.Data
             await Init();
 
             return await _database.Table<Game>()
-                .OrderByDescending(i => i.Id)
+                .OrderByDescending(g => g.Id)
                 .FirstOrDefaultAsync();
         }
 
@@ -128,10 +116,10 @@ namespace BelotScorer.Data
             return await _database.UpdateAsync(item);
         }
 
-        public async Task<int> DeleteGameAsync(Game item)
+        public async Task<int> DeleteGameAsync(Game game)
         {
             await Init();
-            return await _database.DeleteAsync(item);
+            return await _database.DeleteAsync<Game>(game.Id);
         }
 
         public async Task<IEnumerable<Point>> GetPointsForTeam(string teamName, int gameId)
@@ -156,7 +144,5 @@ namespace BelotScorer.Data
             await Init();
             await this._database.DeleteAllAsync<Point>();
         }
-
-
     }
 }

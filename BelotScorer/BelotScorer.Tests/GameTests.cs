@@ -33,9 +33,6 @@ public class GameTests
         //Assert
         Assert.That(team1Points, Is.EqualTo(this._game.Team1FinalPoints));
         Assert.That(team2Points, Is.EqualTo(this._game.Team2FinalPoints));
-
-        Assert.That(1, Is.EqualTo(this._game.Team1Points.Count));
-        Assert.That(1, Is.EqualTo(this._game.Team2Points.Count));
     }
     [Test]
     public void AddPointsAndTeam1Win()

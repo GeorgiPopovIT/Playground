@@ -1,7 +1,4 @@
-﻿using BelotScorer.Data;
-using BelotScorer.ViewModels;
-
-namespace BelotScorer;
+﻿namespace BelotScorer;
 
 public partial class App : Application
 {

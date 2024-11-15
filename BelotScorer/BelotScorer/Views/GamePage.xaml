@@ -17,11 +17,11 @@
         <StackLayout>
             <StackLayout Margin="0,15" Orientation="Horizontal">
                 <Label Text="{Binding Game.Team1Name}"
-                       FontSize="25" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                       FontSize="25" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
 
                 <Label FontSize="25" Text="-"/>
                 <Label Text="{Binding Game.Team2Name}"
-                       FontSize="25" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+                       FontSize="25" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
             </StackLayout>
 			
             <ScrollView>
@@ -33,14 +33,14 @@
                     <CollectionView Margin="60,25" Grid.Column="0" ItemsSource="{Binding Team1Points}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Label Margin="0,6" FontSize="20" FontAttributes="Bold" Text="{Binding .}"/>
+								<Label Margin="0,6" FontSize="20" TextColor="Black" FontAttributes="Bold" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                     <CollectionView Margin="60,25"  Grid.Column="1" ItemsSource="{Binding Team2Points}">
                         <CollectionView.ItemTemplate>
                             <DataTemplate>
-                                <Label Margin="0,6" FontSize="20" FontAttributes="Bold" Text="{Binding .}"/>
+								<Label Margin="0,6" FontSize="20" TextColor="Black" FontAttributes="Bold" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
@@ -69,7 +69,7 @@
                          CornerRadius="20"
                          FontAttributes="Bold"
                          IsEnabled="False"
-                         BackgroundColor="Grey" 
+                         BackgroundColor="Blue" 
                          TextTransform="Uppercase"
                          Text="Въведи точки"
                          TextColor="White"

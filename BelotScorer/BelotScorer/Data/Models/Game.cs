@@ -1,7 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using SQLite;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using static BelotScorer.Common.Constants;
 
 namespace BelotScorer.Models;
@@ -16,7 +14,7 @@ public partial class Game : ObservableObject
     public string Team1Name { get; set; }
 
     [MaxLength(TEAM_NAME_MAX_LENGTH)]
-    public  string Team2Name { get; set; }
+    public string Team2Name { get; set; }
 
     public int Team1FinalPoints { get; set; }
 

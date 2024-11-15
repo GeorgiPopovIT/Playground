@@ -1,6 +1,4 @@
 ﻿using BelotScorer.Data;
-using BelotScorer.Views;
-using System.Collections.ObjectModel;
 
 namespace BelotScorer;
 
@@ -22,7 +20,7 @@ public partial class MainPage : ContentPage
 
             if (toContinue)
             {
-                await Shell.Current.GoToAsync("playGame",true,
+                await Shell.Current.GoToAsync("playGame", true,
                     new Dictionary<string, object>
                     {
                         {"Game", lastGame}

@@ -40,7 +40,9 @@ public partial class GameViewModel : ObservableObject
         {
             try
             {
-                await this._gameRepository.SavePointsToTeams(this.Game, this.Team1PointsToAdd, this.Team2PointsToAdd);
+                await this._gameRepository.SavePointToTeam(this.Game.Id, this.Game.Team1Score, this.Game.Team1Name, this.Team1PointsToAdd);
+                await this._gameRepository.SavePointToTeam(this.Game.Id, this.Game.Team2Score, this.Game.Team2Name, this.Team2PointsToAdd);
+
                 if (this.Game.Team1Score == 0 && this.Game.Team2Score == 0)
                 {
                     this.Team1Points.Add($"0 - {this.Team1PointsToAdd}");

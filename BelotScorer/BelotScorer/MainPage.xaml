@@ -25,6 +25,7 @@
                     VerticalOptions="Center"
                     HorizontalOptions="Center"
                     TextColor="White"
+					Background="Blue"
                     BackgroundColor="Blue"
                     Text="Нова игра"
                     CornerRadius="15"

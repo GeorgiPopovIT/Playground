@@ -5,7 +5,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace BelotScorer.ViewModels;
 
-[QueryProperty("Team1Name","Team1Name")]
+[QueryProperty("Team1Name", "Team1Name")]
 [QueryProperty("Team2Name", "Team2Name")]
 public partial class CreateGameViewModel : ObservableObject
 {

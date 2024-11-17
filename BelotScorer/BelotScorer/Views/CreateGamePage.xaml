@@ -43,6 +43,7 @@
                     FontAttributes="Bold" 
                     IsEnabled="False"
                     CornerRadius="15"
+					Background="Blue"
                     BackgroundColor="Blue"
                     TextColor="White"
                     TextTransform="Uppercase"

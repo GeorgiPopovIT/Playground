@@ -61,26 +61,6 @@ namespace BelotScorer.Data
         public async Task SavePointsToTeams(Game currentGame, int team1PointToAdd, int team2PointToAdd)
         {
 
-            //var initPoint1 = currentGame.Team1Score == 0 ? currentGame.Team1Score : team1PointToAdd;
-            //var secondPoint1 = currentGame.Team1Score == 0 ? team1PointToAdd : currentGame.Team1Score + team1PointToAdd;
-
-            //var pointTeam1 = new Point
-            //{
-            //    Value = $"{initPoint1} - {secondPoint1}",
-            //    GameId = currentGame.Id,
-            //    TeamName = currentGame.Team1Name
-            //};
-
-            //var initPoint2 = currentGame.Team2Score == 0 ? currentGame.Team2Score : team2PointToAdd;
-            //var secondPoint2 = currentGame.Team2Score == 0 ? team2PointToAdd : currentGame.Team2Score + team2PointToAdd;
-            //var pointTeam2 = new Point
-            //{
-            //    Value = $"{initPoint2} - {secondPoint2}",
-            //    GameId = currentGame.Id,
-            //    TeamName = currentGame.Team2Name
-            //};
-
-            //await this.AddPoints(pointTeam1, pointTeam2);
         }
 
         public async Task AddPointToEndScore(Game currentGame, int team1PointToAdd, int team2PointToAdd)

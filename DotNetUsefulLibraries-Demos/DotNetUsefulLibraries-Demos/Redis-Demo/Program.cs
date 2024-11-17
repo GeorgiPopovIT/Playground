@@ -5,10 +5,10 @@ using StackExchange.Redis;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect(configuration: builder.Configuration["CacheConnection"]));
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost"));
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    options.Configuration = builder.Configuration["CacheConnection"];
+    options.Configuration = builder.Configuration.GetConnectionString("MyRedisConStr");
     options.InstanceName = "SampleInstance";
 });
 
@@ -26,7 +26,7 @@ app.MapGet("/redis", async ([FromQuery] string name, IConnectionMultiplexer muxe
     if (string.IsNullOrEmpty(result))
     {
         var setTask = _redis.StringSetAsync("hi", name);
-        var expireTask = _redis.KeyExpireAsync("hi", new TimeSpan(0, 0, 40));
+        var expireTask = _redis.KeyExpireAsync("hi", new TimeSpan(0, 0, 5));
 
         await Task.WhenAll(setTask, expireTask);
         result = await _redis.StringGetAsync("hi");

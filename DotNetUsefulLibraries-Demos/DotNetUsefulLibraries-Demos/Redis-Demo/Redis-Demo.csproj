@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>Redis_Demo</RootNamespace>
-    <UserSecretsId>268ca6d4-abd1-4421-a9b1-06738d0aa29a</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

@@ -1,5 +1,7 @@
 ﻿using SQLite;
 
+namespace BelotScorer.Data.Models;
+
 [Table("points")]
 public class Point
 {

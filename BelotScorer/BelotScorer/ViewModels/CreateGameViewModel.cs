@@ -1,5 +1,5 @@
 ﻿using BelotScorer.Data;
-using BelotScorer.Models;
+using BelotScorer.Data.Models;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 

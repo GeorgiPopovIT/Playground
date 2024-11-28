@@ -2,7 +2,7 @@
 using SQLite;
 using static BelotScorer.Common.Constants;
 
-namespace BelotScorer.Models;
+namespace BelotScorer.Data.Models;
 
 [Table("games")]
 public partial class Game : ObservableObject

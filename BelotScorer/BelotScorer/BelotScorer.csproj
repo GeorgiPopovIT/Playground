@@ -26,6 +26,7 @@
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
     <TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
@@ -40,7 +41,6 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
     <AndroidPackageFormat>apk</AndroidPackageFormat>
-      <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
       <AndroidUseAapt2>True</AndroidUseAapt2>
       <AndroidCreatePackagePerAbi>False</AndroidCreatePackagePerAbi>
   </PropertyGroup>
@@ -66,16 +66,6 @@
     <None Remove="Resources\Splash\cards_splash.svg" />
   </ItemGroup>
 
-  <!--<ItemGroup>
-    <None Remove="Resources\AppIcon\card_icon.svg" />
-    <None Remove="Resources\AppIcon\card_iconconfg.svg" />
-    <None Remove="Resources\AppIcon\playing_cards.svg" />
-  </ItemGroup>-->
-
-  <!--<ItemGroup>
-    <MauiIcon Include="Resources\AppIcon\card_icon.svg" Color="#FFFF00" />
-  </ItemGroup>-->
-
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.1" />
@@ -97,11 +87,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.100" />
+    <PackageReference Update="Microsoft.Maui.Controls" Version="8.0.83" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.100" />
+    <PackageReference Update="Microsoft.Maui.Controls.Compatibility" Version="8.0.83" />
   </ItemGroup>
 
 </Project>

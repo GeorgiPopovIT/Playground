@@ -32,14 +32,14 @@
                     </Grid.ColumnDefinitions>
                     <CollectionView Margin="60,25" Grid.Column="0" ItemsSource="{Binding Team1Points}">
                         <CollectionView.ItemTemplate>
-                            <DataTemplate>
+							<DataTemplate x:DataType="x:String">
 								<Label Margin="0,6" FontSize="20" TextColor="Black" FontAttributes="Bold" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                     <CollectionView Margin="60,25"  Grid.Column="1" ItemsSource="{Binding Team2Points}">
                         <CollectionView.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="x:String">
 								<Label Margin="0,6" FontSize="20" TextColor="Black" FontAttributes="Bold" Text="{Binding .}"/>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>

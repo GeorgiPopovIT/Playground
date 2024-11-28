@@ -1,6 +1,7 @@
 ﻿using BelotScorer.Common;
-using BelotScorer.Models;
+using BelotScorer.Data.Models;
 using SQLite;
+using Point = BelotScorer.Data.Models.Point;
 
 namespace BelotScorer.Data
 {
@@ -48,7 +49,10 @@ namespace BelotScorer.Data
 
         public async Task SavePointToTeam(int gameId, int teamScore, string teamName, int pointToAdd)
         {
-            var expression = teamScore == 0 ? $"{teamScore}-{pointToAdd}" : $"{pointToAdd}-{teamScore}";
+            var expression = teamScore == 0
+                ? $"{teamScore}-{pointToAdd}"
+                : $"{pointToAdd}-{teamScore + pointToAdd}";
+
             var point = new Point
             {
                 TeamName = teamName,
@@ -58,9 +62,9 @@ namespace BelotScorer.Data
 
             await this.AddPoints(point);
         }
-        public async Task SavePointsToTeams(Game currentGame, int team1PointToAdd, int team2PointToAdd)
+        public Task SavePointsToTeams(Game currentGame, int team1PointToAdd, int team2PointToAdd)
         {
-
+            return Task.CompletedTask;
         }
 
         public async Task AddPointToEndScore(Game currentGame, int team1PointToAdd, int team2PointToAdd)

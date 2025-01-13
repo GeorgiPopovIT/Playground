@@ -9,10 +9,10 @@ namespace Bookify.Infrastructure;
 
 public sealed class ApplicationDbContext : DbContext, IUnitOfWork
 {
-    private static readonly JsonSerializerSettings JsonSerializerSettings = new()
-    {
-        TypeNameHandling = TypeNameHandling.All
-    };
+    //private static readonly JsonSerializerSettings JsonSerializerSettings = new()
+    //{
+    //    TypeNameHandling = TypeNameHandling.All
+    //};
 
     private readonly IDateTimeProvider _dateTimeProvider;
 
@@ -49,24 +49,24 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
 
     private void AddDomainEventsAsOutboxMessages()
     {
-        var outboxMessages = ChangeTracker
-            .Entries<Entity>()
-            .Select(entry => entry.Entity)
-            .SelectMany(entity =>
-            {
-                IReadOnlyList<IDomainEvent> domainEvents = entity.GetDomainEvents();
+        //var outboxMessages = ChangeTracker
+        //    .Entries<Entity>()
+        //    .Select(entry => entry.Entity)
+        //    .SelectMany(entity =>
+        //    {
+        //        IReadOnlyList<IDomainEvent> domainEvents = entity.GetDomainEvents();
 
-                entity.ClearDomainEvents();
+        //        entity.ClearDomainEvents();
 
-                return domainEvents;
-            })
-            .Select(domainEvent => new OutboxMessage(
-                Guid.NewGuid(),
-                _dateTimeProvider.UtcNow,
-                domainEvent.GetType().Name,
-                JsonConvert.SerializeObject(domainEvent, JsonSerializerSettings)))
-            .ToList();
+        //        return domainEvents;
+        //    })
+        //    .Select(domainEvent => new OutboxMessage(
+        //        Guid.NewGuid(),
+        //        _dateTimeProvider.UtcNow,
+        //        domainEvent.GetType().Name,
+        //        JsonConvert.SerializeObject(domainEvent, JsonSerializerSettings)))
+        //    .ToList();
 
-        AddRange(outboxMessages);
+        //AddRange(outboxMessages);
     }
 }

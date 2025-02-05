@@ -1,5 +1,5 @@
 ﻿//using Asp.Versioning;
-//using Bookify.Application.Apartments.SearchApartments;
+using Bookify.Application.Apartments.SearchApartments;
 using Bookify.Domain.Abstractions;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;

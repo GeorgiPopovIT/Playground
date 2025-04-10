@@ -1,6 +1,7 @@
 ﻿using Azure.AI.TextAnalytics;
 using Azure;
 using Microsoft.Extensions.Configuration;
+using Azure.AI.Vision.ImageAnalysis;
 
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
 string? endpoint = config["AIServicesEndpoint"];
@@ -13,7 +14,8 @@ string text  = """
      на стадион „Георги Аспарухов“, причинени по време на равенството 1:1.
      ЦСКА ще трябва да плати 4300 лева за поведението на феновете в мача срещу Септември.
 """;
-Console.WriteLine(GetLanguage(text, key,endpoint));
+//Console.WriteLine(GetLanguage(text, key,endpoint));
+AnalyzeImage(endpoint, key);
 static string GetLanguage(string text, string key, string aiEndpoint)
 {
 
@@ -26,4 +28,29 @@ static string GetLanguage(string text, string key, string aiEndpoint)
     DetectedLanguage detectedLanguage = client.DetectLanguage(text);
     return (detectedLanguage.Name);
 
+}
+
+static void AnalyzeImage(string endpoint, string key)
+{
+
+    ImageAnalysisClient client = new ImageAnalysisClient(
+        new Uri(endpoint),
+        new AzureKeyCredential(key));
+    ImageAnalysisResult result = client.Analyze(new Uri("https://portal.vision.cognitive.azure.com/dist/assets/ImageTaggingSample3-f5d27a36.jpg"),
+        VisualFeatures.Caption | VisualFeatures.Read,
+        new ImageAnalysisOptions { GenderNeutralCaption = true });
+
+    Console.WriteLine("Image analysis results:");
+    Console.WriteLine(" Caption:");
+    Console.WriteLine($"   '{result.Caption.Text}', Confidence {result.Caption.Confidence:F4}");
+
+    foreach (DetectedTextBlock block in result.Read.Blocks)
+        foreach (DetectedTextLine line in block.Lines)
+        {
+            Console.WriteLine($"   Line: '{line.Text}");
+            foreach (DetectedTextWord word in line.Words)
+            {
+                Console.WriteLine($"     Word: '{word.Text}', Confidence {word.Confidence.ToString("#.####")}");
+            }
+        }
 }

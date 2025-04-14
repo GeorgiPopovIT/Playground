@@ -6,6 +6,7 @@ using System.IO;
 using System.Drawing;
 using System.Net;
 using System.Reflection.Metadata;
+using System.Xml.Linq;
 
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
 string? endpoint = config["AIServicesEndpoint"];
@@ -21,7 +22,8 @@ string text = """
 //Console.WriteLine(GetLanguage(text, key,endpoint));
 //AnalyzeImage(endpoint, key);
 //ExtractKeyPhases(endpoint, key);
-GetSummary(endpoint,key);
+//GetSummary(endpoint,key);
+DetectPll(endpoint, key);
 static string GetLanguage(string text, string key, string aiEndpoint)
 {
 
@@ -144,4 +146,35 @@ static async Task GetSummary(string aiEndpoint, string key)
         }
     }
 
+}
+
+static void DetectPll(string aiEndpoint, string key)
+{
+    string text = """
+                The Trump trade war has gone viral on TikTok, pushing a Chinese e-commerce app, DHgate, to the top of the Apple App Store in the U.S.
+        After Trump increased U.S. tariffs on Chinese imports by 145%, numerous Chinese suppliers and manufacturers began making TikTok videos explaining to consumers how the global luxury goods market actually works. The clothing, handbags, and other accessories that many people assumed were made in Europe originate from factories in China, these videos explained.
+        As a result of the trend, the Chinese wholesale marketplace app DHgate surged to become the No. 3 top free iPhone app in the U.S. Apple App Store as of Monday morning.
+        For comparison, the app was ranked No. 352 in the top non-game free iPhone apps category in the U.S. as of Friday, April 11, before jumping to No. 6 on Sunday and No. 3 on Monday, according to data from app intelligence provider Appfigures. On Monday, DHgate also climbed to No. 3 on the Top Overall chart for free iPhone apps, including games.
+        The firm tells TechCrunch that on Saturday, April 12, the DHgate app was downloaded 35,400 times across the App Store and Google Play, a 56% increase from its 30-day average. The U.S. accounted for 17,300 of those installs, a jump of 98% over the 30-day average.
+        On Sunday, April 13, those installs increased to 117,500 on iOS, up 732% from the 30-day average. The U.S. accounted for 65,100 of those downloads, up 940%. (Android download data for Sunday isn’t available yet.)
+        """;
+
+    AzureKeyCredential credentials = new AzureKeyCredential(key);
+    Uri endpoint = new Uri(aiEndpoint);
+    var client = new TextAnalyticsClient(endpoint, credentials);
+
+    PiiEntityCollection entities = client.RecognizePiiEntities(text).Value;
+
+    if (entities.Count > 0)
+    {
+        Console.WriteLine($"Recognized {entities.Count} PII entit{(entities.Count > 1 ? "ies" : "y")}:");
+        foreach (PiiEntity entity in entities)
+        {
+            Console.WriteLine($"Text: {entity.Text}, Category: {entity.Category}, SubCategory: {entity.SubCategory}, Confidence score: {entity.ConfidenceScore}");
+        }
+    }
+    else
+    {
+        Console.WriteLine("No entities were found.");
+    }
 }

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ_Demo", "RabbitMQ_D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ.Console", "RabbitMQ.Console\RabbitMQ.Console.csproj", "{80F0F296-D61F-4737-BECA-F0779BAE6637}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMQ.Producer", "RabbitMQ.Producer\RabbitMQ.Producer.csproj", "{996251D2-9106-43D7-BF05-8427A0A0A624}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq.Consumer", "RabbitMq.Consumer\RabbitMq.Consumer.csproj", "{7679A7E9-2DB8-4B62-9047-90912A01CCB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RabbitMq.ConsumerTwo", "RabbitMq.ConsumerTwo\RabbitMq.ConsumerTwo.csproj", "{18D20E48-139D-4F30-AC46-7CF372233691}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{80F0F296-D61F-4737-BECA-F0779BAE6637}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80F0F296-D61F-4737-BECA-F0779BAE6637}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80F0F296-D61F-4737-BECA-F0779BAE6637}.Release|Any CPU.Build.0 = Release|Any CPU
+		{996251D2-9106-43D7-BF05-8427A0A0A624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{996251D2-9106-43D7-BF05-8427A0A0A624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{996251D2-9106-43D7-BF05-8427A0A0A624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{996251D2-9106-43D7-BF05-8427A0A0A624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7679A7E9-2DB8-4B62-9047-90912A01CCB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7679A7E9-2DB8-4B62-9047-90912A01CCB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7679A7E9-2DB8-4B62-9047-90912A01CCB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7679A7E9-2DB8-4B62-9047-90912A01CCB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18D20E48-139D-4F30-AC46-7CF372233691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18D20E48-139D-4F30-AC46-7CF372233691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18D20E48-139D-4F30-AC46-7CF372233691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18D20E48-139D-4F30-AC46-7CF372233691}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

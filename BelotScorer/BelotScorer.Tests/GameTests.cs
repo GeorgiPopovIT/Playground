@@ -1,5 +1,5 @@
 ﻿using BelotScorer.Data;
-using BelotScorer.Models;
+using BelotScorer.Data.Models;
 using NUnit.Framework.Legacy;
 
 namespace BelotScorer.Tests;

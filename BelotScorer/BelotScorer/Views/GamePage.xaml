@@ -12,70 +12,249 @@
         <BackButtonBehavior IsVisible="False" IsEnabled="False"/>
     </Shell.BackButtonBehavior>
 
+    <Grid Padding="15" RowSpacing="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
 
-    <ScrollView>
-        <StackLayout>
-            <StackLayout Margin="0,15" Orientation="Horizontal">
+        <!-- Teams Header -->
+        <Border Grid.Row="0"
+                BackgroundColor="#8B4513"
+                StrokeShape="RoundRectangle 20"
+                Stroke="#D4AF37"
+                StrokeThickness="2"
+                Padding="15">
+            <Border.Shadow>
+                <Shadow Brush="#000000"
+                        Offset="0,4"
+                        Opacity="0.4"
+                        Radius="10" />
+            </Border.Shadow>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
                 <Label Text="{Binding Game.Team1Name}"
-                       FontSize="25" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
-
-                <Label FontSize="25" Text="-"/>
+                       Grid.Column="0"
+                       FontSize="22" 
+                       FontAttributes="Bold" 
+                       TextColor="#F5F5DC" 
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                
+                <Label Grid.Column="1" 
+                       FontSize="25" 
+                       Text="vs" 
+                       TextColor="#D4AF37"
+                       Margin="10,0" 
+                       VerticalOptions="Center"/>
+                
                 <Label Text="{Binding Game.Team2Name}"
-                       FontSize="25" FontAttributes="Bold" TextColor="Black" HorizontalOptions="CenterAndExpand"/>
-            </StackLayout>
-			
-            <ScrollView>
-                <Grid>
+                       Grid.Column="2"
+                       FontSize="22" 
+                       FontAttributes="Bold" 
+                       TextColor="#F5F5DC" 
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+
+        <!-- Score Board with improved contrast -->
+        <Border Grid.Row="1"
+                BackgroundColor="#F5F5DC"
+                Opacity="0.97"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="3"
+                Stroke="#8B4513">
+            <Border.Shadow>
+                <Shadow Brush="#000000"
+                        Offset="0,5"
+                        Opacity="0.4"
+                        Radius="10" />
+            </Border.Shadow>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- Team 1 Points - styled like input fields -->
+                <Border Grid.Column="0"
+                        StrokeShape="RoundRectangle 18,0,0,18"
+                        BackgroundColor="#FFFFFF"
+                        Stroke="#D4AF37"
+                        StrokeThickness="2"
+                        Padding="10,15">
+                    <CollectionView ItemsSource="{Binding Team1Points}"
+                                    Margin="0,2">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <Border Margin="5" 
+                                       StrokeShape="RoundRectangle 8"
+                                       Stroke="#000000"
+                                       StrokeThickness="1"
+                                       BackgroundColor="#FFFFFF"
+                                       Padding="0">
+                                    <Label FontSize="20" 
+                                           TextColor="#000000" 
+                                           FontAttributes="Bold" 
+                                           Text="{Binding .}" 
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           HeightRequest="50"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"
+                                           Margin="8,0"/>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Border>
+                
+                <!-- Team 2 Points - styled like input fields -->
+                <Border Grid.Column="1"
+                        StrokeShape="RoundRectangle 0,18,18,0"
+                        BackgroundColor="#FFFFFF"
+                        Stroke="#D4AF37"
+                        StrokeThickness="2"
+                        Padding="10,15">
+                    <CollectionView ItemsSource="{Binding Team2Points}"
+                                    Margin="0,2">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="x:String">
+                                <Border Margin="5" 
+                                       StrokeShape="RoundRectangle 8"
+                                       Stroke="#000000"
+                                       StrokeThickness="1"
+                                       BackgroundColor="#FFFFFF"
+                                       Padding="0">
+                                    <Label FontSize="20" 
+                                           TextColor="#000000" 
+                                           FontAttributes="Bold" 
+                                           Text="{Binding .}" 
+                                           HorizontalOptions="Center"
+                                           VerticalOptions="Center"
+                                           HeightRequest="50"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"
+                                           Margin="8,0"/>
+                                </Border>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Border>
+            </Grid>
+        </Border>
+
+        <!-- Input Area -->
+        <Border Grid.Row="2"
+                BackgroundColor="#F5F5DC"
+                StrokeShape="RoundRectangle 20"
+                StrokeThickness="2"
+                Stroke="#8B4513"
+                Padding="15">
+            <Border.Shadow>
+                <Shadow Brush="#000000"
+                        Offset="0,4"
+                        Opacity="0.3"
+                        Radius="10" />
+            </Border.Shadow>
+            <VerticalStackLayout Spacing="15">
+                <Grid ColumnSpacing="15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
-                    <CollectionView Margin="60,25" Grid.Column="0" ItemsSource="{Binding Team1Points}">
-                        <CollectionView.ItemTemplate>
-							<DataTemplate x:DataType="x:String">
-								<Label Margin="0,6" FontSize="20" TextColor="Black" FontAttributes="Bold" Text="{Binding .}"/>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                    <CollectionView Margin="60,25"  Grid.Column="1" ItemsSource="{Binding Team2Points}">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="x:String">
-								<Label Margin="0,6" FontSize="20" TextColor="Black" FontAttributes="Bold" Text="{Binding .}"/>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
+                    
+                    <Frame Grid.Column="0" 
+                           BackgroundColor="White"
+                           BorderColor="#D4AF37"
+                           CornerRadius="15"
+                           HasShadow="True"
+                           Padding="10">
+                        <StackLayout>
+                            <Label FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   Text="{Binding Game.Team1Name}" 
+                                   TextColor="#8B4513"
+                                   HorizontalOptions="Center"/>
+                            <Border StrokeShape="RoundRectangle 8"
+                                    Stroke="#000000"
+                                    StrokeThickness="1"
+                                    Margin="0,5,0,0">
+                                <Entry Keyboard="Numeric" 
+                                       FontSize="20" 
+                                       Text="{Binding Team1PointsToAdd}" 
+                                       x:Name="entry1"
+                                       TextChanged="Entry_TeamName_Changed" 
+                                       TextColor="#000000"
+                                       Placeholder="Точки за отбор ..." 
+                                       MaxLength="3"
+                                       HorizontalTextAlignment="Center"
+                                       Margin="8,0"
+                                       PlaceholderColor="#A9A9A9"/>
+                            </Border>
+                        </StackLayout>
+                    </Frame>
+
+                    <Frame Grid.Column="1" 
+                           BackgroundColor="White"
+                           BorderColor="#D4AF37"
+                           CornerRadius="15"
+                           HasShadow="True"
+                           Padding="10">
+                        <StackLayout>
+                            <Label FontSize="18" 
+                                   FontAttributes="Bold" 
+                                   Text="{Binding Game.Team2Name}" 
+                                   TextColor="#8B4513"
+                                   HorizontalOptions="Center"/>
+                            <Border StrokeShape="RoundRectangle 8"
+                                    Stroke="#000000"
+                                    StrokeThickness="1"
+                                    Margin="0,5,0,0">
+                                <Entry Keyboard="Numeric" 
+                                       FontSize="20" 
+                                       Text="{Binding Team2PointsToAdd}" 
+                                       x:Name="entry2"
+                                       TextChanged="Entry_TeamName_Changed" 
+                                       TextColor="#000000"
+                                       Placeholder="Точки за отбор ..." 
+                                       MaxLength="3"
+                                       HorizontalTextAlignment="Center"
+                                       Margin="8,0"
+                                       PlaceholderColor="#A9A9A9"/>
+                            </Border>
+                        </StackLayout>
+                    </Frame>
                 </Grid>
-            </ScrollView>
-            <VerticalStackLayout VerticalOptions="EndAndExpand">
-                <StackLayout Background="#CD853F" Orientation="Horizontal">
-                    <StackLayout HorizontalOptions="Center">
-						<Label FontSize="Large"  FontAttributes="Bold" Grid.Column="1" Text="{Binding Game.Team1Name}"></Label>
-						<Entry Keyboard="Numeric" FontSize="Medium" Grid.Column="1" Text="{Binding Team1PointsToAdd}" x:Name="entry1"
-                       TextChanged="Entry_TeamName_Changed" TextColor="Black"
-                       Placeholder="Точки за отбор ..." MaxLength="3"
-                       PlaceholderColor="Black"/>
-                    </StackLayout>
-                    <StackLayout HorizontalOptions="EndAndExpand">
-						<Label FontSize="Large"  FontAttributes="Bold" Text="{Binding Game.Team2Name}"></Label>
-                        <Entry Keyboard="Numeric" FontSize="Medium" Text="{Binding Team2PointsToAdd}" x:Name="entry2"
-                       TextChanged="Entry_TeamName_Changed" TextColor="Black"
-                       Placeholder="Точки за отбор ..." MaxLength="3"
-                       PlaceholderColor="Black"/>
-                    </StackLayout>
-                </StackLayout>
-                <Button  x:Name="btn_Create"
-                         Margin="10"
-                         Padding="5"
-                         CornerRadius="20"
-                         FontAttributes="Bold"
-                         IsEnabled="False"
-                         BackgroundColor="Blue" 
-                         TextTransform="Uppercase"
-                         Text="Въведи точки"
-                         TextColor="White"
-                         Clicked="Save_Points_Clicked"
-                         Command="{Binding AddPointsToTeamsCommand}" />
+
+                <Button x:Name="btn_Create"
+                        Padding="20,10"
+                        CornerRadius="20"
+                        FontAttributes="Bold"
+                        HeightRequest="55"
+                        IsEnabled="False"
+                        BackgroundColor="#8B4513"
+                        TextTransform="Uppercase"
+                        Text="Въведи точки"
+                        FontSize="18"
+                        TextColor="White"
+                        Clicked="Save_Points_Clicked"
+                        Command="{Binding AddPointsToTeamsCommand}">
+                    <Button.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="0,4"
+                                Opacity="0.4"
+                                Radius="10" />
+                    </Button.Shadow>
+                </Button>
             </VerticalStackLayout>
-        </StackLayout>
-    </ScrollView>
+        </Border>
+    </Grid>
 </ContentPage>

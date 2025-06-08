@@ -1,13 +1,17 @@
 ﻿using BelotScorer.ViewModels;
+using Microsoft.Maui.Graphics;
 
 namespace BelotScorer.Views;
 
 public partial class GamePage : ContentPage
 {
+    // Define the button colors as constants for better maintenance
+    private static readonly Color ButtonEnabledColor = Color.FromArgb("#8B4513"); // Brown color for enabled
+    private static readonly Color ButtonDisabledColor = Color.FromArgb("#A9A9A9"); // Gray color for disabled
+
     public GamePage(GameViewModel gameViewModel)
     {
         InitializeComponent();
-
         BindingContext = gameViewModel;
     }
 
@@ -16,14 +20,12 @@ public partial class GamePage : ContentPage
         if (!string.IsNullOrWhiteSpace(entry1?.Text) && !string.IsNullOrWhiteSpace(entry2?.Text))
         {
             btn_Create.IsEnabled = true;
-
-            btn_Create.BackgroundColor = Colors.Blue;
+            btn_Create.BackgroundColor = ButtonEnabledColor;
         }
         else
         {
             btn_Create.IsEnabled = false;
-
-            btn_Create.BackgroundColor = Colors.Grey;
+            btn_Create.BackgroundColor = ButtonDisabledColor;
         }
     }
 

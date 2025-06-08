@@ -8,48 +8,140 @@
              Title="Създай игра"
              BackgroundImageSource="table_background.jpg">
 
+    <!-- SafeArea margin to ensure content doesn't get cut off by device notches or system UI -->
+    <Grid Padding="{OnPlatform iOS='0,40,0,20', Default='0,20,0,20'}">
+        <!-- Center content but allow it to adapt to different screen sizes -->
+        <ScrollView>
+            <Grid VerticalOptions="Center" Margin="20,0">
+                <Border 
+                    Stroke="#8B4513"
+                    StrokeThickness="3"
+                    StrokeShape="RoundRectangle 24"
+                    BackgroundColor="#F5F5DC"
+                    Opacity="0.95"
+                    HorizontalOptions="Fill">
 
-    <Grid HorizontalOptions="Center">
-        <VerticalStackLayout HorizontalOptions="Center">
+                    <Border.Shadow>
+                        <Shadow Brush="#000000"
+                                Offset="0,6"
+                                Opacity="0.5"
+                                Radius="12" />
+                    </Border.Shadow>
 
-            <StackLayout Margin="12" HorizontalOptions="Center">
-                <Label FontSize="20" 
-                       FontAttributes="Bold">Име на отбор</Label>
-                <Entry Text="{Binding Team1Name}" 
-                       x:Name="entry1"
-                       FontSize="18"
-                       TextChanged="Entry_TeamName_Changed" 
-                       TextColor="Black"
-                       Placeholder="Име на отбор ..." 
-                       MaxLength="15"
-                       PlaceholderColor="Black"/>
-            </StackLayout>
+                    <VerticalStackLayout 
+                        Spacing="15" 
+                        Padding="20"
+                        Margin="0,5"
+                        HorizontalOptions="Center">
 
-            <StackLayout Margin="10" HorizontalOptions="Center">
-                <Label FontSize="20" 
-                       FontAttributes="Bold">Име на отбор</Label>
-                <Entry Text="{Binding Team2Name}" 
-                       x:Name="entry2"
-                        FontSize="18"
-                       TextColor="Black" 
-                       TextChanged="Entry_TeamName_Changed"
-                       PlaceholderColor="Black" 
-                       MaxLength="15"
-                       Placeholder="Име на отбор ..."/>
-            </StackLayout>
+                        <Label Text="Нова игра на Белот" 
+                               FontSize="{OnIdiom Phone=24, Tablet=28, Desktop=28}"
+                               TextColor="#8B4513"
+                               FontAttributes="Bold"
+                               HorizontalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               Margin="0,0,0,10"/>
 
-            <Button x:Name="btn_Create"
-                    Margin="10" Padding="5"  
-                    FontAttributes="Bold" 
-                    IsEnabled="False"
-                    CornerRadius="15"
-					Background="Blue"
-                    BackgroundColor="Blue"
-                    TextColor="White"
-                    TextTransform="Uppercase"
-                    Text="Нова игра"
-                    Command="{Binding CreateGameCommand}" />
+                        <!-- Team 1 Input -->
+                        <Frame BackgroundColor="White" 
+                               Padding="15" 
+                               HasShadow="True"
+                               BorderColor="#D4AF37"
+                               CornerRadius="15"
+                               Margin="0,0,0,5">
+                            <Grid RowSpacing="8">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Label Text="Име на отбор" 
+                                       Grid.Row="0"
+                                       FontSize="{OnIdiom Phone=18, Default=20}"
+                                       FontAttributes="Bold"
+                                       TextColor="#8B4513"/>
+                                
+                                <!-- Entry with border -->
+                                <Border Grid.Row="1"
+                                        Stroke="#000000"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8">
+                                    <Entry Text="{Binding Team1Name}" 
+                                           x:Name="entry1"
+                                           FontSize="{OnIdiom Phone=16, Default=18}"
+                                           TextChanged="Entry_TeamName_Changed" 
+                                           TextColor="#000000"
+                                           Placeholder="Име на отбор ..." 
+                                           MaxLength="15"
+                                           HeightRequest="{OnIdiom Phone=50, Default=45}"
+                                           Margin="8,0"
+                                           PlaceholderColor="#A9A9A9"/>
+                                </Border>
+                            </Grid>
+                        </Frame>
 
-        </VerticalStackLayout>
+                        <!-- Team 2 Input -->
+                        <Frame BackgroundColor="White" 
+                               Padding="15" 
+                               HasShadow="True"
+                               BorderColor="#D4AF37"
+                               CornerRadius="15"
+                               Margin="0,5,0,10">
+                            <Grid RowSpacing="8">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                
+                                <Label Text="Име на отбор" 
+                                       Grid.Row="0"
+                                       FontSize="{OnIdiom Phone=18, Default=20}"
+                                       FontAttributes="Bold"
+                                       TextColor="#8B4513"/>
+                                
+                                <!-- Entry with border -->
+                                <Border Grid.Row="1"
+                                        Stroke="#000000"
+                                        StrokeThickness="1"
+                                        StrokeShape="RoundRectangle 8">
+                                    <Entry Text="{Binding Team2Name}" 
+                                           x:Name="entry2"
+                                           FontSize="{OnIdiom Phone=16, Default=18}"
+                                           TextChanged="Entry_TeamName_Changed"
+                                           TextColor="#000000" 
+                                           HeightRequest="{OnIdiom Phone=50, Default=45}"
+                                           Margin="8,0"
+                                           PlaceholderColor="#A9A9A9" 
+                                           MaxLength="15"
+                                           Placeholder="Име на отбор ..."/>
+                                </Border>
+                            </Grid>
+                        </Frame>
+
+                        <!-- Button with better touch target -->
+                        <Button x:Name="btn_Create"
+                                Margin="10,15,10,10" 
+                                Padding="{OnIdiom Phone='15,12', Default='20,10'}"  
+                                FontAttributes="Bold" 
+                                IsEnabled="False"
+                                CornerRadius="20"
+                                HeightRequest="{OnIdiom Phone=60, Default=55}"
+                                BackgroundColor="#8B4513"
+                                TextColor="White"
+                                FontSize="{OnIdiom Phone=16, Default=18}"
+                                TextTransform="Uppercase"
+                                Text="Нова игра"
+                                Command="{Binding CreateGameCommand}">
+                            <Button.Shadow>
+                                <Shadow Brush="#000000"
+                                        Offset="0,4"
+                                        Opacity="0.4"
+                                        Radius="10" />
+                            </Button.Shadow>
+                        </Button>
+                    </VerticalStackLayout>
+                </Border>
+            </Grid>
+        </ScrollView>
     </Grid>
 </ContentPage>

@@ -1,0 +1,6 @@
+@GrafanaOpenTelemetry_HostAddress = http://localhost:5016
+
+GET {{GrafanaOpenTelemetry_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

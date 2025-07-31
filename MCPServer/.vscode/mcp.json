@@ -1,0 +1,18 @@
+{
+    "servers": {
+        "monkeymcp": {
+            "command": "docker",
+            "args": [
+                "run",
+                "-i",
+                "--rm",
+                "jamesmontemagno/monkeymcp"
+            ],
+            "env": {}
+        },
+    "github": {
+      "type": "http",
+      "url": "https://api.githubcopilot.com/mcp/"
+        }
+    }
+}

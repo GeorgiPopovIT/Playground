@@ -32,7 +32,7 @@ public class User : Entity
     {
         var user = new User(Guid.NewGuid(),firstName, lastName, email);
 
-        user.RaiseDomainEvent(new UserCreateDomainEvent(user.Id));
+        user.RaiseDomainEvent(new UserCreatedDomainEvent(user.Id));
         return user;
     }
 

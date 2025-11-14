@@ -5,6 +5,7 @@ using Bookify.Application;
 using Bookify.Infrastructure;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -63,3 +64,5 @@ app.MapHealthChecks("health", new HealthCheckOptions
 });
 
 app.Run();
+
+public partial class Program;

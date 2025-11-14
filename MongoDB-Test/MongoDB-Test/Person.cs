@@ -1,8 +1,10 @@
 ﻿using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.EntityFrameworkCore;
 
 namespace MongoDB_Test;
 
+[Collection("persons")]
 public class Person
 {
     [BsonId]

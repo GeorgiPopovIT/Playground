@@ -1,0 +1,30 @@
+<h1>{{titleT}}</h1>
+@defer (on timer(5s); prefetch on timer(1s)) {
+    <h2>Deferred Content</h2>
+    <p>This content is loaded after the initial page load.</p>
+   <div>
+    @for (person of dataPerson; track $index) {
+        <p>{{person.name}} - {{person.diet}}</p>
+    }
+    @empty {
+        <p>No data available</p>
+    }
+</div> 
+} @placeholder (minimum 3s) {
+    <p>Loading placeholder</p>
+}
+@loading (minimum 3s; after 2s) {
+    <p>Loading data...</p>
+}
+
+<ng-template [ngxUnless]="">
+<app-home [something]="titleT" (sectionName)="receiveOutputMessage($event)"></app-home>
+</ng-template>
+<app-home [something]="titleT" (sectionName)="receiveOutputMessage($event)">
+</app-home>
+
+<input type="text">
+
+    <h4>Output value: {{'An gular' | reverse}}</h4>
+
+<h1 i18n="Site header|An introduction header for this sample">Hello i18n!</h1>

@@ -1,0 +1,22 @@
+
+@if (!films) {
+  <div class="loading">
+    <p>Loading Star Wars films...</p>
+  </div>
+} @else {
+  @for (item of films; track $index) {
+    <div class="film-card">
+      <h3>{{ item.title }}</h3>
+      <div class="film-meta">
+        <p><strong>Episode:</strong> {{ item.episode_id }}</p>
+        <p><strong>Director:</strong> {{ item.director }}</p>
+        <p><strong>Release Date:</strong> {{ item.release_date }}</p>
+        <p><strong>Producer:</strong> {{ item.producer }}</p>
+      </div>
+      <div class="description">
+        <p>{{ item.opening_crawl }}</p>
+      </div>
+    </div>
+  }
+}
+

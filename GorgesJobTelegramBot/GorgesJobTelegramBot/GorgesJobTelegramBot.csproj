@@ -12,8 +12,4 @@
     <PackageReference Include="Azure.Identity" Version="1.13.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Properties\ServiceDependencies\" />
-  </ItemGroup>
-
 </Project>

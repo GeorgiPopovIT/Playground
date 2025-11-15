@@ -7,9 +7,6 @@ using System.Drawing;
 using System.Net;
 using System.Reflection.Metadata;
 using System.Xml.Linq;
-using Microsoft.CognitiveServices.Speech;
-using Microsoft.CognitiveServices.Speech.Audio;
-using Microsoft.CognitiveServices.Speech.Translation;
 
 var config = new ConfigurationBuilder().AddUserSecrets<Program>().Build();
 string? endpoint = config["AIServicesEndpoint"];
@@ -26,8 +23,7 @@ string text = """
 //AnalyzeImage(endpoint, key);
 //ExtractKeyPhases(endpoint, key);
 //GetSummary(endpoint,key);
-//DetectPll(endpoint, key);
-await SpeechTranslate(key);
+DetectPll(endpoint, key);
 static string GetLanguage(string text, string key, string aiEndpoint)
 {
 
@@ -180,108 +176,5 @@ static void DetectPll(string aiEndpoint, string key)
     else
     {
         Console.WriteLine("No entities were found.");
-    }
-}
-
-static async Task SpeechTranslate(string key)
-{
-    string fromLanguage = "en-US";
-
-    // Creates an instance of a speech translation config with specified endpoint and key and service region.
-    // Replace with your own subscription key and service region (e.g., "westus").
-    var config = SpeechTranslationConfig.FromEndpoint(new Uri("https://ServiceRegron.cognitiveservices.azure.com"), key);
-    config.SpeechRecognitionLanguage = fromLanguage;
-
-    // Translation target language(s).
-    // Replace with language(s) of your choice.
-    config.AddTargetLanguage("de");
-    config.AddTargetLanguage("fr");
-
-    var stopTranslation = new TaskCompletionSource<int>(TaskCreationOptions.RunContinuationsAsynchronously);
-
-    // Creates a translation recognizer using file as audio input.
-    // Replace with your own audio file name.
-    using (var audioInput = AudioConfig.FromWavFileInput(@"whatstheweatherlike.wav"))
-    {
-        using (var recognizer = new TranslationRecognizer(config, audioInput))
-        {
-            // Subscribes to events.
-            recognizer.Recognizing += (s, e) =>
-            {
-                Console.WriteLine($"RECOGNIZING in '{fromLanguage}': Text={e.Result.Text}");
-                foreach (var element in e.Result.Translations)
-                {
-                    Console.WriteLine($"    TRANSLATING into '{element.Key}': {element.Value}");
-                }
-            };
-
-            recognizer.Recognized += (s, e) =>
-            {
-                if (e.Result.Reason == ResultReason.TranslatedSpeech)
-                {
-                    Console.WriteLine($"RECOGNIZED in '{fromLanguage}': Text={e.Result.Text}");
-                    foreach (var element in e.Result.Translations)
-                    {
-                        Console.WriteLine($"    TRANSLATED into '{element.Key}': {element.Value}");
-                    }
-                }
-                else if (e.Result.Reason == ResultReason.RecognizedSpeech)
-                {
-                    Console.WriteLine($"RECOGNIZED: Text={e.Result.Text}");
-                    Console.WriteLine($"    Speech not translated.");
-                }
-                else if (e.Result.Reason == ResultReason.NoMatch)
-                {
-                    Console.WriteLine($"NOMATCH: Speech could not be recognized.");
-                }
-            };
-
-            recognizer.Canceled += (s, e) =>
-            {
-                Console.WriteLine($"CANCELED: Reason={e.Reason}");
-
-                if (e.Reason == CancellationReason.Error)
-                {
-                    Console.WriteLine($"CANCELED: ErrorCode={e.ErrorCode}");
-                    Console.WriteLine($"CANCELED: ErrorDetails={e.ErrorDetails}");
-                    Console.WriteLine($"CANCELED: Did you update the subscription info?");
-                }
-
-                stopTranslation.TrySetResult(0);
-            };
-
-            recognizer.SpeechStartDetected += (s, e) =>
-            {
-                Console.WriteLine("\nSpeech start detected event.");
-            };
-
-            recognizer.SpeechEndDetected += (s, e) =>
-            {
-                Console.WriteLine("\nSpeech end detected event.");
-            };
-
-            recognizer.SessionStarted += (s, e) =>
-            {
-                Console.WriteLine("\nSession started event.");
-            };
-
-            recognizer.SessionStopped += (s, e) =>
-            {
-                Console.WriteLine("\nSession stopped event.");
-                Console.WriteLine($"\nStop translation.");
-                stopTranslation.TrySetResult(0);
-            };
-
-            // Starts continuous recognition. Uses StopContinuousRecognitionAsync() to stop recognition.
-            Console.WriteLine("Start translation...");
-            await recognizer.StartContinuousRecognitionAsync().ConfigureAwait(false);
-
-            // Waits for completion.
-            // Use Task.WaitAny to keep the task rooted.
-            Task.WaitAny(new[] { stopTranslation.Task });
-
-            // Stops translation.
-            await recognizer.StopContinuousRecognitionAsync().ConfigureAwait(false);
-        }
     }
 }

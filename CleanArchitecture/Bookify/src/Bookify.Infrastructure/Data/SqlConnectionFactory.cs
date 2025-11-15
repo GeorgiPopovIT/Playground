@@ -4,7 +4,7 @@ using Npgsql;
 
 namespace Bookify.Infrastructure.Data;
 
-public sealed class SqlConnectionFactory : ISqlConnectionFactory
+internal sealed class SqlConnectionFactory : ISqlConnectionFactory
 {
     private readonly string _connectionString;
 

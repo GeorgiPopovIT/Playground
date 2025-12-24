@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="TelegramAgent/TelegramAgent.csproj" />
+  <Project Path="YouTubeSummarizer/YouTubeSummarizer.csproj" />
+</Solution>

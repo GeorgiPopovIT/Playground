@@ -82,7 +82,7 @@ The agent follows a **tool-based architecture** where:
 
 ## 🚀 Deployment Options
 
-### 1. Console Application (`TelegramAgent`)
+### 1. Console Application
 - Direct command-line interface
 - Perfect for testing and development
 - Immediate response display
@@ -125,14 +125,3 @@ The agent will:
 3. Generate a comprehensive summary
 4. Return the summary in the video's original language
 ## 📦 Dependencies
-
-See individual `*.csproj` files for complete dependency lists. Key NuGet packages:
-- `Microsoft.Agents.AI.Hosting`
-- `Azure.AI.OpenAI`
-- `YoutubeExplode`
-- `Telegram.Bot`
-- `Microsoft.ApplicationInsights.AspNetCore`
-
----
-
-**Built with ❤️ using Microsoft AI Agent Framework and Azure OpenAI**

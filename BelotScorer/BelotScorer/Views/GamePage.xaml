@@ -12,249 +12,386 @@
         <BackButtonBehavior IsVisible="False" IsEnabled="False"/>
     </Shell.BackButtonBehavior>
 
-    <Grid Padding="15" RowSpacing="15">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
+    <Grid>
+        <!-- Semi-transparent overlay -->
+        <BoxView Color="Black" Opacity="0.25"/>
+        
+        <Grid Padding="{OnIdiom Phone=10, Tablet=15, Default=15}" RowSpacing="{OnIdiom Phone=12, Default=18}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="{OnIdiom Phone='0.5*', Default='*'}" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
-        <!-- Teams Header -->
-        <Border Grid.Row="0"
-                BackgroundColor="#8B4513"
-                StrokeShape="RoundRectangle 20"
-                Stroke="#D4AF37"
-                StrokeThickness="2"
-                Padding="15">
-            <Border.Shadow>
-                <Shadow Brush="#000000"
-                        Offset="0,4"
-                        Opacity="0.4"
-                        Radius="10" />
-            </Border.Shadow>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="Auto" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                
-                <Label Text="{Binding Game.Team1Name}"
-                       Grid.Column="0"
-                       FontSize="22" 
-                       FontAttributes="Bold" 
-                       TextColor="#F5F5DC" 
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
-                
-                <Label Grid.Column="1" 
-                       FontSize="25" 
-                       Text="vs" 
-                       TextColor="#D4AF37"
-                       Margin="10,0" 
-                       VerticalOptions="Center"/>
-                
-                <Label Text="{Binding Game.Team2Name}"
-                       Grid.Column="2"
-                       FontSize="22" 
-                       FontAttributes="Bold" 
-                       TextColor="#F5F5DC" 
-                       HorizontalOptions="Center"
-                       VerticalOptions="Center"/>
-            </Grid>
-        </Border>
+            <!-- Enhanced Teams Header with Trophy Icon -->
+            <Border Grid.Row="0"
+                    BackgroundColor="#8B4513"
+                    StrokeShape="RoundRectangle 25"
+                    Stroke="#D4AF37"
+                    StrokeThickness="3"
+                    Padding="{OnIdiom Phone=12, Default=18}">
+                <Border.Shadow>
+                    <Shadow Brush="#000000"
+                            Offset="0,6"
+                            Opacity="0.6"
+                            Radius="15" />
+                </Border.Shadow>
+                <Grid RowSpacing="{OnIdiom Phone=5, Default=8}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!-- Trophy Icon -->
+                    <Label Text="🏆"
+                           Grid.Row="0"
+                           FontSize="{OnIdiom Phone=24, Default=30}"
+                           HorizontalOptions="Center"
+                           Margin="{OnIdiom Phone='0,0,0,3', Default='0,0,0,5'}"/>
+                    
+                    <!-- Team Names -->
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <Label Text="{Binding Game.Team1Name}"
+                               Grid.Column="0"
+                               FontSize="{OnIdiom Phone=18, Tablet=22, Default=24}" 
+                               FontAttributes="Bold" 
+                               TextColor="#FFD700" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               LineBreakMode="TailTruncation"/>
+                        
+                        <Label Grid.Column="1" 
+                               FontSize="{OnIdiom Phone=20, Tablet=24, Default=28}" 
+                               Text="vs" 
+                               TextColor="#D4AF37"
+                               FontAttributes="Bold"
+                               Margin="{OnIdiom Phone='8,0', Default='15,0'}" 
+                               VerticalOptions="Center"/>
+                        
+                        <Label Text="{Binding Game.Team2Name}"
+                               Grid.Column="2"
+                               FontSize="{OnIdiom Phone=18, Tablet=22, Default=24}" 
+                               FontAttributes="Bold" 
+                               TextColor="#FFD700" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               HorizontalTextAlignment="Center"
+                               LineBreakMode="TailTruncation"/>
+                    </Grid>
+                </Grid>
+            </Border>
 
-        <!-- Score Board with improved contrast -->
-        <Border Grid.Row="1"
-                BackgroundColor="#F5F5DC"
-                Opacity="0.97"
-                StrokeShape="RoundRectangle 20"
-                StrokeThickness="3"
-                Stroke="#8B4513">
-            <Border.Shadow>
-                <Shadow Brush="#000000"
-                        Offset="0,5"
-                        Opacity="0.4"
-                        Radius="10" />
-            </Border.Shadow>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
-                </Grid.ColumnDefinitions>
-                
-                <!-- Team 1 Points - styled like input fields -->
-                <Border Grid.Column="0"
-                        StrokeShape="RoundRectangle 18,0,0,18"
-                        BackgroundColor="#FFFFFF"
-                        Stroke="#D4AF37"
-                        StrokeThickness="2"
-                        Padding="10,15">
-                    <CollectionView ItemsSource="{Binding Team1Points}"
-                                    Margin="0,2">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="x:String">
-                                <Border Margin="5" 
-                                       StrokeShape="RoundRectangle 8"
-                                       Stroke="#000000"
-                                       StrokeThickness="1"
-                                       BackgroundColor="#FFFFFF"
-                                       Padding="0">
-                                    <Label FontSize="20" 
-                                           TextColor="#000000" 
-                                           FontAttributes="Bold" 
-                                           Text="{Binding .}" 
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           HeightRequest="50"
-                                           HorizontalTextAlignment="Center"
-                                           VerticalTextAlignment="Center"
-                                           Margin="8,0"/>
-                                </Border>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </Border>
-                
-                <!-- Team 2 Points - styled like input fields -->
-                <Border Grid.Column="1"
-                        StrokeShape="RoundRectangle 0,18,18,0"
-                        BackgroundColor="#FFFFFF"
-                        Stroke="#D4AF37"
-                        StrokeThickness="2"
-                        Padding="10,15">
-                    <CollectionView ItemsSource="{Binding Team2Points}"
-                                    Margin="0,2">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate x:DataType="x:String">
-                                <Border Margin="5" 
-                                       StrokeShape="RoundRectangle 8"
-                                       Stroke="#000000"
-                                       StrokeThickness="1"
-                                       BackgroundColor="#FFFFFF"
-                                       Padding="0">
-                                    <Label FontSize="20" 
-                                           TextColor="#000000" 
-                                           FontAttributes="Bold" 
-                                           Text="{Binding .}" 
-                                           HorizontalOptions="Center"
-                                           VerticalOptions="Center"
-                                           HeightRequest="50"
-                                           HorizontalTextAlignment="Center"
-                                           VerticalTextAlignment="Center"
-                                           Margin="8,0"/>
-                                </Border>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                </Border>
-            </Grid>
-        </Border>
-
-        <!-- Input Area -->
-        <Border Grid.Row="2"
-                BackgroundColor="#F5F5DC"
-                StrokeShape="RoundRectangle 20"
-                StrokeThickness="2"
-                Stroke="#8B4513"
-                Padding="15">
-            <Border.Shadow>
-                <Shadow Brush="#000000"
-                        Offset="0,4"
-                        Opacity="0.3"
-                        Radius="10" />
-            </Border.Shadow>
-            <VerticalStackLayout Spacing="15">
-                <Grid ColumnSpacing="15">
+            <!-- Enhanced Score Board -->
+            <Border Grid.Row="1"
+                    BackgroundColor="#F5F5DC"
+                    Opacity="0.98"
+                    StrokeShape="RoundRectangle 25"
+                    StrokeThickness="4"
+                    Stroke="#D4AF37">
+                <Border.Shadow>
+                    <Shadow Brush="#000000"
+                            Offset="0,8"
+                            Opacity="0.5"
+                            Radius="15" />
+                </Border.Shadow>
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="3" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     
-                    <Frame Grid.Column="0" 
-                           BackgroundColor="White"
-                           BorderColor="#D4AF37"
-                           CornerRadius="15"
-                           HasShadow="True"
-                           Padding="10">
-                        <StackLayout>
-                            <Label FontSize="18" 
-                                   FontAttributes="Bold" 
-                                   Text="{Binding Game.Team1Name}" 
-                                   TextColor="#8B4513"
-                                   HorizontalOptions="Center"/>
-                            <Border StrokeShape="RoundRectangle 8"
-                                    Stroke="#000000"
-                                    StrokeThickness="1"
-                                    Margin="0,5,0,0">
-                                <Entry Keyboard="Numeric" 
-                                       FontSize="20" 
-                                       Text="{Binding Team1PointsToAdd}" 
-                                       x:Name="entry1"
-                                       TextChanged="Entry_TeamName_Changed" 
-                                       TextColor="#000000"
-                                       Placeholder="Точки за отбор ..." 
-                                       MaxLength="3"
-                                       HorizontalTextAlignment="Center"
-                                       Margin="8,0"
-                                       PlaceholderColor="#A9A9A9"/>
-                            </Border>
-                        </StackLayout>
-                    </Frame>
-
-                    <Frame Grid.Column="1" 
-                           BackgroundColor="White"
-                           BorderColor="#D4AF37"
-                           CornerRadius="15"
-                           HasShadow="True"
-                           Padding="10">
-                        <StackLayout>
-                            <Label FontSize="18" 
-                                   FontAttributes="Bold" 
-                                   Text="{Binding Game.Team2Name}" 
-                                   TextColor="#8B4513"
-                                   HorizontalOptions="Center"/>
-                            <Border StrokeShape="RoundRectangle 8"
-                                    Stroke="#000000"
-                                    StrokeThickness="1"
-                                    Margin="0,5,0,0">
-                                <Entry Keyboard="Numeric" 
-                                       FontSize="20" 
-                                       Text="{Binding Team2PointsToAdd}" 
-                                       x:Name="entry2"
-                                       TextChanged="Entry_TeamName_Changed" 
-                                       TextColor="#000000"
-                                       Placeholder="Точки за отбор ..." 
-                                       MaxLength="3"
-                                       HorizontalTextAlignment="Center"
-                                       Margin="8,0"
-                                       PlaceholderColor="#A9A9A9"/>
-                            </Border>
-                        </StackLayout>
-                    </Frame>
+                    <!-- Divider line -->
+                    <BoxView Grid.Column="1"
+                             BackgroundColor="#D4AF37"
+                             WidthRequest="3"/>
+                    
+                    <!-- Team 1 Points Column -->
+                    <Grid Grid.Column="0" Padding="{OnIdiom Phone=8, Default=12}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Team 1 Header -->
+                        <Border Grid.Row="0"
+                                BackgroundColor="#8B4513"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="{OnIdiom Phone='8,6', Default='10,8'}"
+                                Margin="{OnIdiom Phone='0,0,0,6', Default='0,0,0,10'}">
+                            <Label Text="{Binding Game.Team1Name}"
+                                   FontSize="{OnIdiom Phone=15, Default=18}"
+                                   LineBreakMode="TailTruncation"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"/>
+                        </Border>
+                        
+                        <ScrollView Grid.Row="1">
+                            <CollectionView ItemsSource="{Binding Team1Points}"
+                                            Margin="0,2">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="x:String">
+                                        <Border Margin="{OnIdiom Phone='3,3', Default='4,4'}" 
+                                               StrokeShape="RoundRectangle 12"
+                                               Stroke="#8B4513"
+                                               StrokeThickness="2"
+                                               BackgroundColor="#FFFFFF"
+                                               Padding="0">
+                                            <Border.Shadow>
+                                                <Shadow Brush="#000000"
+                                                        Offset="0,2"
+                                                        Opacity="0.15"
+                                                        Radius="6" />
+                                            </Border.Shadow>
+                                            <Label FontSize="{OnIdiom Phone=18, Default=22}" 
+                                                   TextColor="#2E7D32" 
+                                                   FontAttributes="Bold" 
+                                                   Text="{Binding .}" 
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   HeightRequest="{OnIdiom Phone=45, Default=55}"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Center"
+                                                   Margin="10,0"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </ScrollView>
+                    </Grid>
+                    
+                    <!-- Team 2 Points Column -->
+                    <Grid Grid.Column="2" Padding="{OnIdiom Phone=8, Default=12}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <!-- Team 2 Header -->
+                        <Border Grid.Row="0"
+                                BackgroundColor="#8B4513"
+                                StrokeShape="RoundRectangle 12"
+                                Padding="{OnIdiom Phone='8,6', Default='10,8'}"
+                                Margin="{OnIdiom Phone='0,0,0,6', Default='0,0,0,10'}">
+                            <Label Text="{Binding Game.Team2Name}"
+                                   FontSize="{OnIdiom Phone=15, Default=18}"
+                                   LineBreakMode="TailTruncation"
+                                   FontAttributes="Bold"
+                                   TextColor="White"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"/>
+                        </Border>
+                        
+                        <ScrollView Grid.Row="1">
+                            <CollectionView ItemsSource="{Binding Team2Points}"
+                                            Margin="0,2">
+                                <CollectionView.ItemTemplate>
+                                    <DataTemplate x:DataType="x:String">
+                                        <Border Margin="{OnIdiom Phone='3,3', Default='4,4'}" 
+                                               StrokeShape="RoundRectangle 12"
+                                               Stroke="#8B4513"
+                                               StrokeThickness="2"
+                                               BackgroundColor="#FFFFFF"
+                                               Padding="0">
+                                            <Border.Shadow>
+                                                <Shadow Brush="#000000"
+                                                        Offset="0,2"
+                                                        Opacity="0.15"
+                                                        Radius="6" />
+                                            </Border.Shadow>
+                                            <Label FontSize="{OnIdiom Phone=18, Default=22}" 
+                                                   TextColor="#C62828" 
+                                                   FontAttributes="Bold" 
+                                                   Text="{Binding .}" 
+                                                   HorizontalOptions="Center"
+                                                   VerticalOptions="Center"
+                                                   HeightRequest="{OnIdiom Phone=45, Default=55}"
+                                                   HorizontalTextAlignment="Center"
+                                                   VerticalTextAlignment="Center"
+                                                   Margin="10,0"/>
+                                        </Border>
+                                    </DataTemplate>
+                                </CollectionView.ItemTemplate>
+                            </CollectionView>
+                        </ScrollView>
+                    </Grid>
                 </Grid>
+            </Border>
 
-                <Button x:Name="btn_Create"
-                        Padding="20,10"
-                        CornerRadius="20"
-                        FontAttributes="Bold"
-                        HeightRequest="55"
-                        IsEnabled="False"
-                        BackgroundColor="#8B4513"
-                        TextTransform="Uppercase"
-                        Text="Въведи точки"
-                        FontSize="18"
-                        TextColor="White"
-                        Clicked="Save_Points_Clicked"
-                        Command="{Binding AddPointsToTeamsCommand}">
-                    <Button.Shadow>
-                        <Shadow Brush="#000000"
-                                Offset="0,4"
-                                Opacity="0.4"
-                                Radius="10" />
-                    </Button.Shadow>
-                </Button>
-            </VerticalStackLayout>
-        </Border>
+            <!-- Enhanced Input Area -->
+            <Border Grid.Row="2"
+                    BackgroundColor="#F5F5DC"
+                    StrokeShape="RoundRectangle 25"
+                    StrokeThickness="3"
+                    Stroke="#D4AF37"
+                    Padding="{OnIdiom Phone=12, Default=18}">
+                <Border.Shadow>
+                    <Shadow Brush="#000000"
+                            Offset="0,6"
+                            Opacity="0.4"
+                            Radius="15" />
+                </Border.Shadow>
+                <VerticalStackLayout Spacing="{OnIdiom Phone=10, Default=15}">
+                    <!-- Input Instructions -->
+                    <Label Text="📝 Въведете точки за раздаване"
+                           FontSize="{OnIdiom Phone=14, Default=16}"
+                           FontAttributes="Bold"
+                           TextColor="#8B4513"
+                           HorizontalOptions="Center"
+                           Margin="{OnIdiom Phone='0,0,0,3', Default='0,0,0,5'}"/>
+                    
+                    <Grid ColumnSpacing="{OnIdiom Phone=8, Default=15}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Team 1 Input Card -->
+                        <Border Grid.Column="0" 
+                                BackgroundColor="White"
+                                Stroke="#2E7D32"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 18"
+                                Padding="{OnIdiom Phone=8, Default=12}">
+                            <Border.Shadow>
+                                <Shadow Brush="#000000"
+                                        Offset="0,3"
+                                        Opacity="0.2"
+                                        Radius="8" />
+                            </Border.Shadow>
+                            <VerticalStackLayout Spacing="{OnIdiom Phone=6, Default=10}">
+                                <Label FontSize="{OnIdiom Phone=14, Default=16}" 
+                                       FontAttributes="Bold" 
+                                       Text="{Binding Game.Team1Name}" 
+                                       TextColor="#2E7D32"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="TailTruncation"/>
+                                <Border StrokeShape="RoundRectangle 10"
+                                        Stroke="#2E7D32"
+                                        StrokeThickness="2"
+                                        BackgroundColor="#F1F8E9"
+                                        Margin="{OnIdiom Phone='0,2,0,0', Default='0,3,0,0'}">
+                                    <Entry Keyboard="Numeric" 
+                                           FontSize="{OnIdiom Phone=20, Default=24}" 
+                                           FontAttributes="Bold"
+                                           Text="{Binding Team1PointsToAdd}" 
+                                           x:Name="entry1"
+                                           TextChanged="Entry_TeamName_Changed" 
+                                           TextColor="#2E7D32"
+                                           Placeholder="0" 
+                                           MaxLength="3"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"
+                                           HeightRequest="{OnIdiom Phone=45, Default=55}"
+                                           Margin="10,0"
+                                           PlaceholderColor="#81C784"/>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <!-- Team 2 Input Card -->
+                        <Border Grid.Column="1" 
+                                BackgroundColor="White"
+                                Stroke="#C62828"
+                                StrokeThickness="2"
+                                StrokeShape="RoundRectangle 18"
+                                Padding="{OnIdiom Phone=8, Default=12}">
+                            <Border.Shadow>
+                                <Shadow Brush="#000000"
+                                        Offset="0,3"
+                                        Opacity="0.2"
+                                        Radius="8" />
+                            </Border.Shadow>
+                            <VerticalStackLayout Spacing="{OnIdiom Phone=6, Default=10}">
+                                <Label FontSize="{OnIdiom Phone=14, Default=16}" 
+                                       FontAttributes="Bold" 
+                                       Text="{Binding Game.Team2Name}" 
+                                       TextColor="#C62828"
+                                       HorizontalOptions="Center"
+                                       HorizontalTextAlignment="Center"
+                                       LineBreakMode="TailTruncation"/>
+                                <Border StrokeShape="RoundRectangle 10"
+                                        Stroke="#C62828"
+                                        StrokeThickness="2"
+                                        BackgroundColor="#FFEBEE"
+                                        Margin="{OnIdiom Phone='0,2,0,0', Default='0,3,0,0'}">
+                                    <Entry Keyboard="Numeric" 
+                                           FontSize="{OnIdiom Phone=20, Default=24}" 
+                                           FontAttributes="Bold"
+                                           Text="{Binding Team2PointsToAdd}" 
+                                           x:Name="entry2"
+                                           TextChanged="Entry_TeamName_Changed" 
+                                           TextColor="#C62828"
+                                           Placeholder="0" 
+                                           MaxLength="3"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"
+                                           HeightRequest="{OnIdiom Phone=45, Default=55}"
+                                           Margin="10,0"
+                                           PlaceholderColor="#E57373"/>
+                                </Border>
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+
+                    <!-- Enhanced Submit Button -->
+                    <Border StrokeShape="RoundRectangle 25"
+                            Stroke="#D4AF37"
+                            StrokeThickness="3"
+                            Padding="0"
+                            Margin="{OnIdiom Phone='0,3,0,0', Default='0,5,0,0'}">
+                        <Border.Shadow>
+                            <Shadow Brush="#000000"
+                                    Offset="0,6"
+                                    Opacity="0.5"
+                                    Radius="12" />
+                        </Border.Shadow>
+                        
+                        <Button x:Name="btn_Create"
+                                Padding="{OnIdiom Phone='16,10', Default='22,12'}"
+                                CornerRadius="23"
+                                FontAttributes="Bold"
+                                HeightRequest="{OnIdiom Phone=50, Default=60}"
+                                IsEnabled="False"
+                                BackgroundColor="#8B4513"
+                                TextTransform="Uppercase"
+                                Text="✅ Запиши точки"
+                                FontSize="{OnIdiom Phone=16, Default=19}"
+                                TextColor="White"
+                                Clicked="Save_Points_Clicked"
+                                Command="{Binding AddPointsToTeamsCommand}">
+                            <Button.Triggers>
+                                <DataTrigger TargetType="Button" Binding="{Binding IsEnabled, Source={RelativeSource Self}}" Value="True">
+                                    <Setter Property="BackgroundColor" Value="#2E7D32" />
+                                </DataTrigger>
+                                <DataTrigger TargetType="Button" Binding="{Binding IsPressed, Source={RelativeSource Self}}" Value="True">
+                                    <Setter Property="Scale" Value="0.95" />
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </Border>
+                    
+                    
+                    <!-- Helper tip -->
+                    <Label Text="💡 Първият до 151 точки печели играта!"
+                           FontSize="{OnIdiom Phone=12, Default=13}"
+                           TextColor="#654321"
+                           FontAttributes="Italic"
+                           HorizontalOptions="Center"
+                           HorizontalTextAlignment="Center"
+                           Margin="{OnIdiom Phone='0,3,0,0', Default='0,5,0,0'}"/>
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
     </Grid>
 </ContentPage>

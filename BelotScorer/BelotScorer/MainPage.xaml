@@ -6,32 +6,139 @@
              x:Class="BelotScorer.MainPage">
 
     <Shell.TitleView>
-        <Grid>
-            <Label FontSize="Large" 
-                   TextColor="White" 
-                   Text="Belot Scorer" 
+        <Grid Padding="{OnIdiom Phone=8, Tablet=10, Default=10}">
+            <Label FontSize="{OnIdiom Phone=22, Tablet=28, Default=28}" 
+                   FontAttributes="Bold"
+                   TextColor="#FFD700" 
+                   Text="🃏 Belot Scorer" 
                    HorizontalOptions="Center" 
-                   VerticalOptions="Center" />
+                   VerticalOptions="Center">
+                <Label.Shadow>
+                    <Shadow Brush="Black"
+                            Offset="2,2"
+                            Opacity="0.8"
+                            Radius="4" />
+                </Label.Shadow>
+            </Label>
         </Grid>
     </Shell.TitleView>
 
     <Grid>
+        <!-- Semi-transparent overlay for better readability -->
+        <BoxView Color="Black" Opacity="0.3"/>
+        
         <ScrollView>
-            <VerticalStackLayout
-            Spacing="20"
-            Padding="20">
-
-                <Button FontSize="Large"
-                    VerticalOptions="Center"
-                    HorizontalOptions="Center"
-                    TextColor="White"
-					Background="Blue"
-                    BackgroundColor="Blue"
-                    Text="Нова игра"
-                    CornerRadius="15"
-                    Command="{Binding }"
-                    Clicked="GoToCreateGame"/>
-            </VerticalStackLayout>
+            <Grid VerticalOptions="Center" Padding="{OnIdiom Phone=15, Tablet=30, Default=30}">
+                <VerticalStackLayout Spacing="{OnIdiom Phone=20, Tablet=30, Default=30}" VerticalOptions="Center">
+                    
+                    <!-- Welcome Card -->
+                    <Border BackgroundColor="#F5F5DC"
+                            StrokeShape="RoundRectangle 30"
+                            Stroke="#D4AF37"
+                            StrokeThickness="3"
+                            Padding="{OnIdiom Phone=20, Tablet=30, Default=30}"
+                            Margin="{OnIdiom Phone='0,10,0,0', Default='0,20,0,0'}">
+                        <Border.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="0,8"
+                                    Opacity="0.6"
+                                    Radius="20" />
+                        </Border.Shadow>
+                        
+                        <VerticalStackLayout Spacing="{OnIdiom Phone=15, Default=20}">
+                            <!-- App Logo/Icon -->
+                            <Label Text="♠️ ♥️ ♣️ ♦️"
+                                   FontSize="{OnIdiom Phone=40, Tablet=48, Default=48}"
+                                   HorizontalOptions="Center"
+                                   TextColor="#8B4513"/>
+                            
+                            <!-- Welcome Title -->
+                            <Label Text="Добре дошли"
+                                   FontSize="{OnIdiom Phone=26, Tablet=32, Default=32}"
+                                   FontAttributes="Bold"
+                                   TextColor="#8B4513"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"/>
+                            
+                            <!-- Subtitle -->
+                            <Label Text="Започнете нова игра на Белот"
+                                   FontSize="{OnIdiom Phone=14, Default=16}"
+                                   TextColor="#654321"
+                                   HorizontalOptions="Center"
+                                   HorizontalTextAlignment="Center"
+                                   Margin="0,0,0,10"/>
+                            
+                            <!-- New Game Button with gradient effect -->
+                            <Border StrokeShape="RoundRectangle 25"
+                                    Stroke="#D4AF37"
+                                    StrokeThickness="2"
+                                    Padding="0"
+                                    HeightRequest="{OnIdiom Phone=60, Default=70}">
+                                <Border.Shadow>
+                                    <Shadow Brush="Black"
+                                            Offset="0,6"
+                                            Opacity="0.5"
+                                            Radius="15" />
+                                </Border.Shadow>
+                                
+                                <Button Text="🎮 НОВА ИГРА"
+                                        FontSize="{OnIdiom Phone=18, Tablet=22, Default=22}"
+                                        FontAttributes="Bold"
+                                        TextColor="White"
+                                        BackgroundColor="#8B4513"
+                                        CornerRadius="23"
+                                        HeightRequest="{OnIdiom Phone=60, Default=70}"
+                                        Clicked="GoToCreateGame">
+                                    <Button.Triggers>
+                                        <DataTrigger TargetType="Button" Binding="{Binding IsPressed, Source={RelativeSource Self}}" Value="True">
+                                            <Setter Property="Scale" Value="0.95" />
+                                        </DataTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                            </Border>
+                            
+                            <!-- Info Section -->
+                            <Frame BackgroundColor="White"
+                                   BorderColor="#D4AF37"
+                                   CornerRadius="15"
+                                   Padding="{OnIdiom Phone=12, Default=15}"
+                                   HasShadow="True"
+                                   Margin="{OnIdiom Phone='0,8,0,0', Default='0,10,0,0'}">
+                                <VerticalStackLayout Spacing="{OnIdiom Phone=6, Default=8}">
+                                    <Label Text="ℹ️ Как да играя?"
+                                           FontSize="{OnIdiom Phone=15, Default=16}"
+                                           FontAttributes="Bold"
+                                           TextColor="#8B4513"/>
+                                    <Label Text="• Въведете имената на двата отбора"
+                                           FontSize="{OnIdiom Phone=13, Default=14}"
+                                           TextColor="#654321"/>
+                                    <Label Text="• Записвайте точките след всяка ръка"
+                                           FontSize="{OnIdiom Phone=13, Default=14}"
+                                           TextColor="#654321"/>
+                                    <Label Text="• Първият до 151 точки печели!"
+                                           FontSize="{OnIdiom Phone=13, Default=14}"
+                                           TextColor="#654321"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </VerticalStackLayout>
+                    </Border>
+                    
+                    <!-- Footer -->
+                    <Label Text="Приятна игра! 🎴"
+                           FontSize="14"
+                           TextColor="White"
+                           FontAttributes="Italic"
+                           HorizontalOptions="Center"
+                           Margin="0,10,0,20">
+                        <Label.Shadow>
+                            <Shadow Brush="Black"
+                                    Offset="1,1"
+                                    Opacity="0.8"
+                                    Radius="3" />
+                        </Label.Shadow>
+                    </Label>
+                </VerticalStackLayout>
+            </Grid>
         </ScrollView>
     </Grid>
 </ContentPage>

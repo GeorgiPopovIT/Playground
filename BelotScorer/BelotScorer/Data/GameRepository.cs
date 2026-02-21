@@ -64,6 +64,14 @@ namespace BelotScorer.Data
         }
         public Task SavePointsToTeams(Game currentGame, int team1PointToAdd, int team2PointToAdd)
         {
+            currentGame.Team1FinalPoints += team1PointToAdd;
+            currentGame.Team2FinalPoints += team2PointToAdd;
+
+            if (IsGameEnded(currentGame.Team1FinalPoints, currentGame.Team2FinalPoints))
+            {
+                currentGame.IsGameFinished = true;
+            }
+            
             return Task.CompletedTask;
         }
 
@@ -72,8 +80,7 @@ namespace BelotScorer.Data
             currentGame.Team1Score += team1PointToAdd;
             currentGame.Team2Score += team2PointToAdd;
 
-            if (currentGame.Team1Score >= Constants.END_GAME_POINT ||
-                currentGame.Team2Score >= Constants.END_GAME_POINT)
+            if (IsGameEnded(currentGame.Team1Score, currentGame.Team2Score))
             {
                 currentGame.IsGameFinished = true;
             }
@@ -139,5 +146,9 @@ namespace BelotScorer.Data
             await Init();
             await this._database.DeleteAllAsync<Point>();
         }
+
+        private bool IsGameEnded(int team1Score, int team2Score)
+            => team1Score >= Constants.END_GAME_POINT ||
+                team2Score >= Constants.END_GAME_POINT;
     }
 }

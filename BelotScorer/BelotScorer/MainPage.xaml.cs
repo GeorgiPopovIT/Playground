@@ -16,7 +16,7 @@ public partial class MainPage : ContentPage
         var lastGame = await this._gameRepository.GetLastGameAsync();
         if (lastGame is not null && lastGame.IsGameFinished is false)
         {
-            bool toContinue = await Shell.Current.DisplayAlert("Белот", "Искате ли да продължите играта?", "Да", "Не");
+            bool toContinue = await Shell.Current.DisplayAlertAsync("Белот", "Искате ли да продължите играта?", "Да", "Не");
 
             if (toContinue)
             {

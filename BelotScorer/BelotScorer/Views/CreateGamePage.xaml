@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModel ="clr-namespace:BelotScorer.ViewModels"
+             xmlns:services="clr-namespace:BelotScorer.Services"
              x:DataType="viewModel:CreateGameViewModel"
              x:Class="BelotScorer.Views.CreateGamePage"
-             Title="Създай игра"
+             Title="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[CreateGame]}"
              BackgroundImageSource="table_background.jpg">
 
     <Grid>
@@ -43,8 +43,8 @@
                                    FontSize="50"
                                    HorizontalOptions="Center"
                                    Margin="0,0,0,5"/>
-                            
-                            <Label Text="Нова игра на Белот" 
+
+                            <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[NewBelotGame]}"
                                    FontSize="{OnIdiom Phone=26, Tablet=30, Desktop=30}"
                                    TextColor="#8B4513"
                                    FontAttributes="Bold"
@@ -67,7 +67,7 @@
                                 
                                 <HorizontalStackLayout Grid.Row="0" Spacing="8">
                                     <Label Text="👥" FontSize="20" VerticalOptions="Center"/>
-                                    <Label Text="Отбор 1" 
+                                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[Team1]}"
                                            FontSize="{OnIdiom Phone=20, Default=22}"
                                            FontAttributes="Bold"
                                            TextColor="#8B4513"
@@ -91,7 +91,7 @@
                                            FontSize="{OnIdiom Phone=18, Default=20}"
                                            TextChanged="Entry_TeamName_Changed" 
                                            TextColor="#000000"
-                                           Placeholder="Въведете име на отбор..." 
+                                           Placeholder="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[EnterTeamName]}"
                                            MaxLength="15"
                                            HeightRequest="{OnIdiom Phone=55, Default=50}"
                                            Margin="12,0"
@@ -115,7 +115,7 @@
                                 
                                 <HorizontalStackLayout Grid.Row="0" Spacing="8">
                                     <Label Text="👥" FontSize="20" VerticalOptions="Center"/>
-                                    <Label Text="Отбор 2" 
+                                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[Team2]}"
                                            FontSize="{OnIdiom Phone=20, Default=22}"
                                            FontAttributes="Bold"
                                            TextColor="#8B4513"
@@ -143,7 +143,7 @@
                                            Margin="12,0"
                                            PlaceholderColor="#999999" 
                                            MaxLength="15"
-                                           Placeholder="Въведете име на отбор..."/>
+                                           Placeholder="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[EnterTeamName]}"/>
                                 </Border>
                             </Grid>
                         </Frame>
@@ -171,7 +171,7 @@
                                     TextColor="White"
                                     FontSize="{OnIdiom Phone=18, Default=20}"
                                     TextTransform="Uppercase"
-                                    Text="🎮 Започни игра"
+                                    Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[StartGame]}"
                                     Command="{Binding CreateGameCommand}">
                                 <Button.Triggers>
                                     <DataTrigger TargetType="Button" Binding="{Binding IsEnabled, Source={RelativeSource Self}}" Value="True">

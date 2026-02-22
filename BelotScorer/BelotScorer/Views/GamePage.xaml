@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:viewModel ="clr-namespace:BelotScorer.ViewModels"
+             xmlns:services="clr-namespace:BelotScorer.Services"
              x:DataType="viewModel:GameViewModel"
              x:Class="BelotScorer.Views.GamePage"
-             Title="Игра"
+             Title="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[Game]}"
              BackgroundImageSource="table_background.jpg">
 
     <Shell.BackButtonBehavior>
@@ -242,7 +242,7 @@
                 </Border.Shadow>
                 <VerticalStackLayout Spacing="{OnIdiom Phone=10, Default=15}">
                     <!-- Input Instructions -->
-                    <Label Text="📝 Въведете точки за раздаване"
+                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[EnterPointsForRound]}"
                            FontSize="{OnIdiom Phone=14, Default=16}"
                            FontAttributes="Bold"
                            TextColor="#8B4513"
@@ -365,7 +365,7 @@
                                 IsEnabled="False"
                                 BackgroundColor="#8B4513"
                                 TextTransform="Uppercase"
-                                Text="✅ Запиши точки"
+                                Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[RecordPoints]}"
                                 FontSize="{OnIdiom Phone=16, Default=19}"
                                 TextColor="White"
                                 Clicked="Save_Points_Clicked"

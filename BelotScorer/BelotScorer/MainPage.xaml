@@ -1,16 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:model ="clr-namespace:BelotScorer.Data.Models"
+             xmlns:services="clr-namespace:BelotScorer.Services"
              BackgroundImageSource="table_background.jpg"
              x:Class="BelotScorer.MainPage">
 
     <Shell.TitleView>
         <Grid Padding="{OnIdiom Phone=8, Tablet=10, Default=10}">
-            <Label FontSize="{OnIdiom Phone=22, Tablet=28, Default=28}" 
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="{OnIdiom Phone=70, Default=Auto}" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="{OnIdiom Phone=70, Default=Auto}" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0"
+                    Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=CurrentCulture.TwoLetterISOLanguageName, StringFormat='{0}'}"
+                    FontSize="16"
+                    TextColor="White"
+                    BackgroundColor="#8B4513"
+                    CornerRadius="15"
+                    Padding="12,5"
+                    Clicked="OnLanguageButtonClicked"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Start"
+                    Margin="5,0,0,0">
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button" 
+                                 Binding="{Binding Source={x:Static services:LocalizationService.Instance}, Path=CurrentCulture.TwoLetterISOLanguageName}" 
+                                 Value="bg">
+                        <Setter Property="Text" Value="EN" />
+                    </DataTrigger>
+                    <DataTrigger TargetType="Button" 
+                                 Binding="{Binding Source={x:Static services:LocalizationService.Instance}, Path=CurrentCulture.TwoLetterISOLanguageName}" 
+                                 Value="en">
+                        <Setter Property="Text" Value="БГ" />
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+
+            <Label Grid.Column="1"
+                   FontSize="{OnIdiom Phone=22, Tablet=28, Default=28}" 
                    FontAttributes="Bold"
                    TextColor="#FFD700" 
-                   Text="🃏 Belot Scorer" 
+                   Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[AppTitle]}"
                    HorizontalOptions="Center" 
                    VerticalOptions="Center">
                 <Label.Shadow>
@@ -53,15 +85,15 @@
                                    TextColor="#8B4513"/>
                             
                             <!-- Welcome Title -->
-                            <Label Text="Добре дошли"
+                            <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[Welcome]}"
                                    FontSize="{OnIdiom Phone=26, Tablet=32, Default=32}"
                                    FontAttributes="Bold"
                                    TextColor="#8B4513"
                                    HorizontalOptions="Center"
                                    HorizontalTextAlignment="Center"/>
-                            
+
                             <!-- Subtitle -->
-                            <Label Text="Започнете нова игра на Белот"
+                            <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[StartNewGame]}"
                                    FontSize="{OnIdiom Phone=14, Default=16}"
                                    TextColor="#654321"
                                    HorizontalOptions="Center"
@@ -81,7 +113,7 @@
                                             Radius="15" />
                                 </Border.Shadow>
                                 
-                                <Button Text="🎮 НОВА ИГРА"
+                                <Button Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[NewGameButton]}"
                                         FontSize="{OnIdiom Phone=18, Tablet=22, Default=22}"
                                         FontAttributes="Bold"
                                         TextColor="White"
@@ -105,17 +137,17 @@
                                    HasShadow="True"
                                    Margin="{OnIdiom Phone='0,8,0,0', Default='0,10,0,0'}">
                                 <VerticalStackLayout Spacing="{OnIdiom Phone=6, Default=8}">
-                                    <Label Text="ℹ️ Как да играя?"
+                                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[HowToPlay]}"
                                            FontSize="{OnIdiom Phone=15, Default=16}"
                                            FontAttributes="Bold"
                                            TextColor="#8B4513"/>
-                                    <Label Text="• Въведете имената на двата отбора"
+                                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[HowToPlayStep1]}"
                                            FontSize="{OnIdiom Phone=13, Default=14}"
                                            TextColor="#654321"/>
-                                    <Label Text="• Записвайте точките след всяка ръка"
+                                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[HowToPlayStep2]}"
                                            FontSize="{OnIdiom Phone=13, Default=14}"
                                            TextColor="#654321"/>
-                                    <Label Text="• Първият до 151 точки печели!"
+                                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[HowToPlayStep3]}"
                                            FontSize="{OnIdiom Phone=13, Default=14}"
                                            TextColor="#654321"/>
                                 </VerticalStackLayout>
@@ -124,7 +156,7 @@
                     </Border>
                     
                     <!-- Footer -->
-                    <Label Text="Приятна игра! 🎴"
+                    <Label Text="{Binding Source={x:Static services:LocalizationService.Instance}, Path=[EnjoyGame]}"
                            FontSize="14"
                            TextColor="White"
                            FontAttributes="Italic"

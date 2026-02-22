@@ -1,5 +1,6 @@
 ﻿using BelotScorer.Data;
 using BelotScorer.Data.Models;
+using BelotScorer.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
@@ -10,12 +11,14 @@ namespace BelotScorer.ViewModels;
 public partial class GameViewModel : ObservableObject
 {
     private readonly GameRepository _gameRepository;
+    private readonly LocalizationService _localizationService;
 
-    public GameViewModel(GameRepository gameRepo)
+    public GameViewModel(GameRepository gameRepo, LocalizationService localizationService)
     {
-        this._gameRepository = gameRepo;
-        this.Team1Points = new();
-        this.Team2Points = new();
+        _gameRepository = gameRepo;
+        _localizationService = localizationService;
+        this.Team1Points = [];
+        this.Team2Points = [];
 
         _ = InitializeGameResult();
     }
@@ -60,7 +63,11 @@ public partial class GameViewModel : ObservableObject
 
                 if (this.IsGameFinished())
                 {
-                    bool answer = await Shell.Current.DisplayAlert("Белот", "Играта на белот приключи ли?", "Да", "Не");
+                    bool answer = await Shell.Current.DisplayAlert(
+                        _localizationService["ContinueGameTitle"], 
+                        _localizationService["EndGame"], 
+                        _localizationService["Yes"], 
+                        _localizationService["No"]);
 
                     if (answer)
                     {

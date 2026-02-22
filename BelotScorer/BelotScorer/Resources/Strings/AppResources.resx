@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  
+  <!-- Main Page -->
+  <data name="AppTitle" xml:space="preserve">
+    <value>🃏 Belot Scorer</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Добре дошли</value>
+  </data>
+  <data name="StartNewGame" xml:space="preserve">
+    <value>Започнете нова игра на Белот</value>
+  </data>
+  <data name="NewGameButton" xml:space="preserve">
+    <value>🎮 НОВА ИГРА</value>
+  </data>
+  <data name="HowToPlay" xml:space="preserve">
+    <value>ℹ️ Как да играя?</value>
+  </data>
+  <data name="HowToPlayStep1" xml:space="preserve">
+    <value>• Въведете имената на двата отбора</value>
+  </data>
+  <data name="HowToPlayStep2" xml:space="preserve">
+    <value>• Записвайте точките след всяка ръка</value>
+  </data>
+  <data name="HowToPlayStep3" xml:space="preserve">
+    <value>• Първият до 151 точки печели!</value>
+  </data>
+  <data name="EnjoyGame" xml:space="preserve">
+    <value>Приятна игра! 🎴</value>
+  </data>
+  <data name="ContinueGameTitle" xml:space="preserve">
+    <value>Белот</value>
+  </data>
+  <data name="ContinueGameMessage" xml:space="preserve">
+    <value>Искате ли да продължите играта?</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Да</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>Не</value>
+  </data>
+  <data name="Bulgarian" xml:space="preserve">
+    <value>🇧🇬 Български</value>
+  </data>
+  <data name="English" xml:space="preserve">
+    <value>🇬🇧 English</value>
+  </data>
+  
+  <!-- Create Game Page -->
+  <data name="CreateGame" xml:space="preserve">
+    <value>Създай игра</value>
+  </data>
+  <data name="NewBelotGame" xml:space="preserve">
+    <value>Нова игра на Белот</value>
+  </data>
+  <data name="Team1" xml:space="preserve">
+    <value>Отбор 1</value>
+  </data>
+  <data name="Team2" xml:space="preserve">
+    <value>Отбор 2</value>
+  </data>
+  <data name="EnterTeamName" xml:space="preserve">
+    <value>Въведете име на отбора</value>
+  </data>
+  <data name="DefaultTeam1Name" xml:space="preserve">
+    <value>Ние</value>
+  </data>
+  <data name="DefaultTeam2Name" xml:space="preserve">
+    <value>Вие</value>
+  </data>
+  <data name="StartGame" xml:space="preserve">
+    <value>ЗАПОЧНИ ИГРА</value>
+  </data>
+  
+  <!-- Game Page -->
+  <data name="Game" xml:space="preserve">
+    <value>Игра</value>
+  </data>
+  <data name="AddPoints" xml:space="preserve">
+    <value>Добави точки</value>
+  </data>
+  <data name="Points" xml:space="preserve">
+    <value>Точки</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Запази</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отказ</value>
+  </data>
+  <data name="EndGame" xml:space="preserve">
+    <value>Край на играта</value>
+  </data>
+  <data name="Winner" xml:space="preserve">
+    <value>Победител</value>
+  </data>
+  <data name="Congratulations" xml:space="preserve">
+    <value>Поздравления!</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>ОК</value>
+  </data>
+  <data name="EnterPointsForRound" xml:space="preserve">
+    <value>📝 Въведете точки за раздаване</value>
+  </data>
+  <data name="RecordPoints" xml:space="preserve">
+    <value>✅ Запиши точки</value>
+  </data>
+</root>

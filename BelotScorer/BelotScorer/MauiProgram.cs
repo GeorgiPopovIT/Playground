@@ -1,4 +1,5 @@
 ﻿using BelotScorer.Data;
+using BelotScorer.Services;
 using BelotScorer.ViewModels;
 using BelotScorer.Views;
 using Microsoft.Extensions.Logging;
@@ -26,8 +27,9 @@ public static class MauiProgram
         builder.Services.AddSingleton<CreateGameViewModel>();
         builder.Services.AddTransient<GameViewModel>();
 
-
         builder.Services.AddSingleton<GameRepository>();
+
+        builder.Services.AddSingleton<LocalizationService>();
 
 #if DEBUG
         builder.Logging.AddDebug();

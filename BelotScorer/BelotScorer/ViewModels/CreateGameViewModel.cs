@@ -1,5 +1,6 @@
 ﻿using BelotScorer.Data;
 using BelotScorer.Data.Models;
+using BelotScorer.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
@@ -9,20 +10,33 @@ namespace BelotScorer.ViewModels;
 [QueryProperty("Team2Name", "Team2Name")]
 public partial class CreateGameViewModel : ObservableObject
 {
-    GameRepository _gameRepository;
+    private readonly GameRepository _gameRepository;
+    private readonly LocalizationService _localizationService;
 
     [ObservableProperty]
     Game game;
 
     [ObservableProperty]
-    string team1Name = "Ние";
+    string team1Name;
 
     [ObservableProperty]
-    string team2Name = "Вие";
+    string team2Name;
 
-    public CreateGameViewModel(GameRepository gameRepo)
+    public CreateGameViewModel(GameRepository gameRepo, LocalizationService localizationService)
     {
-        this._gameRepository = gameRepo;
+        _gameRepository = gameRepo;
+        _localizationService = localizationService;
+
+        // Set default team names based on current language
+        Team1Name = _localizationService["DefaultTeam1Name"];
+        Team2Name = _localizationService["DefaultTeam2Name"];
+
+        // Subscribe to language changes to update default team names
+        _localizationService.PropertyChanged += (s, e) =>
+        {
+            Team1Name = _localizationService["DefaultTeam1Name"];
+            Team2Name = _localizationService["DefaultTeam2Name"];
+        };
     }
 
     [RelayCommand]

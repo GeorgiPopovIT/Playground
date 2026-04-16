@@ -1,0 +1,118 @@
+{
+  "name": "My workflow 2",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "02e4ca40-8798-489e-b6ac-6130a544d1a5",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -144,
+        0
+      ],
+      "id": "e0656d88-b99e-4e7b-a9e9-9beb74222929",
+      "name": "Webhook",
+      "webhookId": "aa779181-ce27-4783-ba6b-53f2cb47e0d7"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        304,
+        0
+      ],
+      "id": "f3d8a711-9425-4c85-8cdb-d39bc94cfe2b",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "1",
+              "name": "chatInput",
+              "value": "={{ $json.body.ChatInput }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "67a0724a-785d-440e-aa90-9b51a1dcaab7",
+      "name": "Convert Field",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        80,
+        0
+      ]
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatAzureOpenAi",
+      "typeVersion": 1,
+      "position": [
+        240,
+        208
+      ],
+      "id": "df257e8b-cc3c-49c4-80c3-88c0f796e717",
+      "name": "Azure OpenAI Chat Model"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Convert Field",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert Field": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Azure OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "d62816ea-3eb8-4483-b29c-49fd2619f3e8",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "abc8fcdf709b5b42c9e3c95360b906a5bf19e039eb20899a1939c7b46758cd05"
+  },
+  "id": "XmI0BMEDjUO2USmR",
+  "tags": []
+}

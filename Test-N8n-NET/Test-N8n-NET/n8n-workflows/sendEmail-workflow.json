@@ -1,0 +1,77 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "9050caed-992b-434f-8188-6f4b2293a865",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -288,
+        -16
+      ],
+      "id": "97aa9c41-ff87-4176-9bd8-5c86a4e5fd6e",
+      "name": "Webhook",
+      "webhookId": "e0cc7f88-df31-4c4d-9159-69c6f3e87f92"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.body.Email }}",
+        "subject": "={{ $json.body.Subject }}",
+        "emailType": "text",
+        "message": "={{ $json.body.Message }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -64,
+        -16
+      ],
+      "id": "659808ac-846d-41a5-8037-3a845b9e86e6",
+      "name": "Send a message",
+      "webhookId": "006b51a3-fb40-4add-b213-33563e3abe0b",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "i7Tl9A6eHf0YtOjH",
+          "name": "Gmail OAuth2 API"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "47300d09-21a8-4a1f-bf6b-b96c1ad123b1",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "abc8fcdf709b5b42c9e3c95360b906a5bf19e039eb20899a1939c7b46758cd05"
+  },
+  "id": "9Y6B0Xaz13Dv4PsN",
+  "tags": []
+}

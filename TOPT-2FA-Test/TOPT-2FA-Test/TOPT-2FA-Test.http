@@ -1,0 +1,15 @@
+@TOPT_2FA_Test_HostAddress = http://localhost:5089
+
+GET {{TOPT_2FA_Test_HostAddress}}/opt/qrcode/
+Accept: image/png
+
+> images/qrcode.png
+
+###
+
+POST {{TOPT_2FA_Test_HostAddress}}/otp/validate
+Content-Type: application/json
+
+{
+  "code": ""
+}

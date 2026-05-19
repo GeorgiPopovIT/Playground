@@ -1,0 +1,6 @@
+@ReverseProxy_HostAddress = http://localhost:8080
+
+GET {{ReverseProxy_HostAddress}}/products/
+Accept: application/json
+
+###

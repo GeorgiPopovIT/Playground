@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="NewApi/NewApi.csproj" />
+  <Project Path="OldApi/OldApi.csproj" />
+  <Project Path="ReverseProxy/ReverseProxy.csproj" />
+</Solution>

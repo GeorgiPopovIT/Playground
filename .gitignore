@@ -312,9 +312,44 @@ paket-files/
 # CodeRush personal settings
 .cr/personal
 
-# Python Tools for Visual Studio (PTVS)
+# Python projects
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Test and coverage artifacts
+.pytest_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+.hypothesis/
+
+# Type-checking and linting caches
+.mypy_cache/
+.pyright/
+.ruff_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Python packaging artifacts
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
 
 # Cake - Uncomment if you are using it
 # tools/**
@@ -353,6 +388,8 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
+.env
+
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
 
@@ -363,3 +400,4 @@ MigrationBackup/
 FodyWeavers.xsd
 /GorgesMusic.Client
 /Project1
+/TelegramAgent/YouTubeSummarizer/appsettings.Development.json

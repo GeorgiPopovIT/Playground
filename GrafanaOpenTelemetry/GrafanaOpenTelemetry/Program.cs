@@ -17,8 +17,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 //    logging.AddOtlpExporter(options =>
 //           {
-//               options.Endpoint = new Uri("https://otlp-gateway-prod-eu-central-0.grafana.net/otlp");
-//               options.Headers = "Authorization=Basic MTMxMDE4NDpnbGNfZXlKdklqb2lNVFEzTnpNMk1DSXNJbTRpT2lKMFpYTjBJaXdpYXlJNklrdzFOWFp2U0ZGa05qSTJlbTlRV1Rac05UWXpkRFYwUWlJc0ltMGlPbnNpY2lJNkluQnliMlF0WlhVdFkyVnVkSEpoYkMwd0luMTk=";
+//               options.Endpoint = new Uri("");
+//               options.Headers = "";
 //           });
 //});
 
@@ -32,8 +32,8 @@ var builder = WebApplication.CreateBuilder(args);
 //                        .AddService("GrafanaOpenTelemetryService"))
 //                      .AddOtlpExporter(options =>
 //                        {
-//                            options.Endpoint = new Uri("https://otlp-gateway-prod-eu-central-0.grafana.net/otlp");
-//                            options.Headers = "Authorization=Basic MTMxMDE4NDpnbGNfZXlKdklqb2lNVFEzTnpNMk1DSXNJbTRpT2lKMFpYTjBJaXdpYXlJNklrdzFOWFp2U0ZGa05qSTJlbTlRV1Rac05UWXpkRFYwUWlJc0ltMGlPbnNpY2lJNkluQnliMlF0WlhVdFkyVnVkSEpoYkMwd0luMTk=";
+//                            options.Endpoint = new Uri("");
+//                            options.Headers = "";
 //                            options.Protocol = OtlpExportProtocol.Grpc;
 //                        });
 //    })
@@ -43,8 +43,8 @@ var builder = WebApplication.CreateBuilder(args);
 //                      .AddHttpClientInstrumentation()
 //                      .AddOtlpExporter(options =>
 //                      {
-//                          options.Endpoint = new Uri("https://otlp-gateway-prod-eu-central-0.grafana.net/otlp");
-//                          options.Headers = "Authorization=Basic MTMxMDE4NDpnbGNfZXlKdklqb2lNVFEzTnpNMk1DSXNJbTRpT2lKMFpYTjBJaXdpYXlJNklrdzFOWFp2U0ZGa05qSTJlbTlRV1Rac05UWXpkRFYwUWlJc0ltMGlPbnNpY2lJNkluQnliMlF0WlhVdFkyVnVkSEpoYkMwd0luMTk=";
+//                          options.Endpoint = new Uri("");
+//                          options.Headers = "";
 //                          options.Protocol = OtlpExportProtocol.Grpc;
 //                      });
 //    })

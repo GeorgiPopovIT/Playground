@@ -21,9 +21,9 @@ string instructions = """
     Always attempt to process any input that contains a YouTube URL, regardless of additional parameters in the URL.
 """;
 
-var endpointUri = "https://manusopenai.openai.azure.com/";
-var deploymentName = "gpt-4o-mini";
-var azureOpenAiKey = "6DOUKscG11xXo7glpJczyAZGWH5iLsmFSSF4zoF3eLe5JxBFOnaiJQQJ99BDAC5RqLJXJ3w3AAABACOG4ymR";
+var endpointUri = "";
+var deploymentName = "";
+var azureOpenAiKey = "";
 
 IChatClient chatClient =
     new AzureOpenAIClient(new Uri(endpointUri), new ApiKeyCredential(azureOpenAiKey))

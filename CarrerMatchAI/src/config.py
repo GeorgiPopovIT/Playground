@@ -11,6 +11,26 @@ except ImportError:  # pragma: no cover
 load_dotenv()
 
 
+def configure_langsmith_tracing(project_name: str = "CareerMatchAI") -> bool:
+    """Enable LangSmith tracing for LangChain/LangGraph runs using .env credentials."""
+    api_key = os.getenv("LANGSMITH_APIKEY") or os.getenv("LANGSMITH_API_KEY")
+    if not api_key:
+        return False
+
+    os.environ["LANGSMITH_TRACING"] = "true"
+    os.environ["LANGSMITH_API_KEY"] = api_key
+    os.environ.setdefault("LANGSMITH_PROJECT", project_name)
+
+    workspace_id = os.getenv("LANGSMITH_WORKSPACE_ID")
+    if workspace_id:
+        os.environ["LANGSMITH_WORKSPACE_ID"] = workspace_id
+
+    return True
+
+
+configure_langsmith_tracing()
+
+
 def get_openai_api_key() -> str:
     key = os.getenv("OPENAI_API_KEY")
     if key:

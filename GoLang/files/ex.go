@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+func ex() {
 	text := "Learning Go is fun!"
 
 	SaveData("files/notes.txt", text)

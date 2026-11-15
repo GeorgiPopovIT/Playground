@@ -1,14 +1,14 @@
-// package main
+package main
 
-// import "fmt"
+import "fmt"
 
-// func main() {
-// 	ch := make(chan int, 2)
+func buffered() {
+	ch := make(chan int, 2)
 
-// 	ch <- 10
-// 	ch <- 20
+	ch <- 10
+	ch <- 20
 
-// 	for value := range ch {
-// 		fmt.Println(value)
-// 	}
-// }
+	for value := range ch {
+		fmt.Println(value)
+	}
+}
